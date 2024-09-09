@@ -20,6 +20,9 @@
             Book Now and Explore!
         </h3>
     </div>
+    <div>
+        <x-layout.search-hotels-and-villa />
+    </div>
 
     <x-ui.modal.modal-login />
     <x-ui.modal.get-started-modal/>
