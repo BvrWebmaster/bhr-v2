@@ -33,6 +33,10 @@
                 $('#close-register').click(function () {
                     $('#modal-register').fadeOut('fast');
                 })
+
+                $('#btn-menus').click(function () {
+                    $('#navigation-mobile').slideToggle('slow');
+                })
             })
         </script>
     </body>

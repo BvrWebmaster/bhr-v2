@@ -1,12 +1,16 @@
-<header class="h-[290px] tablet:h-[632px] desktop:h-[832px]' w-full bg-cover bg-center overflow-hidden"
+<header class="h-[290px] tablet:h-[632px] desktop:h-[832px] w-full bg-cover bg-center overflow-hidden"
         style="background: linear-gradient(90deg, rgba(0,0,0,0.5243347338935574) 100%, rgba(255,255,255,1) 100%), url('{{ asset('images/header-home.png') }}');
             background-size: cover;
             background-position: top;
             background-repeat: no-repeat;">
 
+    <!-- navigation destop -->
    <div class="w-full py-4 laptop:py-8 laptop:px-[64px] transform duration-200 ease-in-out px-4 flex justify-between items-start fixed z-40" id="nav-navigation-destop">
        <x-layout.navigation-destop />
    </div>
+
+
+   <x-layout.navigation-mobile />
 
     <div class="h-full flex flex-col justify-center items-center">
         <div class="px-7">
@@ -20,6 +24,7 @@
             Book Now and Explore!
         </h3>
     </div>
+
     <div>
         <x-layout.search-hotels-and-villa />
     </div>

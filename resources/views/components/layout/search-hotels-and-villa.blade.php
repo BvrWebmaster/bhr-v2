@@ -1,4 +1,4 @@
-<div class="hidden tablet:block w-full tablet:max-w-2xl laptop:max-w-4xl laptop-l:max-w-[62rem] mx-auto bg-white -mt-28 rounded-2xl">
+<div class="hidden laptop:block w-full tablet:max-w-2xl laptop:max-w-4xl laptop-l:max-w-[62rem] mx-auto bg-white -mt-28 rounded-2xl">
     <div class="grid grid-cols-12">
         <div class="col-span-4 hover:bg-gray-200 py-3 px-6 cursor-pointer transform duration-300 hover:rounded-2xl">
             <div class="space-y-2">
