@@ -9,7 +9,6 @@
        <x-layout.navigation-destop />
    </div>
 
-
    <x-layout.navigation-mobile />
 
     <div class="h-full flex flex-col justify-center items-center">

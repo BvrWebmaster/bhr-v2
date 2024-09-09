@@ -1,5 +1,5 @@
 <footer class="bg-[#292929]">
-    <div class="h-full w-full px-4 pt-6 laptop:px-16 laptop:pt-8 laptop-l:px-20  space-y-6">
+    <div class="h-full w-full tablet:max-w-2xl laptop:max-w-4xl laptop-l:max-w-7xl mx-auto pt-6 laptop:pt-8 space-y-6">
         <div class="hidden laptop:grid laptop:grid-cols-9 laptop-l:grid-cols-11 desktop:grid-cols-12">
            <div class="space-y-8 laptop:col-span-3 laptop-l:col-span-5 desktop:col-span-6">
                <img src="{{ asset('images/bhr-logo-white.png') }}" alt="bhr logo" class="w-[270px] h-[66px]" />

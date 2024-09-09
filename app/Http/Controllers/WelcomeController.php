@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Accomodation;
+use App\Models\Location;
 use Illuminate\View\View;
 
 class WelcomeController extends Controller
@@ -18,11 +19,13 @@ class WelcomeController extends Controller
 
             ->with(['category', 'location', 'facilities'])
 
-            ->limit(8)
+            ->limit(4)
 
             ->get();
 
+        $locations = Location::all();
 
-        return view('pages.welcome', compact('promos', 'accomodations'));
+
+        return view('pages.welcome', compact('promos', 'accomodations', 'locations'));
     }
 }
