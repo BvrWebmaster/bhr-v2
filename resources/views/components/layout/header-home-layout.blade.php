@@ -21,6 +21,8 @@
         </h3>
     </div>
 
+    <x-ui.modal.modal-login />
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const header = document.querySelector('header');

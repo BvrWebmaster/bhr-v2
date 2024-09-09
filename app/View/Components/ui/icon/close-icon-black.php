@@ -1,23 +1,26 @@
 <?php
 
-namespace App\View\Components\ui\modal;
+namespace App\View\Components\ui\icon;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class modallogin extends Component
+class closeiconblack extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(){}
+    public function __construct()
+    {
+        //
+    }
 
     /**
      * Get the view / contents that represent the component.
      */
     public function render(): View|Closure|string
     {
-        return view('components..ui.modal.modal-login');
+        return view('components..ui.icon.close-icon-black');
     }
 }
