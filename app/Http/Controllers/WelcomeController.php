@@ -19,11 +19,11 @@ class WelcomeController extends Controller
 
             ->with(['category', 'location', 'facilities'])
 
-            ->limit(4)
+            ->limit(2)
 
             ->get();
 
-        $locations = Location::all();
+        $locations = Location::limit(3)->get();
 
 
         return view('pages.welcome', compact('promos', 'accomodations', 'locations'));

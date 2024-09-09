@@ -18,7 +18,7 @@
             </div>
         </section>
 
-        <!-- accomodations list -->
+        <!-- accomodations section -->
         <section class="w-full py-7">
             <div class="max-w-full tablet:max-w-2xl laptop:max-w-4xl laptop-l:max-w-7xl mx-auto px-4 tablet:px-0 space-y-6 laptop-l:space-y-10">
                 <div class="space-y-4">
@@ -29,6 +29,8 @@
                         </div>
                         <x-ui.label.sub-heading :label="'Here are some promo that we have made special for you. Pick before it expires!'" />
                     </div>
+
+                    <!-- button tabbar -->
                     <div class="max-w-full tablet:max-w-2xl laptop:max-w-4xl laptop-l:max-w-7xl">
                         <div class="flex space-x-2 overflow-x-scroll no-scrollbar">
                             @foreach($locations as $location)
@@ -36,10 +38,12 @@
                             @endforeach
                         </div>
                     </div>
+
+                    <!-- accomodation list -->
                     <div class="w-full relative">
-                        <div class="overflow-hidden">
+                        <div class="overflow-hidden" id="slider-container-accomodations">
                             <div class="flex gap-2 overflow-x-scroll no-scrollbar">
-                                <div class="flex items-stretch tablet:flex-row gap-x-2 static transition duration-700" id="slider-accomodations">
+                                <div class=" overflow-x-scroll no-scrollbar flex items-stretch tablet:flex-row gap-x-2 static transition duration-700" id="slider-accomodations">
                                     @foreach($accomodations as $accomodation)
                                         <x-ui.card.accomodation-card-slider
                                             :name="$accomodation->name"
@@ -52,6 +56,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <x-ui.icon.icon-slider />
                     </div>
                 </div>

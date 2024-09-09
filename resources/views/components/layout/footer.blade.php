@@ -47,7 +47,7 @@
 
 
         <!-- section mobile -->
-        <div class="space-y-6 laptop:hidden">
+        <div class="space-y-6 px-4 laptop:hidden">
             <img src="{{ asset('images/bhr-logo-white.png') }}" alt="bhr logo" class="w-[130px] laptop:w-[270px] h-[32px] laptop:h-[66px]" />
             <div class="w-full space-y-6 laptop:hidden">
                 <div class="space-y-4">
@@ -81,7 +81,7 @@ Kabupaten Badung, Bali 80236">
         </div>
 
         <!-- section mobile -->
-        <div class="space-y-4 laptop:hidden">
+        <div class="space-y-4 px-4 laptop:hidden">
             <h4 class="text-white text-justify text-xs font-bold leading-[18px]">Useful Links</h4>
             <div class="flex flex-col">
                 <x-ui.label.navigation-footer label="Home" />
