@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class AccomodationGeneralFacility extends Model
+class AccomodationGeneralFacilities extends Model
 {
     use HasFactory;
 

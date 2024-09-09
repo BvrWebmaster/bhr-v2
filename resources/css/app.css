@@ -1,3 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5 {
+    line-height: 150% !important;
+}
+
+p {
+    line-height: 150% !important;
+}
+
+@layer utilities {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+}
+
+.transition-max-height {
+    transition: max-height 0.7s ease-in-out;
+    overflow: hidden;
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+.shadow-custom-top {
+    box-shadow: 0px 0px 5px 3px rgba(216, 216, 216, 0.75);
+    -webkit-box-shadow: 0px 0px 5px 3px rgba(216, 216, 216, 0.75);
+    -moz-box-shadow: 0px 0px 5px 3px rgba(216, 216, 216, 0.75);
+}
