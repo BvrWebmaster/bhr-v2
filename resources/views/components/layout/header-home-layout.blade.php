@@ -22,6 +22,7 @@
     </div>
 
     <x-ui.modal.modal-login />
+    <x-ui.modal.get-started-modal/>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {

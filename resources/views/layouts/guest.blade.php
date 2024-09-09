@@ -11,6 +11,29 @@
     </head>
     <body>
         <x-layout.header-home-layout />
+
         {{ $slot }}
+
+        <x-layout.footer />
+
+        <script>
+            $(document).ready(function () {
+                $('#btn-login').click(function () {
+                    $('#modal-login').fadeIn('slow');
+                });
+
+                $('#close-login').click(function () {
+                    $('#modal-login').fadeOut('fast');
+                })
+
+                $('#btn-register').click(function () {
+                   $('#modal-register').fadeIn('slow');
+                });
+
+                $('#close-register').click(function () {
+                    $('#modal-register').fadeOut('fast');
+                })
+            })
+        </script>
     </body>
 </html>
