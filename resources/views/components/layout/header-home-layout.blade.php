@@ -4,7 +4,7 @@
             background-position: top;
             background-repeat: no-repeat;">
 
-   <div class="w-full py-4 lg:py-6 lg:px-[64px] transform duration-200 ease-in-out px-4 flex justify-between items-start fixed z-40" id="nav-navigation-destop"">
+   <div class="w-full py-4 laptop:py-8 laptop:px-[64px] transform duration-200 ease-in-out px-4 flex justify-between items-start fixed z-40" id="nav-navigation-destop">
        <x-layout.navigation-destop />
    </div>
 

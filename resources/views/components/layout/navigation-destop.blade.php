@@ -10,4 +10,9 @@
         <x-ui.label.navigation-label :label="'Special Offers'" :routes="'#'" :active="request()->routeIs('#')"/>
         <x-ui.label.navigation-label :label="'Contact'" :routes="'#'" :active="request()->routeIs('#')"/>
     </div>
+
+    <div class="hidden laptop:flex space-x-4 items-center">
+        <x-ui.button.button-login />
+        <x-ui.button.button-register />
+    </div>
 </div>
