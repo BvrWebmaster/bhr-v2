@@ -46,4 +46,9 @@ class HotelsAndVillaController extends Controller
 
         return response()->json($accomodations);
     }
+
+    public function show(Accomodation $accomodation): View
+    {
+        return view('pages.hotels-and-villa.detail', compact('accomodation'));
+    }
 }

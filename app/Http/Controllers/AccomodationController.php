@@ -18,8 +18,6 @@ class AccomodationController extends Controller
 
             ->with(['category', 'location', 'facilities'])
 
-            ->limit(4)
-
             ->get();
 
         return response()->json($accomodations);

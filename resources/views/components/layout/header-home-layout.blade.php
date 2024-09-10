@@ -1,5 +1,11 @@
-<header class="h-[290px] tablet:h-[632px] desktop:h-[832px] w-full bg-cover bg-center overflow-hidden"
-        style="background: linear-gradient(90deg, rgba(0,0,0,0.5243347338935574) 100%, rgba(255,255,255,1) 100%), url('{{ asset('images/header-home.png') }}');
+@php
+    $header = request()->routeIs('bali-stories.index') ? 'tablet:h-[576px]' : 'tablet:h-[632px]';
+    $cekRoute = request()->routeIs('bali-stories.index');
+    $background = request()->routeIs('bali-stories.index') ? 'https://www.bvrbaliholidayrentals.com/storage/images/64d9e2c193e28.jpg' : 'images/header-home.png';
+@endphp
+
+<header class="h-[290px] {{ $header }} w-full bg-cover bg-center overflow-hidden"
+        style="background: linear-gradient(90deg, rgba(0,0,0,0.5243347338935574) 100%, rgba(255,255,255,1) 100%), url('{{ asset($background) }}');
             background-size: cover;
             background-position: top;
             background-repeat: no-repeat;">
@@ -14,9 +20,13 @@
     <div class="h-full flex flex-col justify-center items-center">
         <div class="px-7">
             <h2 class="text-center text-white text-lg laptop:text-5xl font-semibold leading-[27px] laptop:leading-[72px]">
-                Discover Your Next Adventure,
-                <br class="hidden tablet:block">
-                Unveiling Unforgettable Journeys!
+               @if(!$cekRoute)
+                    Discover Your Next Adventure,
+                    <br class="hidden tablet:block">
+                    Unveiling Unforgettable Journeys!
+                @else
+                    Hidden Retreat for Summer
+               @endif
             </h2>
         </div>
         <h3 class="text-xs laptop:text-[30px] font-medium text-[#BDBDBD] leading-[18px] laptop:leading-[36px]">
@@ -24,9 +34,11 @@
         </h3>
     </div>
 
-    <div>
-        <x-layout.search-hotels-and-villa />
-    </div>
+    @if(!$cekRoute)
+        <div>
+            <x-layout.search-hotels-and-villa />
+        </div>
+    @endif
 
     <x-ui.modal.modal-login />
     <x-ui.modal.get-started-modal/>

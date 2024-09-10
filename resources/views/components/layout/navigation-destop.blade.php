@@ -1,4 +1,4 @@
-<div class="h-full w-full tablet:max-w-2xl laptop:max-w-4xl laptop-l:max-w-7xl mx-auto flex justify-between">
+<div class="h-full w-full tablet:max-w-2xl laptop:max-w-4xl laptop-l:max-w-7xl desktop:max-w-[1440px] mx-auto flex justify-between">
     <a href='/'>
         <img id="navigation-logo" src="{{ asset('images/bhr-logo-white.png') }}" alt="logo-bhr" class="w-[135px] h-[33px] laptop-l:w-[270px] laptop-l:h-[66px]"/>
     </a>

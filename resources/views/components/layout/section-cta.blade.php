@@ -1,7 +1,7 @@
 <section>
     <div class="w-full h-[272px] laptop:h-[512px] bg-center bg-cover" style="
     background-image: linear-gradient(109deg, rgba(108,97,103,0) 0%, rgba(0,0,0,0.38988095238095233) 0%),url('{{ asset('images/image-cta.jpg') }}');">
-        <div class="w-full tablet:max-w-2xl laptop:max-w-4xl laptop-l:max-w-7xl mx-auto px-4 tablet:px-0 space-y-10">
+        <div class="w-full tablet:max-w-2xl laptop:max-w-4xl laptop-l:max-w-7xl desktop:max-w-[1440px] mx-auto px-4 tablet:px-0 space-y-10">
             <div class="py-8 laptop:py-[76px] space-y-6">
                 <div class="space-y-2 laptop:space-y-4">
                     <div class="text-lg laptop:hidden font-semibold text-white leading-[27px] laptop:leading-[54px]">Subscribe to BVR Group Asia Bulletin</div>
