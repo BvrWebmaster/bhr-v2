@@ -45,17 +45,8 @@
                     <!-- accomodation list -->
                     <div class="w-full relative">
                         <div class="overflow-hidden" id="slider-container-accomodations">
-                            <div class="overflow-x-scroll no-scrollbar flex items-stretch tablet:flex-row gap-x-2 static transition duration-700" id="slider-accomodations">
-{{--                                @foreach($accomodations as $accomodation)--}}
-{{--                                    <x-ui.card.accomodation-card-slider--}}
-{{--                                        :name="$accomodation->name"--}}
-{{--                                        :location="$accomodation->location->name"--}}
-{{--                                        :oldPrice="'12 000000'"--}}
-{{--                                        :images="$accomodation->image"--}}
-{{--                                        :newPrice="'15 0000'"--}}
-{{--                                        :slug="$accomodation->slug" />--}}
-{{--                                @endforeach--}}
-                            </div>
+                            <!-- load accomodation -->
+                            <div class="overflow-x-scroll no-scrollbar flex items-stretch tablet:flex-row gap-x-2 static transition duration-700" id="slider-accomodations"></div>
                         </div>
                         <x-ui.icon.icon-slider />
                     </div>
@@ -193,7 +184,7 @@
                             <div class="space-y-3">
                                 <div class="space-y-3 tablet:space-y-4">
                                     <div class="space-y-2">
-                                        <h4 class="text-[#292929] text-sm tablet:text-base tablet:leading-[24px] laptop:text-base laptop-l:text-lg font-semibold leading-[23.8px] laptop:leading-[24px] laptop-l:leading-[27px]">
+                                        <h4 class="text-[#292929] text-sm tablet:text-base tablet:leading-[24px] h-16 laptop:text-base laptop-l:text-lg font-semibold leading-[23.8px] laptop:leading-[24px] laptop-l:leading-[27px]">
                                             ${accomodation.name}
                                         </h4>
                                         <p class="text-[#7C7C7C] text-xs font-medium tablet:leading-[18px] laptop-l:text-sm leading-[18px] laptop-l:leading-[21px]">

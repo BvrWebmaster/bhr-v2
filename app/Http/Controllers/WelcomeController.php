@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Accomodation;
 use App\Models\Activity;
 use App\Models\Location;
 use Illuminate\Http\Request;

@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Accomodation;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class AccomodationController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request): JsonResponse
     {
         $activeLocation = $request->input('location_id', 1);
 
