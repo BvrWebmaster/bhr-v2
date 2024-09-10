@@ -88,7 +88,5 @@
                 <x-ui.label.text-orange-button label="Explore More Activities" />
             </div>
         </section>
-
-
     </main>
 </x-guest-layout>
