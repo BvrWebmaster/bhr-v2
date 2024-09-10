@@ -5,11 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Accomodation;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\View\View;
 
 class AccomodationController extends Controller
 {
-    public function filterAccomodation(Request $request): JsonResponse
+    public function __invoke(Request $request): JsonResponse
     {
         $activeLocation = $request->input('location_id', 1);
 
@@ -24,10 +23,5 @@ class AccomodationController extends Controller
             ->get();
 
         return response()->json($accomodations);
-    }
-
-    public function index(): View
-    {
-        return view('pages.hotels-and-villa.index');
     }
 }
