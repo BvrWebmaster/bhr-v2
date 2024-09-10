@@ -1,12 +1,17 @@
 <x-guest-layout>
-    <div class="py-7">
+
+    <div class="pt-7 px-4 w-full tablet:max-w-2xl mx-auto flex justify-start space-x-4 laptop:hidden">
+        <x-ui.button.button-filter />
+        <x-ui.button.button-sort />
+    </div>
+
+    <div class="py-4">
         <div class="w-full tablet:max-w-2xl laptop:max-w-4xl laptop-l:max-w-7xl mx-auto px-4 tablet:px-0 space-y-6">
             <div class="grid grid-cols-12 gap-x-6">
 
                 <!-- filter panel -->
                 <div class="col-span-3">
                     <div class="col-span-12 laptop:col-span-4 laptop-l:col-span-3 space-y-5 hidden laptop-l:block sticky top-36 z-30">
-
                         <!-- filter facilites -->
                         <x-layout.filter-layout>
                             <x-ui.label.header-checkbox-filter label="Facilities" subLabel="Essential amenities" />
@@ -25,6 +30,12 @@
             </div>
         </div>
     </div>
+
+    <!-- panel filter mobile -->
+    <x-ui.modal.filter-hotels-and-villa-panel :facilities="$facilities" />
+
+    <!-- panel sort mobile -->
+    <x-ui.modal.sort-hotels-and-villa-panel />
 
     <script>
         $(document).ready(function () {
@@ -72,6 +83,26 @@
            });
 
             loadAccomodations(1);
+
+            $('#btn-filter').on('click', function () {
+                $('#panel-hotels-and-villa').removeClass('translate-y-full');
+                $('#container-hotels-and-villa').removeClass('translate-y-full').addClass('translate-y-0 transform duration-500');
+            });
+
+            $('#btn-close-hotels-and-villa').on('click', function () {
+                $('#panel-hotels-and-villa').removeClass('translate-y-0').addClass('translate-y-full');
+            });
+
+            $('#btn-sort').on('click', function () {
+                $('#sort-hotels-and-villa').removeClass('translate-y-full');
+                $('#container-sort-hotels-and-villa').removeClass('translate-y-full').addClass('translate-y-0 transform duration-500');
+            })
+
+            $('#btn-close-sort-hotels-and-villa').on('click', function () {
+                $('#sort-hotels-and-villa').removeClass('translate-y-0').addClass('translate-y-full');
+            });
+
+
         });
 
         function accomodationCard(accomodation) {
