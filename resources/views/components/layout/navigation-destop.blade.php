@@ -4,7 +4,7 @@
     </a>
 
     <div class="hidden laptop-l:flex space-x-6 items-center justify-center">
-        <x-ui.label.navigation-label :label="'Hotels & Villas'" :routes="'hotels-and-villa'" :active="request()->routeIs('hotels-and-villa')"/>
+        <x-ui.label.navigation-label :label="'Hotels & Villas'" :routes="'hotels-and-villa'" :active="request()->routeIs('hotels-and-villa.index')"/>
         <x-ui.label.navigation-label :label="'Activities in Bali'" :routes="'#'" :active="request()->routeIs('#')"/>
         <x-ui.label.navigation-label :label="'Bali Stories'"  :routes="'bali-stories'" :active="request()->route('bali-stories')"/>
         <x-ui.label.navigation-label :label="'Special Offers'" :routes="'#'" :active="request()->routeIs('#')"/>
