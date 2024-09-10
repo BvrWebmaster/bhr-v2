@@ -1,7 +1,7 @@
 <a href="#" class="bg-white w-[167px] tablet:w-[212px] laptop-l:w-[308px] desktop:w-[348px]">
-    <img src="https://www.bvrbaliholidayrentals.com/storage/images/6544c31d6db77.jpg" alt="{{ $name }}" class="w-full h-[104px] object-cover tablet:h-[152px] laptop:h-[152px] laptop-l:h-[225px] rounded-t-[6.58px] tablet:rounded-t-[11[x] laptop-l:rounded-t-2xl">
+    <img src="https://www.bvrbaliholidayrentals.com/storage/images/6544c31d6db77.jpg" alt="{{ $name }}" class="w-full h-[104px] object-cover tablet:h-[152px] laptop:h-[152px] laptop-l:h-[225px] rounded-t-[6.58px] tablet:rounded-t-[11px] laptop-l:rounded-t-2xl">
 
-    <div class="px-3 py-2 tablet:px-4 tablet:py-4 desktop:py-5 desktop:px-6 space-y-4 border border-b-[#BDBDBD] border-l-[#BDBDBD] border-r-[#BDBDBD] rounded-b-[7px]">
+    <div class="px-3 py-2 tablet:px-4 tablet:py-4 desktop:py-5 desktop:px-6 space-y-4 border border-b-[#BDBDBD] border-l-[#BDBDBD] border-r-[#BDBDBD] rounded-b-[6.58px] tablet:rounded-b-[11px] laptop-l:rounded-b-2xl">
         <div class="space-y-3">
             <div class="space-y-3 tablet:space-y-4">
                 <div class="space-y-2">
