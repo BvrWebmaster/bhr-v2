@@ -5,10 +5,10 @@
 
     <div class="hidden laptop-l:flex space-x-6 items-center justify-center">
         <x-ui.label.navigation-label :label="'Hotels & Villas'" :routes="'hotels-and-villa'" :active="request()->routeIs('hotels-and-villa.index')"/>
-        <x-ui.label.navigation-label :label="'Activities in Bali'" :routes="'#'" :active="request()->routeIs('#')"/>
-        <x-ui.label.navigation-label :label="'Bali Stories'"  :routes="'bali-stories'" :active="request()->route('bali-stories')"/>
-        <x-ui.label.navigation-label :label="'Special Offers'" :routes="'#'" :active="request()->routeIs('#')"/>
-        <x-ui.label.navigation-label :label="'Contact'" :routes="'#'" :active="request()->routeIs('#')"/>
+        <x-ui.label.navigation-label :label="'Activities in Bali'" :routes="'activities'" :active="request()->routeIs('activities.index')"/>
+        <x-ui.label.navigation-label :label="'Bali Stories'"  :routes="'bali-stories'" :active="request()->routeIs('bali-stories.index')"/>
+        <x-ui.label.navigation-label :label="'Special Offers'" :routes="'special-offers'" :active="request()->routeIs('special-offers.index')"/>
+        <x-ui.label.navigation-label :label="'Contact'" :routes="'contact'" :active="request()->routeIs('contact.index')"/>
     </div>
 
     <div class="tablet:flex space-x-4 items-center">

@@ -4,8 +4,16 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\AccomodationController;
 use App\Http\Controllers\HotelsAndVillaController;
+use App\Http\Controllers\ActivitiesController;
+use App\Http\Controllers\BaliStoryController;
+use App\Http\Controllers\SpecialOfferController;
+use App\Http\Controllers\ContactController;
 
 Route::get('/', WelcomeController::class)->name('welcome');
 Route::get('accomodations', AccomodationController::class)->name('accomodations');
 Route::get('hotels-and-villa', [HotelsAndVillaController::class, 'index'])->name('hotels-and-villa.index');
 Route::get('load-accomodations', [HotelsAndVillaController::class, 'loadHotelsAndVilla'])->name('load-hotels-and-villa');
+Route::get('activities', [ActivitiesController::class, 'index'])->name('activities.index');
+Route::get('bali-stories', [BaliStoryController::class, 'index'])->name('bali-stories.index');
+Route::get('special-offers', [SpecialOfferController::class, 'index'])->name('special-offers.index');
+Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
