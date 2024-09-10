@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Accomodation;
+use App\Models\Activity;
 use App\Models\Location;
 use Illuminate\View\View;
 
@@ -23,9 +24,19 @@ class WelcomeController extends Controller
 
             ->get();
 
+        $activities = Activity::where('is_published', true)
+
+            ->orderBy('created_at', 'desc')
+
+            ->with(['location', 'category'])
+
+            ->limit(4)
+
+            ->get();
+
         $locations = Location::limit(3)->get();
 
 
-        return view('pages.welcome', compact('promos', 'accomodations', 'locations'));
+        return view('pages.welcome', compact('promos', 'accomodations', 'locations', 'activities'));
     }
 }
