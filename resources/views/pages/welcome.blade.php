@@ -56,11 +56,39 @@
                                 </div>
                             </div>
                         </div>
-
                         <x-ui.icon.icon-slider />
+                    </div>
+                    <div>
+                        <x-ui.label.text-orange-button label="See More Accomodations" />
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- activities section -->
+        <section class="py-7 w-full">
+            <div class="max-w-full tablet:max-w-2xl laptop:max-w-4xl laptop-l:max-w-7xl mx-auto px-4 tablet:px-0 space-y-6">
+                <div class="space-y-6">
+                    <div class="space-y-2">
+                        <div class="flex items-center space-x-3">
+                            <x-ui.icon.trending-icon />
+                            <x-ui.label.thrid-heading :label="'Trending Activities in Bali'" />
+                        </div>
+                        <p class="text-sm tablet:text-base font-medium text-[#7C7C7C]">
+                            Once your hotel or villa is settled, let’s have fun!
+                        </p>
+                    </div>
+                </div>
+                <div class="w-full relative">
+                    <div class="overflow-hidden">
+
+                    </div>
+                    <x-ui.icon.icon-slider />
+                </div>
+                <x-ui.label.text-orange-button label="Explore More Activities" />
+            </div>
+        </section>
+
+
     </main>
 </x-guest-layout>
