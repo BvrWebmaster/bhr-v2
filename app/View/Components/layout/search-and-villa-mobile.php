@@ -1,18 +1,18 @@
 <?php
 
-namespace App\View\Components\ui\button;
+namespace App\View\Components\layout;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class buttonsearchmobile extends Component
+class searchandvillamobile extends Component
 {
     /**
      * Create a new component instance.
      */
     public function __construct(
-        public string $label
+        public string $location
     ){}
 
     /**
@@ -20,6 +20,6 @@ class buttonsearchmobile extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components..ui.button.button-search-mobile');
+        return view('components..layout.search-and-villa-mobile');
     }
 }

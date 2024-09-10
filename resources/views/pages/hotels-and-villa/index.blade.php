@@ -1,5 +1,9 @@
 <x-guest-layout>
 
+    <div class="-mt-4 w-full bg-white tablet:hidden rounded-t-[20px]">
+        <x-layout.search-and-villa-mobile location="Canggu" />
+    </div>
+
     <div class="pt-7 px-4 w-full tablet:max-w-2xl mx-auto flex justify-start space-x-4 laptop:hidden">
         <x-ui.button.button-filter />
         <x-ui.button.button-sort />
@@ -58,6 +62,7 @@
 
            $('.filter-facility').on('click', function () {
                let selectedFacilities = [];
+
                $('.filter-facility:checked').each(function() {
                    selectedFacilities.push($(this).data('facilities-id'));
                });

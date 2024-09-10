@@ -1,5 +1,3 @@
-<div class="flex items-center justify-center">
-    <button class="bg-[#FF5700] rounded-xl py-3 px-6 transform duration-300 active:scale-95">
-        <p class="text-xl font-semibold font-serif leading-[30px] text-white">Search</p>
-    </button>
-</div>
+<button class="transform duration-300 active:scale-95 border bg-[#FF5700] rounded-xl w-full py-3 text-white text-base font-semibold leading-[24px]">
+    Explore Now
+</button>

@@ -1,25 +1,26 @@
 <?php
 
-namespace App\View\Components\ui\button;
+namespace App\View\Components\ui\icon;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class buttonsearchmobile extends Component
+class search-icon extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(
-        public string $label
-    ){}
+    public function __construct()
+    {
+        //
+    }
 
     /**
      * Get the view / contents that represent the component.
      */
     public function render(): View|Closure|string
     {
-        return view('components..ui.button.button-search-mobile');
+        return view('components..ui.icon.search-icon');
     }
 }
