@@ -81,6 +81,13 @@
                 </div>
                 <div class="w-full relative">
                     <div class="overflow-hidden">
+                        <div class="flex flex-row items-stretch static transition duration-700 space-x-2" id="slider-activities">
+                            @foreach($activities as $activity)
+                                <x-ui.card.activities-card-slider
+                                    :images="'https://www.bvrbaliholidayrentals.com/storage/images//65b71a8b121a2.JPG'"
+                                    :title="'Bali Zoo'" />
+                            @endforeach
+                        </div>
 
                     </div>
                     <x-ui.icon.icon-slider />
