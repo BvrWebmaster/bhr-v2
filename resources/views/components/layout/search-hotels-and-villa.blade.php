@@ -29,11 +29,11 @@
            </div>
        </div>
        <div class="col-span-2 flex items-center justify-center">
-           <div class="flex items-center justify-center">
-               <button class="bg-[#FF5700] rounded-xl py-3 px-6 transform duration-300 active:scale-95" id="btn-explore">
+           <a href="{{ route('hotels-and-villa.index') }}" class="flex items-center justify-center">
+               <div class="bg-[#FF5700] rounded-xl py-3 px-6 transform duration-300 active:scale-95" id="btn-explore">
                    <p class="text-xl font-semibold font-serif leading-[30px] text-white">Search</p>
-               </button>
-           </div>
+               </div>
+           </a>
        </div>
    </div>
 
