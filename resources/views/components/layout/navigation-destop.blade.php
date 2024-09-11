@@ -16,6 +16,7 @@
             <x-ui.button.button-login />
             <x-ui.button.button-register />
         </div>
+
         <x-ui.icon.toggle-button />
 
     </div>
