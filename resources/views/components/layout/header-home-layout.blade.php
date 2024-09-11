@@ -10,12 +10,12 @@
             background-position: top;
             background-repeat: no-repeat;">
 
+    <x-layout.navigation-mobile />
+
     <!-- navigation destop -->
    <div class="w-full py-4 laptop:py-8 laptop:px-[64px] transform duration-200 ease-in-out px-4 flex justify-between items-start fixed z-40" id="nav-navigation-destop">
        <x-layout.navigation-destop />
    </div>
-
-   <x-layout.navigation-mobile />
 
     <div class="h-full flex flex-col justify-center items-center">
         <div class="px-7">
@@ -66,6 +66,12 @@
 
             window.addEventListener('scroll', scrollHandler);
             scrollHandler();
+        });
+
+        $(document).ready(function () {
+            $('#btn-menus').click(function () {
+                $('#navigation-mobile').slideToggle('slow');
+            });
         });
     </script>
 </header>
