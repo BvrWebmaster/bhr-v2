@@ -8,20 +8,20 @@
         </div>
 
         <div class="col-span-2 hover:bg-gray-200 py-3 cursor-pointer transform duration-300 hover:rounded-2xl">
-            <div class="space-y-2">
+            <div class="space-y-2" id="container-start-date-desktop">
                 <h4 class="text-sm font-semibold leading-[21px] font-serif">Check in</h4>
                 <p class="text-base font-semibold leading-[24px] font-serif" id="input-startDate-desktop">startDate</p>
             </div>
         </div>
         <div class="col-span-2 hover:bg-gray-200 py-3 cursor-pointer transform duration-300 hover:rounded-2xl">
-            <div class="space-y-2">
+            <div class="space-y-2" id="container-end-date-desktop">
                 <h4 class="text-sm font-semibold leading-[21px] font-serif">Check out</h4>
                 <p class="text-base font-semibold leading-[24px] font-serif" id="input-endDate-desktop">endDate</p>
             </div>
         </div>
 
         <div class="col-span-2 hover:bg-gray-200 py-3 cursor-pointer transform duration-300 hover:rounded-2xl">
-            <div class="space-y-2">
+            <div class="space-y-2" id="container-guest-desktop">
                 <h4 class="text-sm font-semibold leading-[21px] font-serif">Guest</h4>
                 <p class="text-base text-[#888] font-semibold leading-[24px] font-serif" id="input-guest-desktop">Add Guests</p>
             </div>
@@ -43,6 +43,18 @@
             $('#container-location-destop').click(function () {
                 $('#modal-searching').fadeIn('slow');
             });
+
+            $('#container-start-date-desktop').click(function () {
+                $('#modal-searching').fadeIn('slow');
+            });
+
+            $('#container-end-date-desktop').click(function () {
+                $('#modal-searching').fadeIn('slow');
+            });
+
+            $('#container-guest-desktop').click(function () {
+                $('#modal-searching').fadeIn('slow');
+            })
         });
     </script>
 </div>

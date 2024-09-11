@@ -52,12 +52,13 @@
     </div>
 
     <script>
-        $(document).ready(function () {
-            let valueAdult = 0;
-            let valueChild = 0;
-            let valueInfants = 0;
-            let valueLocations = null;
+        let valueAdult = 0;
+        let valueChild = 0;
+        let valueInfants = 0;
+        let valueLocations = null;
 
+
+        $(document).ready(function () {
             // state in panel searching
             $('#adult-mobile').text(valueAdult);
             $('#child-mobile').text(valueChild);

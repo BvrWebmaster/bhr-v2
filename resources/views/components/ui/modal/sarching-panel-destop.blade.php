@@ -63,6 +63,10 @@
 
     <script>
         $(document).ready(function () {
+            let valueAdult = 0;
+            let valueChild = 0;
+            let valueInfants = 0;
+
             let valueLocations = null;
             let startDate = getDate().day;
             let endDate = getDate().tomorrow;

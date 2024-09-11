@@ -36,6 +36,5 @@
             });
         </script>
         <script src="{{ secure_asset(asset('assets/utils.js')) }}"></script>
-        <script src="{{ secure_asset(asset('assets/searcing-accomodation.js')) }}"></script>
     </body>
 </html>
