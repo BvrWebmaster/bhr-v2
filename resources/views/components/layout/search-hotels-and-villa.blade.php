@@ -3,27 +3,27 @@
         <div class="col-span-4 hover:bg-gray-200 py-3 px-6 cursor-pointer transform duration-300 hover:rounded-2xl">
             <div class="space-y-2"  id="container-location-destop">
                 <h4 class="text-sm font-semibold leading-[21px] font-serif">Location</h4>
-                <p class="text-base font-medium leading-[24px] font-serif">City, destination, or villa name</p>
+                <p class="text-base font-medium leading-[24px] font-serif" id="input-location-desktop">City, destination, or villa name</p>
             </div>
         </div>
 
         <div class="col-span-2 hover:bg-gray-200 py-3 cursor-pointer transform duration-300 hover:rounded-2xl">
             <div class="space-y-2">
                 <h4 class="text-sm font-semibold leading-[21px] font-serif">Check in</h4>
-                <p class="text-base font-semibold leading-[24px] font-serif">startDate</p>
+                <p class="text-base font-semibold leading-[24px] font-serif" id="input-startDate-desktop">startDate</p>
             </div>
         </div>
         <div class="col-span-2 hover:bg-gray-200 py-3 cursor-pointer transform duration-300 hover:rounded-2xl">
             <div class="space-y-2">
                 <h4 class="text-sm font-semibold leading-[21px] font-serif">Check out</h4>
-                <p class="text-base font-semibold leading-[24px] font-serif">endDate</p>
+                <p class="text-base font-semibold leading-[24px] font-serif" id="input-endDate-desktop">endDate</p>
             </div>
         </div>
 
         <div class="col-span-2 hover:bg-gray-200 py-3 cursor-pointer transform duration-300 hover:rounded-2xl">
             <div class="space-y-2">
                 <h4 class="text-sm font-semibold leading-[21px] font-serif">Guest</h4>
-                <p class="text-base text-[#888] font-semibold leading-[24px] font-serif">Add Guests</p>
+                <p class="text-base text-[#888] font-semibold leading-[24px] font-serif" id="input-guest-desktop">Add Guests</p>
             </div>
         </div>
 
@@ -36,10 +36,12 @@
         </div>
     </div>
 
+    <x-ui.modal.sarching-panel-destop />
+
     <script>
         $(document).ready(function () {
             $('#container-location-destop').click(function () {
-
+                $('#modal-searching').fadeIn('slow');
             });
         });
     </script>

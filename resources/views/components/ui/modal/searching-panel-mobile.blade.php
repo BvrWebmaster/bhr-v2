@@ -11,7 +11,7 @@
             <select id="container-locations-mobile" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></select>
 
             <!-- input datetime -->
-            <div  class="w-full flex items-center justify-between tablet:justify-start tablet:space-x-2">
+            <div  class="w-full flex items-center justify-between tablet:justify-start space-x-2">
                 <div class="relative w-full">
                     <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Start date</label>
                     <input id="start-date-mobile" name="start" type="date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date start">
@@ -58,10 +58,12 @@
             let valueInfants = 0;
             let valueLocations = null;
 
+            // state in panel searching
             $('#adult-mobile').text(valueAdult);
             $('#child-mobile').text(valueChild);
             $('#infants-mobile').text(valueInfants);
 
+            // state in component searching
             $('#input-date').text(`${getDate().day} - ${getDate().tomorrow}`);
             $('#input-location').text( 'Where do you want to stay?');
             $('#input-guest').text('0 Adult, 0 Child, 0 Infants');
@@ -118,32 +120,6 @@
             loadLocation();
         });
 
-        function buttonLocationCard(location) {
-            return `
-                <option value="${location.id}">${location.name}</option>
-            `;
-        }
-
-        function getDate() {
-            const date = new Date();
-            const dateTomorrow = new Date(date);
-            dateTomorrow.setDate(date.getDate() + 1);
-
-            const dateMonthOptions = { day: 'numeric', month: 'long' };
-            const day = date.toLocaleDateString('id-ID', dateMonthOptions);
-            const tomorrow = dateTomorrow.toLocaleDateString('id-ID', dateMonthOptions);
-
-            return {
-                day, tomorrow
-            }
-        }
-
-        function formatDateLocal(dateString) {
-            let date = new Date(dateString);
-            let options = { day: '2-digit', month: 'long' };
-            return date.toLocaleDateString('id-Id', options);
-        }
-
         function selectStartDateAndEndDate() {
             const startDate = $('#start-date-mobile').val();
             const endDate = $('#end-date-mobile').val();
@@ -163,8 +139,10 @@
         }
 
         function selectLocationWhenNullNotRemoveClass(valueLocations) {
-            if (valueLocations === null) {
-                $('#input-location').text('Where do you want to stay?');
+            if (valueLocations === null || valueLocations === 'Choose countries') {
+                $('#input-location').text('Where do you want to stay?')
+                    .removeClass('text-black font-semibold')
+                    .addClass('text-[#989898] font-medium');
             } else {
                 $('#input-location').text(valueLocations).removeClass('text-[#989898] font-medium').addClass('text-black font-semibold')
             }
@@ -175,10 +153,10 @@
                 url: "{{ route('location') }}",
                 method: "GET",
                 success: function (response) {
-                    $('#container-locations-mobile').empty();
+                    $('#container-locations-mobile').append(selectedLocationCard());
 
                     $.each(response, function (index, location) {
-                        $('#container-locations-mobile').append(buttonLocationCard(location));
+                        $('#container-locations-mobile').append(selectLocationCard(location));
                     })
                 },
                 error: function (xhr) {
