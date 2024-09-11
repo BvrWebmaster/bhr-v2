@@ -1,119 +1,123 @@
 <x-guest-layout>
+    <main>
+        <!-- container searching mobile -->
+        <div class="-mt-4 w-full bg-white tablet:hidden rounded-t-[20px]">
+            <x-layout.search-and-villa-mobile location="Canggu" />
+        </div>
 
-    <div class="-mt-4 w-full bg-white tablet:hidden rounded-t-[20px]">
-        <x-layout.search-and-villa-mobile location="Canggu" />
-    </div>
+        <!-- container button filter and sort mobile -->
+        <div class="pt-7 px-4 w-full tablet:max-w-2xl mx-auto flex justify-start space-x-4 laptop:hidden">
+            <x-ui.button.button-filter />
+            <x-ui.button.button-sort />
+        </div>
 
-    <div class="pt-7 px-4 w-full tablet:max-w-2xl mx-auto flex justify-start space-x-4 laptop:hidden">
-        <x-ui.button.button-filter />
-        <x-ui.button.button-sort />
-    </div>
+        <div class="py-4">
+            <div class="w-full tablet:max-w-2xl laptop:max-w-4xl laptop-l:max-w-7xl desktop:max-w-[1440px] mx-auto px-4 tablet:px-0 space-y-6">
+                <div class="grid grid-cols-12 gap-x-6">
 
-    <div class="py-4">
-        <div class="w-full tablet:max-w-2xl laptop:max-w-4xl laptop-l:max-w-7xl desktop:max-w-[1440px] mx-auto px-4 tablet:px-0 space-y-6">
-            <div class="grid grid-cols-12 gap-x-6">
+                    <!-- filter panel -->
+                    <section class="col-span-3">
+                        <div class="col-span-12 laptop:col-span-4 laptop-l:col-span-3 space-y-5 hidden laptop-l:block sticky top-36 z-30">
 
-                <!-- filter panel -->
-                <div class="col-span-3">
-                    <div class="col-span-12 laptop:col-span-4 laptop-l:col-span-3 space-y-5 hidden laptop-l:block sticky top-36 z-30">
-                        <!-- filter facilites -->
-                        <x-layout.filter-layout>
-                            <x-ui.label.header-checkbox-filter label="Facilities" subLabel="Essential amenities" />
-                            <div class="flex flex-col space-y-3 transition-max-height duration-700 ease-in-out">
-                                @foreach($facilities as $facility)
-                                    <x-ui.label.cekbox-filter-hotels-and-villa :label="$facility->name" :title="$facility->name" :index="$facility->id" />
-                                @endforeach
-                            </div>
-                        </x-layout.filter-layout>
-                    </div>
+                            <!-- filter facilites -->
+                            <x-layout.filter-layout>
+                                <x-ui.label.header-checkbox-filter label="Facilities" subLabel="Essential amenities" />
+                                <div class="flex flex-col space-y-3 transition-max-height duration-700 ease-in-out">
+                                    @foreach($facilities as $facility)
+                                        <x-ui.label.cekbox-filter-hotels-and-villa :label="$facility->name" :title="$facility->name" :index="$facility->id" />
+                                    @endforeach
+                                </div>
+                            </x-layout.filter-layout>
+
+                        </div>
+                    </section>
+
+                    <!-- section list accomodation-->
+                    <section class="col-span-12 laptop-l:col-span-9 space-y-6" id="hotels-and-villa-container"></section>
+
                 </div>
-
-                <!-- data list -->
-                <div class="col-span-12 laptop-l:col-span-9 space-y-6" id="hotels-and-villa-container"></div>
-
             </div>
         </div>
-    </div>
 
-    <!-- panel filter mobile -->
-    <x-ui.modal.filter-hotels-and-villa-panel :facilities="$facilities" />
+        <!-- panel filter mobile -->
+        <x-ui.modal.filter-hotels-and-villa-panel :facilities="$facilities" />
 
-    <!-- panel sort mobile -->
-    <x-ui.modal.sort-hotels-and-villa-panel />
+        <!-- panel sort mobile -->
+        <x-ui.modal.sort-hotels-and-villa-panel />
 
-    <script>
-        $(document).ready(function () {
-            function loadAccomodations(page) {
-                $.ajax({
-                    url: "{{ route('load-hotels-and-villa') }}",
-                    method: "GET",
-                    data: {
-                        page: page
-                    },
-                    success: function (response) {
-                        $('#hotels-and-villa-container').empty();
+        <script>
+            $(document).ready(function () {
+                function loadAccomodations(page) {
+                    $.ajax({
+                        url: "{{ route('load-hotels-and-villa') }}",
+                        method: "GET",
+                        data: {
+                            page: page
+                        },
+                        success: function (response) {
+                            $('#hotels-and-villa-container').empty();
 
-                        $.each(response.data, function (index, accomodation) {
-                            $('#hotels-and-villa-container').append(accomodationCard(accomodation))
-                        });
-                    }
+                            $.each(response.data, function (index, accomodation) {
+                                $('#hotels-and-villa-container').append(accomodationCard(accomodation))
+                            });
+                        }
+                    })
+                }
+
+                $('.filter-facility').on('click', function () {
+                    let selectedFacilities = [];
+
+                    $('.filter-facility:checked').each(function() {
+                        selectedFacilities.push($(this).data('facilities-id'));
+                    });
+
+                    $.ajax({
+                        url: "{{ route('load-hotels-and-villa') }}",
+                        method: 'GET',
+                        data: {
+                            facilities: selectedFacilities,
+                            page: 1
+                        },
+                        success: function (response) {
+                            $('#hotels-and-villa-container').empty();
+
+                            $.each(response.data, function (index, accomodation) {
+                                $('#hotels-and-villa-container').append(accomodationCard(accomodation))
+                            });
+                        },
+                        error: function(xhr) {
+                            console.error(xhr);
+                        }
+                    })
+                });
+
+                loadAccomodations(1);
+
+                $('#btn-filter').on('click', function () {
+                    $('#panel-hotels-and-villa').removeClass('translate-y-full');
+                    $('#container-hotels-and-villa').removeClass('translate-y-full').addClass('translate-y-0 transform duration-500');
+                });
+
+                $('#btn-close-hotels-and-villa').on('click', function () {
+                    $('#panel-hotels-and-villa').removeClass('translate-y-0').addClass('translate-y-full');
+                });
+
+                $('#btn-sort').on('click', function () {
+                    $('#sort-hotels-and-villa').removeClass('translate-y-full');
+                    $('#container-sort-hotels-and-villa').removeClass('translate-y-full').addClass('translate-y-0 transform duration-500');
                 })
-            }
 
-           $('.filter-facility').on('click', function () {
-               let selectedFacilities = [];
+                $('#btn-close-sort-hotels-and-villa').on('click', function () {
+                    $('#sort-hotels-and-villa').removeClass('translate-y-0').addClass('translate-y-full');
+                });
 
-               $('.filter-facility:checked').each(function() {
-                   selectedFacilities.push($(this).data('facilities-id'));
-               });
 
-               $.ajax({
-                   url: "{{ route('load-hotels-and-villa') }}",
-                   method: 'GET',
-                   data: {
-                       facilities: selectedFacilities,
-                       page: 1
-                   },
-                   success: function (response) {
-                       $('#hotels-and-villa-container').empty();
-
-                       $.each(response.data, function (index, accomodation) {
-                           $('#hotels-and-villa-container').append(accomodationCard(accomodation))
-                       });
-                   },
-                   error: function(xhr) {
-                       console.error(xhr);
-                   }
-               })
-           });
-
-            loadAccomodations(1);
-
-            $('#btn-filter').on('click', function () {
-                $('#panel-hotels-and-villa').removeClass('translate-y-full');
-                $('#container-hotels-and-villa').removeClass('translate-y-full').addClass('translate-y-0 transform duration-500');
             });
 
-            $('#btn-close-hotels-and-villa').on('click', function () {
-                $('#panel-hotels-and-villa').removeClass('translate-y-0').addClass('translate-y-full');
-            });
+            function accomodationCard(accomodation) {
+                const hotelsAndVillaBaseURL = "{{ url('hotels-and-villa') }}/";
 
-            $('#btn-sort').on('click', function () {
-                $('#sort-hotels-and-villa').removeClass('translate-y-full');
-                $('#container-sort-hotels-and-villa').removeClass('translate-y-full').addClass('translate-y-0 transform duration-500');
-            })
-
-            $('#btn-close-sort-hotels-and-villa').on('click', function () {
-                $('#sort-hotels-and-villa').removeClass('translate-y-0').addClass('translate-y-full');
-            });
-
-
-        });
-
-        function accomodationCard(accomodation) {
-            const hotelsAndVillaBaseURL = "{{ url('hotels-and-villa') }}/";
-
-            return `
+                return `
             <a href="${hotelsAndVillaBaseURL}${accomodation.slug}" class="cursor-pointer grid grid-cols-9 ">
                 <div class="col-span-9 tablet:col-span-3 relative">
                     <img class="h-[200px] tablet:h-full w-full object-cover rounded-t-2xl tablet:rounded-l-2xl tablet:rounded-t-none tablet:rounded-tl-2xl" src="${accomodation.images}" alt="${accomodation.title}" />
@@ -154,10 +158,10 @@
 
                         <div class="w-full flex space-x-1 overflow-scroll tablet:hidden">
                             ${accomodation.facilities.map(facility =>
-                            `<div class="rounded-full py-1 bg-[#FFEDD3] px-2 flex justify-center items-center">
+                    `<div class="rounded-full py-1 bg-[#FFEDD3] px-2 flex justify-center items-center">
                                         <p class="font-sans text-[#FF5700] text-xs tablet:text-sm font-semibold leading-[18px]">${facility.name}</p>
                                     </div>`
-                                ).join('')}
+                ).join('')}
                         </div>
 
                         <div class="flex justify-between">
@@ -185,7 +189,7 @@
                 </div>
             </a>
         `;
-        }
-    </script>
-
+            }
+        </script>
+    </main>
 </x-guest-layout>

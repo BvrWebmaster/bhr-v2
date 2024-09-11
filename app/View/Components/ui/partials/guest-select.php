@@ -1,18 +1,22 @@
 <?php
 
-namespace App\View\Components\layout;
+namespace App\View\Components\ui\partials;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class inputsearchmobile extends Component
+class guestselect extends Component
 {
     /**
      * Create a new component instance.
      */
     public function __construct(
-        public string $id
+        public string $idBtnDecrement,
+        public string $idBtnIncrement,
+        public string $idValue,
+        public string $label,
+        public string $subLabel
     ){}
 
     /**
@@ -20,6 +24,6 @@ class inputsearchmobile extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components..layout.input-search-mobile');
+        return view('components..ui.partials.guest-select');
     }
 }

@@ -1,25 +1,26 @@
 <?php
 
-namespace App\View\Components\layout;
+namespace App\View\Components\ui\modal;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class inputsearchmobile extends Component
+class searching-panel-mobile extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(
-        public string $id
-    ){}
+    public function __construct()
+    {
+        //
+    }
 
     /**
      * Get the view / contents that represent the component.
      */
     public function render(): View|Closure|string
     {
-        return view('components..layout.input-search-mobile');
+        return view('components..ui.modal.searching-panel-mobile');
     }
 }

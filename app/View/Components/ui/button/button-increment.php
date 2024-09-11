@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components\layout;
+namespace App\View\Components\ui\button;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class inputsearchmobile extends Component
+class buttonincrement extends Component
 {
     /**
      * Create a new component instance.
@@ -20,6 +20,6 @@ class inputsearchmobile extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components..layout.input-search-mobile');
+        return view('components..ui.button.button-increment');
     }
 }

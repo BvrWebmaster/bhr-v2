@@ -8,6 +8,7 @@ use App\Http\Controllers\ActivitiesController;
 use App\Http\Controllers\BaliStoryController;
 use App\Http\Controllers\SpecialOfferController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\LocationController;
 
 Route::get('/', WelcomeController::class)->name('welcome');
 Route::get('accomodations', AccomodationController::class)->name('accomodations');
@@ -18,3 +19,4 @@ Route::get('activities', [ActivitiesController::class, 'index'])->name('activiti
 Route::get('bali-stories', [BaliStoryController::class, 'index'])->name('bali-stories.index');
 Route::get('special-offers', [SpecialOfferController::class, 'index'])->name('special-offers.index');
 Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
+Route::get('location', [LocationController::class, 'index'])->name('location');

@@ -1,8 +1,12 @@
 <x-guest-layout>
     <main>
-        <div class="-mt-4 w-full bg-white tablet:hidden rounded-t-[20px]">
-            <x-layout.search-and-villa-mobile location="Canggu" />
+        <!-- searching mobile -->
+        <div class="-mt-4 w-full bg-white laptop:hidden rounded-t-[20px]">
+            <x-layout.search-and-villa-mobile />
         </div>
+
+        <!-- panel searching mobile -->
+        <x-ui.modal.searching-panel-mobile />
 
         <!-- special promo -->
         <section class="py-6 lg:py-7">
