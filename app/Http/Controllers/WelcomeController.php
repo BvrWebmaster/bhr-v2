@@ -31,7 +31,6 @@ class WelcomeController extends Controller
 
         $locations = Location::all();
 
-
         return view('pages.welcome', compact('promos',  'locations', 'activities', 'activeLocation'));
     }
 }
