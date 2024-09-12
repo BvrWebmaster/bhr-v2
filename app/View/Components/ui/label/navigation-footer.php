@@ -12,7 +12,8 @@ class navigationfooter extends Component
      * Create a new component instance.
      */
     public function __construct(
-        public string $label
+        public string $label,
+        public string $routes
     ){}
 
     /**

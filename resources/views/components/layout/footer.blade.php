@@ -13,11 +13,11 @@
                 <div class="flex flex-col space-y-3">
                     <x-ui.label.text-header-footer label="Useful Links" />
                     <div>
-                        <x-ui.label.navigation-footer label="Home" />
-                        <x-ui.label.navigation-footer label="Hotels & Villa" />
-                        <x-ui.label.navigation-footer label="Activities" />
-                        <x-ui.label.navigation-footer label="Stories" />
-                        <x-ui.label.navigation-footer label="Package / Special Offer" />
+                        <x-ui.label.navigation-footer label="Home" routes="welcome" />
+                        <x-ui.label.navigation-footer label="Hotels & Villa" routes="hotels-and-villa.index" />
+                        <x-ui.label.navigation-footer label="Activities" routes="activities.index"/>
+                        <x-ui.label.navigation-footer label="Stories" routes="bali-stories.index"/>
+                        <x-ui.label.navigation-footer label="Package / Special Offer" routes="special-offers.index" />
                     </div>
                 </div>
 
@@ -84,11 +84,11 @@ Kabupaten Badung, Bali 80236">
         <div class="space-y-4 px-4 laptop:hidden">
             <h4 class="text-white text-justify text-xs font-bold leading-[18px]">Useful Links</h4>
             <div class="flex flex-col">
-                <x-ui.label.navigation-footer label="Home" />
-                <x-ui.label.navigation-footer label="Hotels & Villa" />
-                <x-ui.label.navigation-footer label="Activities" />
-                <x-ui.label.navigation-footer label="Stories" />
-                <x-ui.label.navigation-footer label="Package / Special Offer" />
+                <x-ui.label.navigation-footer label="Home" routes="welcome"/>
+                <x-ui.label.navigation-footer label="Hotels & Villa" routes="hotels-and-villa.index" />
+                <x-ui.label.navigation-footer label="Activities" routes="activities.index"/>
+                <x-ui.label.navigation-footer label="Stories" routes="bali-stories.index"/>
+                <x-ui.label.navigation-footer label="Package / Special Offer" routes="special-offers.index"/>
             </div>
         </div>
     </div>
