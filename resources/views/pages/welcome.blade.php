@@ -9,7 +9,7 @@
         <x-ui.modal.searching-panel-mobile />
 
         <!-- special promo -->
-        <section class="py-6 lg:py-7">
+        <section class="py-6 lg:py-7" id="section-promo">
             <div class="max-w-full tablet:max-w-2xl laptop:max-w-4xl laptop-l:max-w-7xl desktop:max-w-[1440px] mx-auto px-4 tablet:px-0 space-y-10">
                 <div class="space-y-2">
                     <div class="flex items-center space-x-3">

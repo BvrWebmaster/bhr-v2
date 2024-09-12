@@ -4,7 +4,7 @@
     $background = request()->routeIs('bali-stories.index') ? 'https://www.bvrbaliholidayrentals.com/storage/images/64d9e2c193e28.jpg' : 'images/header-home.png';
 @endphp
 
-<header class="h-[290px] {{ $header }} w-full bg-cover bg-center overflow-hidden"
+<header class="h-[290px] {{ $header }} w-full bg-cover bg-center overflow-hidden" id="header-desktop"
         style="background: linear-gradient(90deg, rgba(0,0,0,0.5243347338935574) 100%, rgba(255,255,255,1) 100%), url('{{ asset($background) }}');
             background-size: cover;
             background-position: top;
@@ -48,6 +48,9 @@
             const header = document.querySelector('header');
             const navigation = document.getElementById('nav-navigation-destop');
             const navigationLogo = document.getElementById('navigation-logo');
+            const listNavigation = document.getElementById('list-navigation-desktop');
+            const containerAuth = document.getElementById('container-auth');
+            const navigationSearch = document.getElementById('nav-search');
 
             const scrollHandler = () => {
                 const rect = header.getBoundingClientRect();
@@ -57,10 +60,17 @@
                     navigation.classList.add('bg-transparent', 'shadow-none');
                     navigation.classList.remove('bg-white', 'shadow-lg');
                     navigationLogo.src = '/images/bhr-logo-white.png';
+                    listNavigation.classList.add('laptop-l:flex');
+                    containerAuth.classList.add('tablet:flex');
+                    navigationSearch.classList.add('hidden');
+
                 } else {
                     navigation.classList.add('bg-white', 'shadow-lg');
                     navigation.classList.remove('bg-transparent', 'shadow-none');
                     navigationLogo.src = '/images/bhr-logo-black.png';
+                    listNavigation.classList.remove('laptop-l:flex');
+                    containerAuth.classList.remove('tablet:flex');
+                    navigationSearch.classList.remove('hidden');
                 }
             };
 
