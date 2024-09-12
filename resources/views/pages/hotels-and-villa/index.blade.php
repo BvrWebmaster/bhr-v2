@@ -61,7 +61,6 @@
 
                     <!-- section list accomodation-->
                     <section class="col-span-12 laptop-l:col-span-9 space-y-6" id="hotels-and-villa-container"></section>
-
                 </div>
             </div>
         </div>
@@ -74,22 +73,50 @@
 
         <script>
             $(document).ready(function () {
+                let page = 1;
+                let loading = false;
+
+                loadAccomodations(page);
+
                 function loadAccomodations(page) {
+                    if (loading) return;
+                    loading = true;
+
                     $.ajax({
                         url: "{{ route('load-hotels-and-villa') }}",
                         method: "GET",
                         data: {
                             page: page
                         },
+                        beforeSend: function () {
+                            $('#hotels-and-villa-container').append(spinnerLoading());
+                        },
                         success: function (response) {
-                            $('#hotels-and-villa-container').empty();
+                          if (response.data.length > 0) {
+                              $('#loading').remove();
+                              $.each(response.data, function (index, accomodation) {
+                                  $('#hotels-and-villa-container').append(accomodationCardHotelsAndVilla(accomodation));
+                              });
 
-                            $.each(response.data, function (index, accomodation) {
-                                $('#hotels-and-villa-container').append(accomodationCardHotelsAndVilla(accomodation));
-                            });
+                              loading = false;
+                          } else {
+                              $('#loading').remove();
+                              $('#hotels-and-villa-container').append('<div class="text-center">No more data available</div>');
+                          }
+                        },
+                        error: function (xhr) {
+                            $('#loading').remove();
+                            alert('Error loading data');
                         }
                     })
                 }
+
+                $(window).scroll(function () {
+                    if ($(window).scrollTop() + $(window).height() >= $(document).height() - 100) {
+                        page++;
+                        loadAccomodations(page);
+                    }
+                })
 
                 function filterAccomodation() {
                     let selectedLocation = [];
@@ -135,8 +162,6 @@
                 $('.filter-facility').on('click', function () {
                     filterAccomodation();
                 });
-
-                loadAccomodations(1);
 
                 $('#btn-filter').on('click', function () {
                     $('#panel-hotels-and-villa').removeClass('translate-y-full');
