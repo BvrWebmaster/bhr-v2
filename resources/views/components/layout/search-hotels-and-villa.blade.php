@@ -55,6 +55,10 @@
 
             $('#container-guest-desktop').click(function () {
                 $('#modal-searching').fadeIn('slow');
+            });
+
+            $('.container-location').click(function () {
+                $('#modal-searching').fadeIn('slow');
             })
         });
     </script>

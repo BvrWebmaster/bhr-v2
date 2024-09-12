@@ -25,35 +25,35 @@
         <div class="flex justify-between pr-4">
             <div class="flex">
                 <div class="px-2 laptop-l:px-6 col-span-3 hover:bg-gray-200 py-2 laptop-l:pl-6 cursor-pointer transform duration-300 hover:rounded-2xl">
-                    <div class="laptop-l:w-[284px] space-y-2"  id="container-location-destop">
+                    <div class="laptop-l:w-[284px] space-y-2 container-location"  id="container-location-nav">
                         <h4 class="text-xs laptop-l:text-sm font-semibold leading-[21px] font-serif">Location</h4>
-                        <p class="text-sm laptop-l:text-base font-medium leading-[24px] font-serif" id="input-location-desktop">City, destination, or villa name</p>
+                        <p class="text-sm laptop-l:text-base font-medium leading-[24px] font-serif" id="input-location-nav">City, destination, or villa name</p>
                     </div>
                 </div>
 
                 <div class="px-2 laptop-l:px-6 hover:bg-gray-200 py-2 cursor-pointer transform duration-300 hover:rounded-2xl">
-                    <div class="space-y-2" id="container-start-date-desktop">
+                    <div class="space-y-2" id="container-start-date-nav">
                         <h4 class="text-xs laptop-l:text-sm font-semibold leading-[21px] font-serif">Check in</h4>
-                        <p class="text-sm laptop-l:text-base font-semibold leading-[24px] font-serif" id="input-startDate-desktop">startDate</p>
+                        <p class="text-sm laptop-l:text-base font-semibold leading-[24px] font-serif" id="input-startDate-nav">startDate</p>
                     </div>
                 </div>
                 <div class="px-2 laptop-l:px-6 hover:bg-gray-200 py-2 cursor-pointer transform duration-300 hover:rounded-2xl">
-                    <div class="space-y-2" id="container-end-date-desktop">
+                    <div class="space-y-2" id="container-end-date-nav">
                         <h4 class="text-xs laptop-l:text-sm font-semibold leading-[21px] font-serif">Check out</h4>
-                        <p class="text-sm laptop-l:text-base font-semibold leading-[24px] font-serif" id="input-endDate-desktop">endDate</p>
+                        <p class="text-sm laptop-l:text-base font-semibold leading-[24px] font-serif" id="input-endDate-nav">endDate</p>
                     </div>
                 </div>
 
                 <div class="px-2 laptop-l:px-6 hover:bg-gray-200 py-2 cursor-pointer transform duration-300 hover:rounded-2xl">
-                    <div class="space-y-2" id="container-guest-desktop">
+                    <div class="space-y-2" id="container-guest-nav">
                         <h4 class="text-xs laptop-l:text-sm font-semibold leading-[21px] font-serif">Guest</h4>
-                        <p class="text-sm laptop-l:text-base text-[#888] font-semibold leading-[24px] font-serif" id="input-guest-desktop">Add Guests</p>
+                        <p class="text-sm laptop-l:text-base text-[#888] font-semibold leading-[24px] font-serif" id="input-guest-nav">Add Guests</p>
                     </div>
                 </div>
             </div>
             <div class="col-span-2 flex items-center justify-center">
                 <a href="{{ route('hotels-and-villa.index') }}" class="flex items-center justify-center">
-                    <div class="px-4 bg-[#FF5700] rounded-xl py-2 laptop-l:px-6 transform duration-300 active:scale-95" id="btn-explore">
+                    <div class="px-4 bg-[#FF5700] rounded-xl py-2 laptop-l:px-6 transform duration-300 active:scale-95" id="btn-explore-nav">
                         <p class="text-base laptop-l:text-xl font-semibold font-serif leading-[30px] text-white">Search</p>
                     </div>
                 </a>
