@@ -44,37 +44,47 @@
     <x-ui.modal.get-started-modal/>
 
     <script>
+        const navigation = document.getElementById('nav-navigation-destop');
+        const navigationLogo = document.getElementById('navigation-logo');
+        const listNavigation = document.getElementById('list-navigation-desktop');
+        const containerAuth = document.getElementById('container-auth');
+        const navigationSearch = document.getElementById('nav-search');
+        const btnMenus = document.getElementById('btn-menus');
+
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header-desktop');
+            const headerPosition = header.getBoundingClientRect().bottom;
+
+            if (headerPosition < 0) {
+                navigationLogo.src = '/images/bhr-logo-black.png';
+                listNavigation.classList.remove('laptop-l:flex');
+                containerAuth.classList.add('laptop:hidden');
+                containerAuth.classList.remove('laptop-l:flex');
+                navigationSearch.classList.add('laptop:block');
+                btnMenus.classList.add('laptop:hidden');
+            } else {
+                navigationLogo.src = '/images/bhr-logo-white.png';
+                listNavigation.classList.add('laptop-l:flex');
+                containerAuth.classList.add('tablet:flex');
+                containerAuth.classList.remove('laptop:hidden');
+                navigationSearch.classList.remove('laptop:block');
+                btnMenus.classList.remove('laptop:hidden');
+            }
+        });
+
         document.addEventListener('DOMContentLoaded', function () {
-            const header = document.querySelector('header');
-            const navigation = document.getElementById('nav-navigation-destop');
-            const navigationLogo = document.getElementById('navigation-logo');
-            const listNavigation = document.getElementById('list-navigation-desktop');
-            const containerAuth = document.getElementById('container-auth');
-            const navigationSearch = document.getElementById('nav-search');
-            const btnMenus = document.getElementById('btn-menus');
+            const headerView = document.querySelector('header');
 
             const scrollHandler = () => {
-                const rect = header.getBoundingClientRect();
+                const rect = headerView.getBoundingClientRect();
                 const isOpen = rect.top >= 0 && rect.top <= window.innerHeight;
 
                 if (isOpen) {
                     navigation.classList.add('bg-transparent', 'shadow-none');
                     navigation.classList.remove('bg-white', 'shadow-lg');
-                    navigationLogo.src = '/images/bhr-logo-white.png';
-                    listNavigation.classList.add('laptop-l:flex');
-                    containerAuth.classList.add('tablet:flex');
-                    containerAuth.classList.remove('laptop:hidden');
-                    navigationSearch.classList.remove('laptop:block');
-                    btnMenus.classList.remove('laptop:hidden');
                 } else {
                     navigation.classList.add('bg-white', 'shadow-lg');
                     navigation.classList.remove('bg-transparent', 'shadow-none');
-                    navigationLogo.src = '/images/bhr-logo-black.png';
-                    listNavigation.classList.remove('laptop-l:flex');
-                    containerAuth.classList.add('laptop:hidden');
-                    containerAuth.classList.remove('laptop-l:flex');
-                    navigationSearch.classList.add('laptop:block');
-                    btnMenus.classList.add('laptop:hidden');
                 }
             };
 
