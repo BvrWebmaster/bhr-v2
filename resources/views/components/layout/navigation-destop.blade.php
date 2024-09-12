@@ -24,30 +24,30 @@
     <div class="w-9/12 rounded-xl border border-[#BDBDBD] hidden laptop:block" id="nav-search">
         <div class="flex justify-between pr-4">
             <div class="flex">
-                <div class="px-2 laptop-l:px-6 col-span-3 hover:bg-gray-200 py-2 laptop-l:pl-6 cursor-pointer transform duration-300 hover:rounded-2xl">
+                <div class="px-2 col-span-3 hover:bg-gray-200 py-2 laptop-l:pl-6 cursor-pointer transform duration-300 hover:rounded-2xl">
                     <div class="laptop-l:w-[284px] space-y-2 container-location">
                         <h4 class="text-xs laptop-l:text-sm font-semibold leading-[21px] font-serif">Location</h4>
-                        <p class="text-sm laptop-l:text-base font-medium leading-[24px] font-serif" id="input-location-nav">City, destination, or villa name</p>
+                        <p class="input-location text-sm laptop-l:text-base font-medium leading-[24px] font-serif" id="input-location-nav">City, destination, or villa name</p>
                     </div>
                 </div>
 
-                <div class="px-2 laptop-l:px-6 hover:bg-gray-200 py-2 cursor-pointer transform duration-300 hover:rounded-2xl">
+                <div class="px-2 laptop-l:px-3 hover:bg-gray-200 py-2 cursor-pointer transform duration-300 hover:rounded-2xl">
                     <div class="space-y-2 container-start-date">
                         <h4 class="text-xs laptop-l:text-sm font-semibold leading-[21px] font-serif">Check in</h4>
-                        <p class="text-sm laptop-l:text-base font-semibold leading-[24px] font-serif" id="input-startDate-nav">startDate</p>
+                        <p class="input-startDate text-sm laptop-l:text-base font-semibold leading-[24px] font-serif" id="input-startDate-nav">start Date</p>
                     </div>
                 </div>
-                <div class="px-2 laptop-l:px-6 hover:bg-gray-200 py-2 cursor-pointer transform duration-300 hover:rounded-2xl">
+                <div class="px-2 laptop-l:px-3 hover:bg-gray-200 py-2 cursor-pointer transform duration-300 hover:rounded-2xl">
                     <div class="space-y-2 container-end-date">
                         <h4 class="text-xs laptop-l:text-sm font-semibold leading-[21px] font-serif">Check out</h4>
-                        <p class="text-sm laptop-l:text-base font-semibold leading-[24px] font-serif" id="input-endDate-nav">endDate</p>
+                        <p class="input-endDate text-sm laptop-l:text-base font-semibold leading-[24px] font-serif" id="input-endDate-nav">end Date</p>
                     </div>
                 </div>
 
-                <div class="px-2 laptop-l:px-6 hover:bg-gray-200 py-2 cursor-pointer transform duration-300 hover:rounded-2xl">
+                <div class="px-2 laptop-l:px-3 hover:bg-gray-200 py-2 cursor-pointer transform duration-300 hover:rounded-2xl">
                     <div class="space-y-2 container-guest">
                         <h4 class="text-xs laptop-l:text-sm font-semibold leading-[21px] font-serif">Guest</h4>
-                        <p class="text-sm laptop-l:text-base text-[#888] font-semibold leading-[24px] font-serif" id="input-guest-nav">Add Guests</p>
+                        <p class="input-guest text-sm laptop-l:text-base text-[#888] font-semibold leading-[24px] font-serif" id="input-guest-nav">Add Guests</p>
                     </div>
                 </div>
             </div>

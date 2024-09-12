@@ -4,27 +4,27 @@
            <div class="px-4 laptop-l:px-6 col-span-3 hover:bg-gray-200 py-3 pl-6 cursor-pointer transform duration-300 hover:rounded-2xl">
                <div class="laptop-l:w-[284px]  space-y-2 container-location">
                    <h4 class="text-sm font-semibold leading-[21px] font-serif">Location</h4>
-                   <p class="text-base laptop-l:text-lg font-medium leading-[24px] font-serif" id="input-location-desktop">City, destination, or villa name</p>
+                   <p class="input-location text-base laptop-l:text-lg font-medium leading-[24px] font-serif" >City, destination, or villa name</p>
                </div>
            </div>
 
            <div class="px-4 laptop-l:px-6 hover:bg-gray-200 py-3 cursor-pointer transform duration-300 hover:rounded-2xl">
                <div class="space-y-2 container-start-date">
                    <h4 class="text-sm font-semibold leading-[21px] font-serif">Check in</h4>
-                   <p class="text-base laptop-l:text-lg font-semibold leading-[24px] font-serif" id="input-startDate-desktop">startDate</p>
+                   <p class="input-startDate text-base laptop-l:text-lg font-semibold leading-[24px] font-serif">start Date</p>
                </div>
            </div>
            <div class="px-4 laptop-l:px-6 hover:bg-gray-200 py-3 cursor-pointer transform duration-300 hover:rounded-2xl">
                <div class="space-y-2 container-end-date">
                    <h4 class="text-sm font-semibold leading-[21px] font-serif">Check out</h4>
-                   <p class="text-base laptop-l:text-lg font-semibold leading-[24px] font-serif" id="input-endDate-desktop">endDate</p>
+                   <p class="input-endDate text-base laptop-l:text-lg font-semibold leading-[24px] font-serif">end Date</p>
                </div>
            </div>
 
            <div class="px-4 laptop-l:px-6 hover:bg-gray-200 py-3 cursor-pointer transform duration-300 hover:rounded-2xl">
                <div class="space-y-2 container-guest">
                    <h4 class="text-sm font-semibold leading-[21px] font-serif">Guest</h4>
-                   <p class="text-base laptop-l:text-lg text-[#888] font-semibold leading-[24px] font-serif" id="input-guest-desktop">Add Guests</p>
+                   <p class="input-guest text-base laptop-l:text-lg text-[#888] font-semibold leading-[24px] font-serif">Add Guests</p>
                </div>
            </div>
        </div>

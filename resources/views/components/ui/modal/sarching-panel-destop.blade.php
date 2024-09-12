@@ -133,27 +133,27 @@
 
             $('#btn-modal-searching').click(function () {
                 selectLocationWhenNullOrNot(valueLocations);
-                $('#input-startDate-desktop').text(selectStartDate());
-                $('#input-endDate-desktop').text(selectEndDate());
+                $('.input-startDate').text(selectStartDate());
+                $('.input-endDate').text(selectEndDate());
                 if(valueAdult === 0 && valueChild === 0 && valueInfants === 0) {
-                    $('#input-guest-desktop')
+                    $('.input-guest')
                         .addClass('text-[#888]')
                         .text('Add Guests');
                 } else {
-                    $('#input-guest-desktop')
+                    $('.input-guest')
                         .removeClass('text-[#888]')
                         .text(`${valueAdult} Adult, ${valueChild} Child, ${valueInfants} Infants`)
 
                 }
-                $('#modal-searching').fadeOut('slow');
+                $('#modal-searching').fadeOut('fast');
             })
         });
 
         function selectLocationWhenNullOrNot(valueLocations) {
             if (valueLocations === 'Choose countries' || valueLocations === null) {
-                $('#input-location-desktop').text('City, destination, or villa name');
+                $('.input-location').text('City, destination, or villa name');
             } else {
-                $('#input-location-desktop').text(valueLocations);
+                $('.input-location').text(valueLocations);
             }
         }
 
