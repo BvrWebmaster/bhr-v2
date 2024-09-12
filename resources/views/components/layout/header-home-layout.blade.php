@@ -80,6 +80,7 @@
                 const isOpen = rect.top >= 0 && rect.top <= window.innerHeight;
 
                 if (isOpen) {
+                    navigationSearch.classList.remove('laptop:block');
                     navigation.classList.add('bg-transparent', 'shadow-none');
                     navigation.classList.remove('bg-white', 'shadow-lg');
                 } else {

@@ -11,7 +11,7 @@
         <x-ui.label.navigation-label :label="'Contact'" :routes="'contact'" :active="request()->routeIs('contact.index')"/>
     </div>
 
-    <div class="tablet:flex space-x-4 items-center" >
+    <div class="tablet:flex space-x-4 items-center">
         <div class="hidden tablet:flex laptop:hidden laptop-l:flex space-x-3" id="container-auth">
             <x-ui.button.button-login />
             <x-ui.button.button-register />
