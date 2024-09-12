@@ -28,3 +28,4 @@ function selectedLocationCard() {
     return `<option selected>Choose countries</option>`;
 }
 
+
