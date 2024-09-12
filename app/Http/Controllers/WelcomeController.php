@@ -25,7 +25,7 @@ class WelcomeController extends Controller
 
             ->with(['location', 'category'])
 
-            ->limit(4)
+            ->limit(8)
 
             ->get();
 

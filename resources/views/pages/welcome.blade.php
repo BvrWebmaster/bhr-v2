@@ -54,9 +54,10 @@
                     <div class="w-full relative">
                         <div class="overflow-hidden" id="slider-container-accomodations">
                             <!-- load accomodation -->
-                            <div class="overflow-x-scroll no-scrollbar flex items-stretch tablet:flex-row gap-x-2 static transition duration-700" id="slider-accomodations"></div>
+                            <div class="flex items-stretch md:flex-row gap-x-2 static transition duration-700" id="slider-accomodations"></div>
                         </div>
-                        <x-ui.icon.icon-slider />
+                        <x-ui.icon.icon-slider id="btn-next-accomodation" />
+                        <x-ui.icon.icon-slider-prev id="btn-prev-accomodation" />
                     </div>
                     <div>
                         <x-ui.label.text-orange-button label="See More Accomodations" routes="hotels-and-villa.index"/>
@@ -80,10 +81,10 @@
                     </div>
                 </div>
                 <div class="w-full relative">
-                    <div class="overflow-hidden">
-                        <div class="flex flex-row items-stretch static transition duration-700 space-x-2" id="slider-activities">
+                    <div class="overflow-hidden" id="slider-container-activities">
+                        <div class="flex items-stretch md:flex-row gap-x-2 static transition duration-700" id="slider-activities">
                             @foreach($activities as $activity)
-                              <div class="w-[37%] tablet:w-[30%] laptop:w-[34%] laptop-l:w-[24%] flex-shrink-0">
+                              <div class="w-[37%] tablet:w-[30%] laptop:w-[34%] laptop-l:w-[24.4%] flex-shrink-0">
                                   <x-ui.card.activities-card-slider
                                       :images="'https://www.bvrbaliholidayrentals.com/storage/images//65b71a8b121a2.JPG'"
                                       :title="'Bali Zoo'" />
@@ -92,7 +93,8 @@
                         </div>
 
                     </div>
-                    <x-ui.icon.icon-slider />
+                    <x-ui.icon.icon-slider id="btn-next-activities"/>
+                    <x-ui.icon.icon-slider-prev id="btn-prev-activities" />
                 </div>
                 <x-ui.label.text-orange-button label="Explore More Activities" routes="activities.index" />
             </div>
@@ -133,9 +135,9 @@
                     </p>
                 </div>
                 <div class="w-full relative">
-                    <div class="overflow-hidden">
-                        <div class="flex items-stretch static space-x-2 transition duration-700 " id="slider-accomodations">
-                            @for($i = 0; $i<3; $i++)
+                    <div class="overflow-hidden" id="container-slider-youtube">
+                        <div class="flex items-stretch md:flex-row gap-x-2 static transition duration-700" id="slider-youtube">
+                            @for($i = 0; $i<6; $i++)
                                 <x-ui.card.youtube-card
                                     :embed="'ByzQhArnp_c'"
                                     :title="'Royal Manuaba Ubud X BVR Property'"
@@ -144,7 +146,8 @@
                         </div>
 
                     </div>
-                    <x-ui.icon.icon-slider />
+                    <x-ui.icon.icon-slider id="btn-next-youtube"/>
+                    <x-ui.icon.icon-slider-prev id="btn-prev-youtube" />
                 </div>
                 <div>
                     <x-ui.label.text-orange-button :label="'See More Videos'" routes="welcome" />
@@ -235,6 +238,143 @@
                     </div>
                 `;
             }
+
+            // variabel of container youtube slider
+            const sliderRefYoutube = $('#container-slider-youtube');
+            const btnPrevYoutube = $('#btn-prev-youtube');
+            const btnNextYoutube = $('#btn-next-youtube');
+            const itemWidthYoutube = sliderRefYoutube.width();
+            let slidePrevYoutube = false;
+
+            function setSlidePrevYoutube(newSlidePrev) {
+                slidePrevYoutube = newSlidePrev;
+
+                if (slidePrevYoutube) {
+                    btnPrevYoutube.removeClass('hidden');
+                }
+            }
+
+            function onNextSlideYoutube() {
+                const maxScrollLeft = sliderRefYoutube[0].scrollWidth - sliderRefYoutube.width();
+
+                sliderRefYoutube.animate({
+                    scrollLeft: '+=' + sliderRefYoutube.width()
+                }, 100, function () {
+                    setSlidePrevYoutube(true);
+
+                    if (sliderRefYoutube.scrollLeft() >= maxScrollLeft - itemWidthYoutube) {
+                        btnNextYoutube.addClass('hidden');
+                    }
+                });
+            }
+
+            function onPrevSlideYoutube() {
+                sliderRefYoutube.animate({
+                    scrollLeft: '-=' + sliderRefYoutube.width()
+                }, 100, function () {
+
+                    btnNextYoutube.removeClass('hidden');
+
+                    if (sliderRefYoutube.scrollLeft() <= sliderRefYoutube.width()) {
+                        btnPrevYoutube.addClass('hidden');
+                    }
+                });
+            }
+
+            btnNextYoutube.on('click', onNextSlideYoutube);
+            btnPrevYoutube.on('click', onPrevSlideYoutube);
+
+            // variable of container activities slider
+            const sliderRefActivities = $('#slider-container-activities');
+            const btnPrevActivities = $('#btn-prev-activities');
+            const btnNextActivities = $('#btn-next-activities');
+            const itemWidthActivities = sliderRefActivities.width();
+            let slidePrevActivities = false;
+
+            function setSlidePrevActivities(newSlidePrev) {
+                slidePrevActivities = newSlidePrev;
+
+                if (slidePrevActivities) {
+                    btnPrevActivities.removeClass('hidden');
+                }
+            }
+
+            function onNextSlideActivities() {
+                const maxScrollLeft = sliderRefActivities[0].scrollWidth - sliderRefActivities.width();
+
+                sliderRefActivities.animate({
+                    scrollLeft: '+=' + sliderRefActivities.width()
+                }, 100, function () {
+                    setSlidePrevActivities(true);
+
+                    if (sliderRefActivities.scrollLeft() >= maxScrollLeft - itemWidthActivities) {
+                        btnNextActivities.addClass('hidden');
+                    }
+                });
+            }
+
+            function onPrevSlideActivities() {
+                sliderRefActivities.animate({
+                    scrollLeft: '-=' + sliderRef.width()
+                }, 100, function () {
+
+                    btnNextActivities.removeClass('hidden');
+
+                    if (sliderRefActivities.scrollLeft() <= sliderRefActivities.width()) {
+                        btnPrevActivities.addClass('hidden');
+                    }
+                });
+            }
+
+            // action
+            btnNextActivities.on('click', onNextSlideActivities);
+            btnPrevActivities.on('click', onPrevSlideActivities);
+
+
+            // variable of container accomodation slider
+            const sliderRef = $('#slider-container-accomodations');
+            const btnPrev = $('#btn-prev-accomodation');
+            const btnNext = $('#btn-next-accomodation');
+            let slidePrev = false;
+            const itemWidth = sliderRef.width();
+
+            function setSlidePrev(newSlidePrev) {
+                slidePrev = newSlidePrev;
+
+                if (slidePrev) {
+                    btnPrev.removeClass('hidden');
+                }
+            }
+
+            function handleNextSlider() {
+                const maxScrollLeft = sliderRef[0].scrollWidth - sliderRef.width();
+
+                sliderRef.animate({
+                    scrollLeft: '+=' + sliderRef.width()
+                }, 100, function () {
+                    setSlidePrev(true);
+
+                    if (sliderRef.scrollLeft() >= maxScrollLeft - itemWidth) {
+                        btnNext.addClass('hidden');
+                    }
+                });
+            }
+
+            function handlePrevSlider() {
+                sliderRef.animate({
+                    scrollLeft: '-=' + sliderRef.width()
+                }, 100, function () {
+
+                    btnNext.removeClass('hidden');
+
+                    if (sliderRef.scrollLeft() <= sliderRef.width()) {
+                        btnPrev.addClass('hidden');
+                    }
+                });
+            }
+
+            btnNext.on('click', handleNextSlider);
+            btnPrev.on('click', handlePrevSlider);
         });
 
     </script>

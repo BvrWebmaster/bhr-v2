@@ -6,13 +6,13 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class iconslider extends Component
+class iconsliderprev extends Component
 {
     /**
      * Create a new component instance.
      */
     public function __construct(
-        public string $routes
+        public string $id
     ){}
 
     /**
@@ -20,6 +20,6 @@ class iconslider extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components..ui.icon.icon-slider');
+        return view('components..ui.icon.icon-slider-prev');
     }
 }
