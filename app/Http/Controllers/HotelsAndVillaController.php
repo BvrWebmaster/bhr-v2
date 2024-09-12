@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Accomodation;
 use App\Models\AccomodationGeneralFacilities;
+use App\Models\Location;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use function PHPUnit\Framework\isEmpty;
+use function PHPUnit\Framework\isNull;
 
 class HotelsAndVillaController extends Controller
 {
@@ -14,12 +17,24 @@ class HotelsAndVillaController extends Controller
     {
         $facilities = AccomodationGeneralFacilities::all();
 
-        return view('pages.hotels-and-villa.index', compact('facilities'));
+        $locations = Location::all();
+
+        return view('pages.hotels-and-villa.index', compact('facilities', 'locations'));
     }
 
     public function loadHotelsAndVilla(Request $request): JsonResponse
     {
         $facilityIds = $request->input('facilities', []);
+
+        $locations = $request->input('location', []);
+
+        $sortName = $request->input('sortName', null);
+
+        if (!is_array($locations)) {
+
+            $locations = explode(',', $locations);
+
+        }
 
         if (!is_array($facilityIds)) {
 
@@ -40,9 +55,17 @@ class HotelsAndVillaController extends Controller
                 });
             })
 
+            ->when(!empty($locations), function ($query) use ($locations) {
+                $query->whereIn('location_id', $locations);
+            })
+
+            ->when($sortName, function ($query) use ($sortName) {
+                $query->orderBy('name', $sortName);
+            })
+
             ->orderBy('created_at', 'desc')
 
-            ->paginate(8);
+            ->paginate(22);
 
         return response()->json($accomodations);
     }

@@ -5,8 +5,8 @@
     </div>
     <div class="cursor-pointer">
         <div class="transition duration-300">
-            <div>
-                <x-ui.icon.arrow-bottom-icon />
+            <div id="{{ $label }}">
+                <x-ui.icon.arrow-bottom-icon id="btn-{{ $label }}" />
             </div>
         </div>
     </div>

@@ -13,7 +13,7 @@ class headercheckboxfilter extends Component
      */
     public function __construct(
         public string $label,
-        public string $title
+        public string $subLabel
     ){}
 
     /**
