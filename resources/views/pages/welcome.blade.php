@@ -59,7 +59,7 @@
                         <x-ui.icon.icon-slider />
                     </div>
                     <div>
-                        <x-ui.label.text-orange-button label="See More Accomodations" />
+                        <x-ui.label.text-orange-button label="See More Accomodations" routes="hotels-and-villa.index"/>
                     </div>
                 </div>
             </div>
@@ -94,7 +94,7 @@
                     </div>
                     <x-ui.icon.icon-slider />
                 </div>
-                <x-ui.label.text-orange-button label="Explore More Activities" />
+                <x-ui.label.text-orange-button label="Explore More Activities" routes="activities.index" />
             </div>
         </section>
 
@@ -113,7 +113,7 @@
                         <x-ui.card.promo-card :label="$promo" :image="$promo" />
                     @endforeach
                 </div>
-                <x-ui.label.text-orange-button label="See More Packages" />
+                <x-ui.label.text-orange-button label="See More Packages" routes="special-offers.index" />
             </div>
         </section>
 
@@ -147,7 +147,7 @@
                     <x-ui.icon.icon-slider />
                 </div>
                 <div>
-                    <x-ui.label.text-orange-button :label="'See More Recommended Package'" />
+                    <x-ui.label.text-orange-button :label="'See More Videos'" routes="welcome" />
                 </div>
             </div>
         </section>
