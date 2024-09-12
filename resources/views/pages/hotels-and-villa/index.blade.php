@@ -36,11 +36,6 @@
 
                             </x-layout.filter-layout>
 
-                            <!-- price range -->
-                            <x-layout.filter-layout>
-                                <x-ui.label.header-checkbox-filter label="Price" subLabel="Per room, per night" />
-                            </x-layout.filter-layout>
-
                             <!-- filter facilites -->
                             <x-layout.filter-layout>
                                 <x-ui.label.header-checkbox-filter label="Facilities" subLabel="Essential amenities" />

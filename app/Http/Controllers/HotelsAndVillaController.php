@@ -65,7 +65,7 @@ class HotelsAndVillaController extends Controller
 
             ->orderBy('created_at', 'desc')
 
-            ->paginate(22);
+            ->paginate(8);
 
         return response()->json($accomodations);
     }

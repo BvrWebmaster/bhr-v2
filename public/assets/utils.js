@@ -29,7 +29,7 @@ function selectedLocationCard() {
 }
 
 function cardAccomodationHome(accomodation) {
-    const hotelsAndVillaBaseURL = "{{ url('hotels-and-villa') }}/";
+    const hotelsAndVillaBaseURL = "hotels-and-villa/";
 
     return `
                     <div class="w-[45%] tablet:w-1/3 laptop:w-[24.4%] flex-shrink-0">
@@ -84,7 +84,7 @@ function cardAccomodationHome(accomodation) {
 }
 
 function accomodationCardHotelsAndVilla(accomodation) {
-    const hotelsAndVillaBaseURL = "{{ url('hotels-and-villa') }}/";
+    const hotelsAndVillaBaseURL = "hotels-and-villa/";
 
     return `
             <a href="${hotelsAndVillaBaseURL}${accomodation.slug}" class="cursor-pointer grid grid-cols-9 ">
