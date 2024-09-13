@@ -238,33 +238,49 @@
                 return `
             <a href="${hotelsAndVillaBaseURL}${accomodation.slug}" class="cursor-pointer grid grid-cols-9 ">
                 <div class="col-span-9 tablet:col-span-3 relative">
-                    <img class="h-[200px] tablet:h-full w-full object-cover rounded-t-2xl tablet:rounded-l-2xl laptop:rounded-l-[28px] tablet:rounded-t-none tablet:rounded-tl-2xl laptop:rounded-tl-[28px]" src="${accomodation.images}" alt="${accomodation.title}" />
-
+                    <img class="h-[200px] tablet:h-full w-full object-cover rounded-t-2xl tablet:rounded-l-2xl laptop:rounded-l-[28px] tablet:rounded-t-none tablet:rounded-tl-2xl laptop:rounded-tl-[28px]" src="${accomodation.featured_image}" alt="${accomodation.title}" />
                 </div>
                 <div class="col-span-9 laptop:max-h-[286px] laptop-l:max-h-[386px] tablet:col-span-6 border border-t-[#BDBDBD] border-b-[#BDBDBD] border-r-[#BDBDBD] rounded-b-2xl tablet:rounded-r-2xl laptop-l:rounded-r-[28px] tablet:rounded-bl-none no-scrollbar">
-                    <div class="px-5 laptop:px-5 laptop-l:px-10 py-3 laptop-l:py-8 space-y-6">
+                    <div class="px-5 laptop:px-5 laptop-l:px-10 py-3 laptop-l:py-8 space-y-4 laptop-l:space-y-6">
+
+                        <!-- location -->
                         <div class="flex flex-col space-y-2">
-                            <h2 class="font-sans text-[#292929] text-base tablet:text-xl laptop:text-2xl font-semibold leading-[36px]">${accomodation.name}</h2>
-                            <div class="flex space-x-2 items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                  <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="#7C7C7C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                  <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="#7C7C7C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                            <div class="pl-[0.9px]">
+                                 <h2 class="font-sans text-[#292929] text-base tablet:text-xl laptop:text-2xl font-semibold leading-[36px]">${accomodation.name}</h2>
+                            </div>
+                            <div class="flex space-x-1 items-center">
+                                <div>
+                                      <div class="hidden laptop:block">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                              <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="#7C7C7C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                              <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="#7C7C7C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div class="laptop:hidden">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                              <g clip-path="url(#clip0_1589_3620)">
+                                                <path d="M14.498 6.66559C14.498 11.3323 8.49805 15.3323 8.49805 15.3323C8.49805 15.3323 2.49805 11.3323 2.49805 6.66559C2.49805 5.07429 3.13019 3.54817 4.25541 2.42295C5.38062 1.29773 6.90675 0.665588 8.49805 0.665588C10.0893 0.665588 11.6155 1.29773 12.7407 2.42295C13.8659 3.54817 14.498 5.07429 14.498 6.66559Z" stroke="#7C7C7C" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M8.49902 8.66663C9.60359 8.66663 10.499 7.7712 10.499 6.66663C10.499 5.56206 9.60359 4.66663 8.49902 4.66663C7.39445 4.66663 6.49902 5.56206 6.49902 6.66663C6.49902 7.7712 7.39445 8.66663 8.49902 8.66663Z" stroke="#7C7C7C" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                              </g>
+                                              <defs>
+                                                <clipPath id="clip0_1589_3620">
+                                                  <rect width="16" height="16" fill="white" transform="translate(0.498047)"/>
+                                                </clipPath>
+                                              </defs>
+                                            </svg>
+                                        </div>
+                                </div>
                                 <p class="font-sans text-[#7C7C7C] text-xs tablet:text-base font-medium leading-[12px] tablet:leading-[26px] tracking-[0.3px]">${accomodation.location.name}</p>
                             </div>
                         </div>
-                        <div class="font-sans text-[#7C7C7C] text-xs laptop:text-base font-medium leading-[26px] tracking-[0.3px] w-full space-y-4">
-                            <div class="flex space-x-2 w-full items-center">
-                                <div>
-                                   <div class="rounded-full py-[4.25px] px-[3px] flex items-center justify-center bg-[#FF9132]">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8" fill="none" class="tablet:hidden">
-                                            <path d="M8.74805 5.875C8.74805 5.94604 8.72171 6.01417 8.67482 6.0644C8.62794 6.11464 8.56435 6.14286 8.49805 6.14286C8.43174 6.14286 8.36815 6.11464 8.32127 6.0644C8.27439 6.01417 8.24805 5.94604 8.24805 5.875V2.125C8.24805 1.09107 7.21305 0.25 6.24805 0.25H1.99805C1.46761 0.25 0.958906 0.475765 0.583833 0.877628C0.208761 1.27949 -0.00195312 1.82454 -0.00195312 2.39286V7.75H1.99805V5.60714H4.49805V7.75H6.49805V5.33929C6.49805 5.26825 6.52439 5.20011 6.57127 5.14988C6.61815 5.09965 6.68174 5.07143 6.74805 5.07143C6.81435 5.07143 6.87794 5.09965 6.92482 5.14988C6.97171 5.20011 6.99805 5.26825 6.99805 5.33929V6.14286C6.99805 6.5691 7.15608 6.97788 7.43739 7.27928C7.71869 7.58068 8.10022 7.75 8.49805 7.75C8.89587 7.75 9.2774 7.58068 9.55871 7.27928C9.84001 6.97788 9.99805 6.5691 9.99805 6.14286V5.07143H8.74805V5.875Z" fill="white"/>
-                                        </svg>
 
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="10" viewBox="0 0 14 10" fill="none" class="hidden tablet:block">
-                                            <path
-                                                d="M11.9987 7.5C11.9987 7.59472 11.9636 7.68556 11.9011 7.75254C11.8386 7.81952 11.7538 7.85714 11.6654 7.85714C11.577 7.85714 11.4922 7.81952 11.4297 7.75254C11.3672 7.68556 11.332 7.59472 11.332 7.5V2.5C11.332 1.12143 9.95203 0 8.66537 0H2.9987C2.29145 0 1.61318 0.301019 1.11308 0.836838C0.612983 1.37266 0.332031 2.09938 0.332031 2.85714V10H2.9987V7.14286H6.33203V10H8.9987V6.78571C8.9987 6.69099 9.03382 6.60015 9.09633 6.53318C9.15884 6.4662 9.24363 6.42857 9.33203 6.42857C9.42044 6.42857 9.50522 6.4662 9.56773 6.53318C9.63025 6.60015 9.66537 6.69099 9.66537 6.78571V7.85714C9.66537 8.42546 9.87608 8.97051 10.2512 9.37237C10.6262 9.77424 11.1349 10 11.6654 10C12.1958 10 12.7045 9.77424 13.0796 9.37237C13.4547 8.97051 13.6654 8.42546 13.6654 7.85714V6.42857H11.9987V7.5Z"
-                                                fill="white"/>
+                        <!-- card near bali -->
+                        <div class="font-sans text-[#7C7C7C] text-xs laptop:text-base font-medium leading-[26px] tracking-[0.3px] space-y-4">
+                            <div class="flex space-x-2 items-center pl-[2px]">
+                                <div class="bg-[#FF9132] py-[4.25px] px-[3px] rounded-full flex items-center justify-center">
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="8" viewBox="0 0 11 8" fill="none">
+                                            <path d="M9.24805 5.875C9.24805 5.94604 9.22171 6.01417 9.17482 6.0644C9.12794 6.11464 9.06435 6.14286 8.99805 6.14286C8.93174 6.14286 8.86815 6.11464 8.82127 6.0644C8.77439 6.01417 8.74805 5.94604 8.74805 5.875V2.125C8.74805 1.09107 7.71305 0.25 6.74805 0.25H2.49805C1.96761 0.25 1.45891 0.475765 1.08383 0.877628C0.708761 1.27949 0.498047 1.82454 0.498047 2.39286V7.75H2.49805V5.60714H4.99805V7.75H6.99805V5.33929C6.99805 5.26825 7.02439 5.20011 7.07127 5.14988C7.11815 5.09965 7.18174 5.07143 7.24805 5.07143C7.31435 5.07143 7.37794 5.09965 7.42482 5.14988C7.47171 5.20011 7.49805 5.26825 7.49805 5.33929V6.14286C7.49805 6.5691 7.65608 6.97788 7.93739 7.27928C8.21869 7.58068 8.60022 7.75 8.99805 7.75C9.39587 7.75 9.7774 7.58068 10.0587 7.27928C10.34 6.97788 10.498 6.5691 10.498 6.14286V5.07143H9.24805V5.875Z" fill="white"/>
                                         </svg>
                                     </div>
                                 </div>
@@ -273,27 +289,31 @@
                                     <p class="font-semibold">Bali Zoo</p>
                                 </div>
                             </div>
+
                         </div>
 
-                        <div class="w-full flex space-x-1 overflow-scroll tablet:hidden">
-                            ${accomodation.facilities.map(facility =>
-                    `<div class="rounded-full py-1 bg-[#FFEDD3] px-2 flex justify-center items-center">
+                        <!-- mobile card -->
+                        <div class="w-full flex overflow-x-scroll space-x-2 relative tablet:hidden">
+                            ${accomodation.facilities.slice(0,3).map(facility =>
+                                `<div class="rounded-full px-2 py-1 bg-[#FFEDD3] flex justify-center items-center">
                                         <p class="font-sans text-[#FF5700] text-xs tablet:text-sm font-semibold leading-[18px]">${facility.name}</p>
                                     </div>`
-                ).join('')}
+                                ).join('')
+                            }
                         </div>
 
+                        <!-- destop card -->
                         <div class="flex justify-between">
                             <div>
                                 <div class="hidden tablet:flex flex-wrap space-y-4 space-x-2">
-                                    ${accomodation.facilities.map(facility =>`
+                                    ${accomodation.facilities.slice(0,4).map(facility =>`
                                       <div class="rounded-full py-1 bg-[#FFEDD3] px-4 laptop:px-4 flex justify-center items-center">
                                         <p class="text-[#FF5700] text-xs laptop:text-sm font-bold leading-[21px]">${facility.name}</p>
                                       </div>
                                     `).join('')}
                                 </div>
                             </div>
-                            <div class="flex flex-col space-y-1 items-start">
+                            <div class="flex flex-col space-y-1 items-end laptop:items-start">
                                 <h3 class="font-sans text-[#7C7C7C] text-xs tablet:text-base font-medium leading-[24px]">Starts from</h3>
                                 <div class="flex space-x-2 items-center">
                                     <p class="font-sans line-through text-[#7C7C7C] text-xs tablet:text-base font-medium">IDR ${accomodation.price}</p>

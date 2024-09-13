@@ -334,7 +334,7 @@
             return `
                     <div class="w-[45%] tablet:w-1/3 laptop:w-[24.4%] flex-shrink-0">
                         <a href="${hotelsAndVillaBaseURL}${accomodation.slug}" class="cursor-pointer bg-white w-[167px] tablet:w-[212px] laptop-l:w-[308px] desktop:w-[348px]">
-                            <img src="https://www.bvrbaliholidayrentals.com/storage/images/6544c31d6db77.jpg"
+                            <img src="${accomodation.featured_image}"
                                  alt="${accomodation.name}"
                                  class="w-full h-[104px] object-cover tablet:h-[152px] laptop:h-[152px] laptop-l:h-[225px] rounded-t-[6.58px] tablet:rounded-t-[11px] laptop-l:rounded-t-2xl">
 
