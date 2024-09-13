@@ -84,6 +84,8 @@
                     navigation.classList.add('bg-transparent', 'shadow-none');
                     navigation.classList.remove('bg-white', 'shadow-lg');
                 } else {
+                    // remove flex when scroll
+                    listNavigation.classList.remove('laptop-l:flex');
                     navigation.classList.add('bg-white', 'shadow-lg');
                     navigation.classList.remove('bg-transparent', 'shadow-none');
                 }
