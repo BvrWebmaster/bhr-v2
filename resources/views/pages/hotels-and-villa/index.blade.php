@@ -84,7 +84,11 @@
         </div>
 
         <!-- panel filter mobile -->
-        <x-ui.modal.filter-hotels-and-villa-panel :facilities="$facilities" :accomodationCategories="$accomodationCategories" />
+        <x-ui.modal.filter-hotels-and-villa-panel
+            :facilities="$facilities"
+            :accomodationCategories="$accomodationCategories"
+            :locations="$locations"
+        />
 
         <!-- panel sort mobile -->
         <x-ui.modal.sort-hotels-and-villa-panel />

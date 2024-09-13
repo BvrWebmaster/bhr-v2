@@ -29,6 +29,14 @@
                 </div>
             </x-layout.panel-mobile-layout>
 
+            <!-- filter location -->
+            <x-layout.panel-mobile-layout>
+                <x-ui.label.header-checkbox-mobile-filter label="Locations" subLabel="Essential Location" />
+                @foreach($locations as $location)
+                    <x-ui.label.filter-locations-mobile :label="$location->name" :title="$location->name" :index="$location->id" />
+                @endforeach
+            </x-layout.panel-mobile-layout>
+
         </div>
     </div>
 </div>
