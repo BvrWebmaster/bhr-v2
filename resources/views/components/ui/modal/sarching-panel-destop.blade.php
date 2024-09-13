@@ -75,8 +75,9 @@
             $('#child-desktop').text(valueChild);
             $('#infants-desktop').text(valueInfants);
 
-            $('#input-startDate-desktop').text(startDate);
-            $('#input-endDate-desktop').text(endDate);
+            // destop
+            $('.input-startDate').text(startDate);
+            $('.input-endDate').text(endDate);
 
             $.ajax({
                 url: "{{ route('location') }}",
