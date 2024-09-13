@@ -6,11 +6,17 @@ use App\Models\Activity;
 use App\Models\Location;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use RalphJSmit\Laravel\SEO\Support\SEOData;
 
 class WelcomeController extends Controller
 {
     public function __invoke(Request $request): View
     {
+        $seoData = new SEOData(
+          title: 'Welcome | BVR Bali holiday Rentals',
+          description: 'Description'
+        );
+
         $activeLocation = $request->input('location_id', 1);
 
 
@@ -31,6 +37,6 @@ class WelcomeController extends Controller
 
         $locations = Location::all();
 
-        return view('pages.welcome', compact('promos',  'locations', 'activities', 'activeLocation'));
+        return view('pages.welcome', compact('promos',  'locations', 'activities', 'activeLocation', 'seoData'));
     }
 }

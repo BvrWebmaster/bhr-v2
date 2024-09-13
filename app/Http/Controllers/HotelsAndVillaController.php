@@ -8,6 +8,7 @@ use App\Models\Location;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use RalphJSmit\Laravel\SEO\Support\SEOData;
 use function PHPUnit\Framework\isEmpty;
 use function PHPUnit\Framework\isNull;
 
@@ -15,11 +16,16 @@ class HotelsAndVillaController extends Controller
 {
     public function index(): View
     {
+        $seoData = new SEOData(
+          title: 'Hotels And Villa',
+          description: 'Description hotels and villa'
+        );
+
         $facilities = AccomodationGeneralFacilities::all();
 
         $locations = Location::all();
 
-        return view('pages.hotels-and-villa.index', compact('facilities', 'locations'));
+        return view('pages.hotels-and-villa.index', compact('facilities', 'locations', 'seoData'));
     }
 
     public function loadHotelsAndVilla(Request $request): JsonResponse
@@ -72,6 +78,13 @@ class HotelsAndVillaController extends Controller
 
     public function show(Accomodation $accomodation): View
     {
-        return view('pages.hotels-and-villa.detail', compact('accomodation'));
+        $seoData = new SEOData(
+
+            title: $accomodation->name,
+
+            description: $accomodation->meta_description
+        );
+
+        return view('pages.hotels-and-villa.detail', compact('accomodation', 'seoData'));
     }
 }

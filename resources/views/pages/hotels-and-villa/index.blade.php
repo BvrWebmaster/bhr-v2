@@ -1,3 +1,5 @@
+{!! seo($seoData) !!}
+
 <x-guest-layout>
     <main>
         <!-- container searching mobile -->
