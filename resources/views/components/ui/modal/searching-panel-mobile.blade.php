@@ -64,11 +64,6 @@
             $('#child-mobile').text(valueChild);
             $('#infants-mobile').text(valueInfants);
 
-            // state in component searching
-            $('#input-date').text(`${getDate().day} - ${getDate().tomorrow}`);
-            $('#input-location').text( 'Where do you want to stay?');
-            $('#input-guest').text('0 Adult, 0 Child, 0 Infants');
-
             // select locations
             $('#container-locations-mobile').on('change', function () {
                 valueLocations = $(this).find(':selected').text();

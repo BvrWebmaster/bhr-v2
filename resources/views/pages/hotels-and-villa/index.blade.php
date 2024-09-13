@@ -4,8 +4,11 @@
     <main>
         <!-- container searching mobile -->
         <div class="-mt-4 w-full bg-white tablet:hidden rounded-t-[20px]">
-            <x-layout.search-and-villa-mobile location="Canggu" />
+            <x-layout.search-and-villa-mobile  />
         </div>
+
+        <!-- panel searching mobile -->
+        <x-ui.modal.searching-panel-mobile />
 
         <!-- container button filter and sort mobile -->
         <div class="pt-7 px-4 w-full tablet:max-w-2xl mx-auto flex justify-start space-x-4 laptop:hidden">

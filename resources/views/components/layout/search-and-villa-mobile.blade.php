@@ -28,6 +28,11 @@
 
     <script>
         $(document).ready(function () {
+            // state in component searching
+            $('#input-date').text(`${getDate().day} - ${getDate().tomorrow}`);
+            $('#input-location').text( 'Where do you want to stay?');
+            $('#input-guest').text('0 Adult, 0 Child, 0 Infants');
+
             $('#input-location-mobile').click(function () {
                 $('#panel-searching-mobile').removeClass('translate-y-full').addClass('translate-y-0');
                 $('#container-searching-mobile').removeClass('translate-y-full').addClass('translate-y-0 transform duration-300');
