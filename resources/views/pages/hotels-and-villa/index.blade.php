@@ -243,6 +243,7 @@
             });
 
             function accomodationCardHotelsAndVilla(accomodation) {
+                console.log(accomodation);
                 const hotelsAndVillaBaseURL = "hotels-and-villa/";
 
                 return `
@@ -326,12 +327,12 @@
                             <div class="flex flex-col space-y-1 items-end laptop:items-start">
                                 <h3 class="font-sans text-[#7C7C7C] text-xs tablet:text-base font-medium leading-[24px]">Starts from</h3>
                                 <div class="flex space-x-2 items-center">
-                                    <p class="font-sans line-through text-[#7C7C7C] text-xs tablet:text-base font-medium">IDR ${accomodation.price}</p>
+                                    <p class="font-sans line-through text-[#7C7C7C] text-xs tablet:text-base font-medium">${convertToRupiah(accomodation.price)}</p>
                                     <button class="rounded-[10px] px-1 py-[2px] bg-[#FFEDD3] text-[#FF5700] text-xs tablet:text-base font-bold leading-[18px]">
                                         -10%
                                     </button>
                                 </div>
-                                <p class="font-sans text-[#FF5700] text-base laptop:text-2xl font-semibold leading-[24px] tracking-[0.5px]">IDR ${accomodation.discounted_price}</p>
+                                <p class="font-sans text-[#FF5700] text-base laptop:text-2xl font-semibold leading-[24px] tracking-[0.5px]">${convertToRupiah(accomodation.discounted_price)}</p>
                             </div>
                         </div>
                     </div>

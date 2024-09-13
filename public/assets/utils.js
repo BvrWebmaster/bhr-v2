@@ -12,6 +12,10 @@ function getDate() {
     }
 }
 
+function convertToRupiah(price) {
+    return new Intl.NumberFormat('id-ID', {style: 'currency', currency: 'IDR'}).format(price);
+}
+
 function formatDateLocal(dateString) {
     let date = new Date(dateString);
     let options = { day: '2-digit', month: 'long' };
