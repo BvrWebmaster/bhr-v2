@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Accomodation;
+use App\Models\AccomodationCategory;
 use App\Models\AccomodationGeneralFacilities;
 use App\Models\Location;
 use Illuminate\Http\JsonResponse;
@@ -23,9 +24,11 @@ class HotelsAndVillaController extends Controller
 
         $facilities = AccomodationGeneralFacilities::all();
 
+        $accomodationCategories = AccomodationCategory::all();
+
         $locations = Location::all();
 
-        return view('pages.hotels-and-villa.index', compact('facilities', 'locations', 'seoData'));
+        return view('pages.hotels-and-villa.index', compact('facilities', 'locations', 'accomodationCategories' , 'seoData'));
     }
 
     public function loadHotelsAndVilla(Request $request): JsonResponse

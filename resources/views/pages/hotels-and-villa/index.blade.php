@@ -38,6 +38,17 @@
 
                             </x-layout.filter-layout>
 
+                            <!-- filter accomodation categories -->
+                            <x-layout.filter-layout>
+                                <x-ui.label.header-checkbox-filter label="Accommodation" subLabel="Find your preferred stay" />
+                                <div class="flex flex-col space-y-3 transition-max-height duration-700 ease-in-out" id="container-filter-categories">
+                                    @foreach($accomodationCategories as $accomodationCategory)
+                                        <x-ui.label.filter-categories-accomodation :label="$accomodationCategory->name" :title="$accomodationCategory->name" :index="$accomodationCategory->id" />
+                                    @endforeach
+                                </div>
+                            </x-layout.filter-layout>
+
+
                             <!-- filter facilites -->
                             <x-layout.filter-layout>
                                 <x-ui.label.header-checkbox-filter label="Facilities" subLabel="Essential amenities" />
@@ -57,7 +68,6 @@
                                     @endforeach
                                 </div>
                             </x-layout.filter-layout>
-
                         </div>
                     </section>
 
@@ -72,6 +82,8 @@
 
         <!-- panel sort mobile -->
         <x-ui.modal.sort-hotels-and-villa-panel />
+
+        <x-layout.section-cta />
 
         <script>
             $(document).ready(function () {
@@ -123,6 +135,7 @@
                 function filterAccomodation() {
                     let selectedLocation = [];
                     let selectedFacilities = [];
+                    let selectedCategoriesAccomodations = [];
                     let selectedSort = $('input[name="sort-recommended"]:checked').data('sort-id');
 
                     $('.filter-location:checked').each(function () {
@@ -131,6 +144,10 @@
 
                     $('.filter-facility:checked').each(function () {
                         selectedFacilities.push($(this).data('facilities-id'));
+                    });
+
+                    $('.filter-accomodation-categories:checked').each(function () {
+                        selectedCategoriesAccomodations.push($(this).data('categories-accomodation-filter'));
                     });
 
                     $.ajax({
@@ -164,6 +181,11 @@
                 $('.filter-facility').on('click', function () {
                     filterAccomodation();
                 });
+
+                // filter categories
+                $('.filter-accomodation-categories').on('click', function () {
+                    filterAccomodation();
+                })
 
                 $('#btn-filter').on('click', function () {
                     $('#panel-hotels-and-villa').removeClass('translate-y-full');
@@ -202,8 +224,11 @@
 
                 $('#Price').on('click', function () {
                     $('#btn-Price').toggleClass('rotate-180');
-                })
+                });
 
+                $('#Accommodation').on('click', function () {
+                    $('#btn-Accommodation').toggleClass('rotate-180');
+                })
             });
 
             function accomodationCardHotelsAndVilla(accomodation) {
