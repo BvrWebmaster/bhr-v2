@@ -364,7 +364,7 @@
                                     <div class="space-y-1">
                                         <div class="flex items-center space-x-2">
                                             <div class="line-through text-xs tablet:text-xs tablet:font-medium tablet:leading-[18px] laptop:text-sm font-medium text-[#7C7C7C] leading-[18px] laptop:leading-[21px]">
-                                                IDR 1.0000.000
+                                              ${convertToRupiah(accomodation.price)}
                                             </div>
                                             <div class="bg-[#ffedd3] w-fit px-2 py-1 rounded-[10px]">
                                                 <p class="text-[#ff5700] text-xs laptop:text-sm font-bold leading-[18px] laptop:leading-[21px]">
@@ -373,7 +373,7 @@
                                             </div>
                                         </div>
                                         <div class="font-semibold text-sm tablet:text-base laptop:text-base laptop-l:text-xl text-[#ff5700] leading-[21px] laptop:leading-[24px] laptop-l:leading-[30px] tracking-[0.298px] tablet:tracking-[0.5px] laptop:tracking-[0.5px]">
-                                            IDR 1.0000.000
+                                            ${convertToRupiah(accomodation.discounted_price)}
                                         </div>
                                     </div>
                                 </div>

@@ -16,12 +16,20 @@ class AccomodationController extends Controller
 
             ->where('location_id', $activeLocation)
 
-            ->with(['category', 'location', 'facilities'])
+            ->with(['category', 'location', 'facilities', 'roomtypes'])
 
             ->limit(12)
 
             ->get();
 
+        $accomodations->transform(function ($accomodation) {
+            $lowestPrice = $accomodation->roomtypes->min('price_per_night') ?? 0;
+            $accomodation->discounted_price = $lowestPrice * 0.90;
+            $accomodation->price = $lowestPrice;
+            return $accomodation;
+        });
+
         return response()->json($accomodations);
     }
 }
+
