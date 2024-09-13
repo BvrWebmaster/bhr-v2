@@ -8,6 +8,7 @@ use App\Models\AccomodationGeneralFacilities;
 use App\Models\Location;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 use RalphJSmit\Laravel\SEO\Support\SEOData;
 use function PHPUnit\Framework\isEmpty;
@@ -39,21 +40,11 @@ class HotelsAndVillaController extends Controller
 
         $sortName = $request->input('sortName', null);
 
-        if (!is_array($locations)) {
-
-            $locations = explode(',', $locations);
-
-        }
-
-        if (!is_array($facilityIds)) {
-
-            $facilityIds = explode(',', $facilityIds);
-
-        }
+        $accomodationCategories = $request->input('accomodationCategories', []);
 
         $accomodations = Accomodation::query()
 
-            ->with(['category', 'location', 'facilities'])
+            ->with(['category', 'location', 'facilities', 'roomtypes'])
 
             ->when(!empty($facilityIds), function ($query) use ($facilityIds) {
 
@@ -72,9 +63,25 @@ class HotelsAndVillaController extends Controller
                 $query->orderBy('name', $sortName);
             })
 
+            ->when(!empty($accomodationCategories), function ($query) use ($accomodationCategories) {
+
+                $query->whereIn('category_id', $accomodationCategories);
+
+            })
+
             ->orderBy('created_at', 'desc')
 
             ->paginate(8);
+
+        $accomodations->getCollection()->transform(function ($accomodation) {
+            // Dapatkan harga termurah dari roomtypes
+            $lowestPrice = $accomodation->roomtypes->min('price_per_night') ?? 0;
+            // Terapkan diskon 10%
+            $accomodation->discounted_price = $lowestPrice * 0.90;
+            $accomodation->price = $lowestPrice;
+            return $accomodation;
+        });
+
 
         return response()->json($accomodations);
     }
