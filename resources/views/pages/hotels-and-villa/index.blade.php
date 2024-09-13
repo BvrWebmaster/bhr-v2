@@ -46,7 +46,10 @@
                                 <x-ui.label.header-checkbox-filter label="Accommodation" subLabel="Find your preferred stay" />
                                 <div class="flex flex-col space-y-3 transition-max-height duration-700 ease-in-out" id="container-filter-categories">
                                     @foreach($accomodationCategories as $accomodationCategory)
-                                        <x-ui.label.filter-categories-accomodation :label="$accomodationCategory->name" :title="$accomodationCategory->name" :index="$accomodationCategory->id" />
+                                        <x-ui.label.filter-categories-accomodation
+                                            :label="$accomodationCategory->name"
+                                            :title="$accomodationCategory->name"
+                                            :index="$accomodationCategory->id" />
                                     @endforeach
                                 </div>
                             </x-layout.filter-layout>
@@ -81,7 +84,7 @@
         </div>
 
         <!-- panel filter mobile -->
-        <x-ui.modal.filter-hotels-and-villa-panel :facilities="$facilities" />
+        <x-ui.modal.filter-hotels-and-villa-panel :facilities="$facilities" :accomodationCategories="$accomodationCategories" />
 
         <!-- panel sort mobile -->
         <x-ui.modal.sort-hotels-and-villa-panel />

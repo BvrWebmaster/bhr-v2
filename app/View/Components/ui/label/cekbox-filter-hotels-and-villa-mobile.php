@@ -1,19 +1,20 @@
 <?php
 
-namespace App\View\Components\ui\modal;
+namespace App\View\Components\ui\label;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class filterhotelsandvillapanel extends Component
+class cekboxfilterhotelsandvillamobile extends Component
 {
     /**
      * Create a new component instance.
      */
     public function __construct(
-        public $facilities,
-        public $accomodationCategories
+        public string $label,
+        public string $title,
+        public string $index
     ){}
 
     /**
@@ -21,6 +22,6 @@ class filterhotelsandvillapanel extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components..ui.modal.filter-hotels-and-villa-panel');
+        return view('components..ui.label.cekbox-filter-hotels-and-villa-mobile');
     }
 }
