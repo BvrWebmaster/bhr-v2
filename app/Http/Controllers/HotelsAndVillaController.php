@@ -8,11 +8,8 @@ use App\Models\AccomodationGeneralFacilities;
 use App\Models\Location;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 use RalphJSmit\Laravel\SEO\Support\SEOData;
-use function PHPUnit\Framework\isEmpty;
-use function PHPUnit\Framework\isNull;
 
 class HotelsAndVillaController extends Controller
 {
