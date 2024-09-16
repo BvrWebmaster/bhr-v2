@@ -1,10 +1,18 @@
 @php
-    $header = request()->routeIs('bali-stories.index') ? 'tablet:h-[576px]' : 'tablet:h-[632px]';
-    $cekRoute = request()->routeIs('bali-stories.index');
-    $background = request()->routeIs('bali-stories.index') ? 'https://www.bvrbaliholidayrentals.com/storage/images/64d9e2c193e28.jpg' : 'images/header-home.png';
+    if (request()->routeIs('activities.index')) {
+        $background = 'images/activities.jpeg';
+        $header = 'tablet:h-[832px]';
+    } else if (request()->routeIs('special-offers.index')) {
+        $header = 'tablet:h-[576px]';
+        $background = 'images/bali-stories.jpg';
+    } else {
+        $background = 'images/header-home.png';
+        $header = 'tablet:h-[632px]';
+    }
+
 @endphp
 
-<header class="h-[290px] {{ $header }} w-full bg-cover bg-center overflow-hidden" id="header-desktop"
+<header class="h-[290px] {{ $header }} w-full overflow-hidden" id="header-desktop"
         style="background: linear-gradient(90deg, rgba(0,0,0,0.5243347338935574) 100%, rgba(255,255,255,1) 100%), url('{{ asset($background) }}');
             background-size: cover;
             background-position: top;
@@ -17,30 +25,16 @@
        <x-layout.navigation-destop />
    </div>
 
-    <div class="h-full flex flex-col justify-center items-center">
-        <div class="px-7">
-            <h2 class="text-center text-white text-lg laptop:text-5xl font-semibold leading-[27px] laptop:leading-[72px]">
-               @if(!$cekRoute)
-                    Discover Your Next Adventure,
-                    <br class="hidden tablet:block">
-                    Unveiling Unforgettable Journeys!
-                @else
-                    Hidden Retreat for Summer
-               @endif
-            </h2>
-        </div>
-        <h3 class="text-xs laptop:text-[30px] font-medium text-[#BDBDBD] leading-[18px] laptop:leading-[36px]">
-            Book Now and Explore!
-        </h3>
-    </div>
+   @if(request()->routeIs('bali-stories.index'))
+       <x-ui.header.header-home-and-hotels-villa :showSearching="false"/>
+    @elseif(request()->routeIs('activities.index'))
+       <x-ui.header.header-activities />
+   @endif
 
-    @if(!$cekRoute)
-        <div>
-            <x-layout.search-hotels-and-villa />
-        </div>
-    @endif
+
 
     <x-ui.modal.modal-login />
+
     <x-ui.modal.get-started-modal/>
 
     <script>
