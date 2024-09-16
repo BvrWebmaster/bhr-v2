@@ -13,7 +13,7 @@ use App\Http\Controllers\LocationController;
 Route::get('/', WelcomeController::class)->name('welcome');
 Route::get('accomodations', AccomodationController::class)->name('accomodations');
 Route::get('hotels-and-villa', [HotelsAndVillaController::class, 'index'])->name('hotels-and-villa.index');
-Route::get('hotels-and-villa/{accomodation:slug}', [HotelsAndVillaController::class, 'show'])->name('hotels-and-villa.detailed');
+Route::get('hotels-and-villa/{detail}', [HotelsAndVillaController::class, 'show'])->name('hotels-and-villa.detailed');
 Route::get('load-accomodations', [HotelsAndVillaController::class, 'loadHotelsAndVilla'])->name('load-hotels-and-villa');
 Route::get('activities', [ActivitiesController::class, 'index'])->name('activities.index');
 Route::get('bali-stories', [BaliStoryController::class, 'index'])->name('bali-stories.index');
