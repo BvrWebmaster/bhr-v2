@@ -10,6 +10,7 @@
 
         <x-layout.search-activities />
 
+        <!-- list card category -->
         <div class="w-full hidden laptop-l:flex items-center justify-center">
             <div class="w-[709px] flex justify-center space-y-4 space-x-4 flex-wrap-reverse">
 
