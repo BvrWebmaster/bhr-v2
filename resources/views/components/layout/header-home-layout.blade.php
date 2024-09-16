@@ -1,13 +1,13 @@
 @php
     if (request()->routeIs('activities.index')) {
         $background = 'images/activities.jpeg';
-        $header = 'tablet:h-[832px]';
+        $header = 'tablet:h-[432px] laptop:h-[532px] laptop:h-[632px] laptop-l:h-[832px]';
     } else if (request()->routeIs('special-offers.index')) {
         $header = 'tablet:h-[576px]';
         $background = 'images/bali-stories.jpg';
     } else {
         $background = 'images/header-home.png';
-        $header = 'tablet:h-[632px]';
+        $header = 'tablet:h-[832px]';
     }
 
 @endphp
@@ -25,6 +25,7 @@
        <x-layout.navigation-destop />
    </div>
 
+    <!-- content header -->
    @if(request()->routeIs('bali-stories.index'))
        <x-ui.header.header-home-and-hotels-villa :showSearching="false"/>
     @elseif(request()->routeIs('activities.index'))

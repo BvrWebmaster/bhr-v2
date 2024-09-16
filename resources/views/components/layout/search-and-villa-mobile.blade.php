@@ -24,7 +24,7 @@
         <p class="w-full text-black text-base font-semibold leading-[24px]" id="input-guest"></p>
     </x-layout.input-search-mobile>
 
-    <x-ui.button.button-search-mobile />
+    <x-ui.button.button-search-mobile label="Explore Now" />
 
     <script>
         $(document).ready(function () {

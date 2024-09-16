@@ -1,14 +1,15 @@
-<div class="h-full pt-[184px] flex justify-center pb-[87px]">
+<div class="h-full pt-[82px] tablet:pt-[152px] laptop-l:pt-[184px] flex justify-center pb-[87px]">
     <div class="space-y-14">
-        <div class="space-y-4">
-            <h1 class="text-[#fff] text-6xl font-semibold leading-[90px] text-center">
+        <div class="space-y-1 tablet:space-y-2 laptop:space-y-3 laptop-l:space-y-4">
+            <h1 class="text-[#fff] text-lg tablet:text-2xl laptop:text-4xl laptop-l:text-6xl font-semibold leading-[90px] text-center">
                 Discover Endless of Fun <br>
                 Activities for Your Trip
             </h1>
-            <h3 class="text-[#EFEFEF] text-3xl font-normal leading-[45px] text-center">Book Now and Explore!</h3>
+            <h3 class="font-serif text-[#EFEFEF] text-base tablet:text-lg laptop:text-xl laptop-l:text-3xl font-normal leading-[45px] text-center">Book Now and Explore!</h3>
         </div>
         <x-layout.search-activities />
-        <div class="w-full flex items-center justify-center">
+
+        <div class="w-full hidden laptop-l:flex items-center justify-center">
             <div class="w-[709px] flex justify-center space-y-4 space-x-4 flex-wrap-reverse">
 
                 <x-ui.button.tag-card-activities label="Bali Zoo">

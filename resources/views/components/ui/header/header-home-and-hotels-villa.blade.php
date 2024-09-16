@@ -1,6 +1,6 @@
 <div class="h-full flex flex-col justify-center items-center">
     <div class="px-7">
-        <h2 class="text-center text-white text-lg laptop:text-5xl font-semibold leading-[27px] laptop:leading-[72px]">
+        <h2 class="text-center text-white text-lg laptop:text-5xl laptop-l:text-6xl font-semibold leading-[27px] laptop:leading-[72px]">
             Discover Your Next Adventure,
             <br class="hidden tablet:block">
             Unveiling Unforgettable Journeys!

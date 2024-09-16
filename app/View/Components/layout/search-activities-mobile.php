@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components\ui\button;
+namespace App\View\Components\layout;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class buttonregister extends Component
+class search-activities-mobile extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class buttonregister extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components..ui.button.button-register');
+        return view('components..layout.search-activities-mobile');
     }
 }
