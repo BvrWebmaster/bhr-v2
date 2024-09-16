@@ -28,8 +28,10 @@
     <!-- content header -->
    @if(request()->routeIs('bali-stories.index'))
        <x-ui.header.header-home-and-hotels-villa :showSearching="false"/>
-    @elseif(request()->routeIs('activities.index'))
+   @elseif(request()->routeIs('activities.index'))
        <x-ui.header.header-activities />
+   @elseif(request()->routeIs('special-offers.index'))
+       <x-ui.header.header-special-offers />
    @endif
 
 

@@ -7,6 +7,7 @@
             </h1>
             <h3 class="font-serif text-[#EFEFEF] text-base tablet:text-lg laptop:text-xl laptop-l:text-3xl font-normal leading-[45px] text-center">Book Now and Explore!</h3>
         </div>
+
         <x-layout.search-activities />
 
         <div class="w-full hidden laptop-l:flex items-center justify-center">
