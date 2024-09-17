@@ -83,13 +83,13 @@ class HotelsAndVillaController extends Controller
         return response()->json($accomodations);
     }
 
-    public function show(string $detail): View
+    public function show(Accomodation $accomodation): View
     {
         $seoData = new SEOData(
 
-            title: 'detail',
+            title: $accomodation->name,
 
-            description: 'detail description'
+            description: $accomodation->meta_description
         );
 
         return view('pages.hotels-and-villa.detail', compact('seoData'));

@@ -249,7 +249,7 @@
                 const hotelsAndVillaBaseURL = "hotels-and-villa/";
 
                 return `
-            <div  class="cursor-pointer flex flex-col tablet:flex-row">
+            <div  class="flex flex-col tablet:flex-row">
               <div class="w-full tablet:w-[40%] laptop:w-[453px] relative h-[200px] tablet:h-[286px] laptop:h-[386px] overflow-hidden slide-container-hotels">
                     ${accomodation.roomtypes.map((roomType, index) => `
                         <div class="slider-item">
