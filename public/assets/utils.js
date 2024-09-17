@@ -12,6 +12,9 @@ function getDate() {
     }
 }
 
+function getFirstThreeWords(text) {
+    return text.split(' ').slice(0, 3).join(' ');
+}
 function convertToRupiah(price) {
     return new Intl.NumberFormat('id-ID', {style: 'currency', currency: 'IDR'}).format(price);
 }

@@ -11,7 +11,7 @@
         <x-ui.modal.searching-panel-mobile />
 
         <!-- container button filter and sort mobile -->
-        <div class="pt-7 px-4 w-full tablet:max-w-2xl mx-auto flex justify-start space-x-4 laptop:hidden">
+        <div class="pt-7 px-4 w-full tablet:max-w-2xl laptop:max-w-4xl mx-auto flex justify-start space-x-4 laptop-l:hidden">
             <x-ui.button.button-filter />
             <x-ui.button.button-sort />
         </div>
@@ -241,23 +241,54 @@
                     $('#btn-Accommodation').toggleClass('rotate-180');
                     $('#container-filter-categories').toggleClass('h-0');
                 });
+
             });
+
 
             function accomodationCardHotelsAndVilla(accomodation) {
                 const hotelsAndVillaBaseURL = "hotels-and-villa/";
 
                 return `
-            <a href="${hotelsAndVillaBaseURL}${accomodation.slug}" class="cursor-pointer grid grid-cols-9 ">
-                <div class="col-span-9 tablet:col-span-3 relative">
-                    <img class="h-[200px] tablet:h-[286px] laptop:h-[386px] w-full object-cover rounded-t-2xl tablet:rounded-l-2xl laptop:rounded-l-[28px] tablet:rounded-t-none tablet:rounded-tl-2xl laptop:rounded-tl-[28px]" src="${accomodation.featured_image}" alt="${accomodation.title}" />
-                </div>
-                <div class="col-span-9 tablet:h-[286px] laptop:h-[386px] tablet:col-span-6 border border-t-[#BDBDBD] border-b-[#BDBDBD] border-r-[#BDBDBD] rounded-b-2xl tablet:rounded-r-2xl laptop-l:rounded-r-[28px] tablet:rounded-bl-none no-scrollbar">
-                    <div class="px-5 laptop:px-10  py-3 laptop:py-8 space-y-4 laptop:space-y-6">
+            <div  class="cursor-pointer flex flex-col tablet:flex-row">
+              <div class="w-full tablet:w-[40%] laptop:w-[453px] relative h-[200px] tablet:h-[286px] laptop:h-[386px] overflow-hidden slide-container-hotels">
+                    ${accomodation.roomtypes.map((roomType, index) => `
+                        <div class="slider-item">
+                            <div class="overflow-hidden w-full flex h-full" id="slider-${index}">
+                                <img class="w-full h-full object-cover transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none rounded-t-2xl tablet:rounded-l-2xl laptop:rounded-l-[28px] tablet:rounded-t-none tablet:rounded-tl-2xl laptop:rounded-tl-[28px]" src="${roomType.featured_image}" alt="${roomType.name}" />
+                            </div>
 
-                        <!-- location -->
+                            <!-- Button slide -->
+                            <div class="hidden w-full absolute top-1/2 laptop:flex justify-between px-5">
+                                <div class="backdrop-blur bg-black/80 rounded-[6px] prev-slide-hotels" data-slider-id="${index}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                        <path d="M20 24L12 16L20 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+
+                                <div class="backdrop-blur bg-black/80 rounded-[6px] next-slide-hotels" data-slider-id="${index}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                        <path d="M12 24L20 16L12 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- corousel -->
+                            <div class="hidden w-full h-5 absolute bottom-6 laptop:flex gap-x-2 justify-center items-center">
+                                <button type="button" class="bg-white w-6 h-2 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                                <button type="button" class="bg-gray-200 w-2 h-2 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                                <button type="button" class="bg-gray-200 w-2 h-2 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                            </div>
+                        </div>
+                    `)}
+                </div>
+
+                <a href="${hotelsAndVillaBaseURL}${accomodation.slug}" class="w-full tablet:w-[60%] laptop:w-[611px] tablet:h-[286px] laptop:h-[386px] border border-t-[#BDBDBD] border-b-[#BDBDBD] border-r-[#BDBDBD] rounded-b-2xl tablet:rounded-r-2xl laptop-l:rounded-r-[28px] tablet:rounded-bl-none no-scrollbar">
+                    <div class="px-5 laptop:px-10 py-3 laptop:py-8 space-y-4 laptop:space-y-6">
+
+                        <!-- location and name-->
                         <div class="flex flex-col space-y-2">
                             <div class="pl-[0.9px]">
-                                 <h2 class="font-sans text-[#292929] text-base tablet:text-xl laptop:text-2xl font-semibold leading-[36px]">${accomodation.name}</h2>
+                                 <h2 class="font-sans text-[#292929] text-base tablet:text-xl laptop:text-2xl font-semibold leading-[36px]">${getFirstThreeWords(accomodation.name)}</h2>
                             </div>
                             <div class="flex space-x-1 items-center">
                                 <div>
@@ -417,8 +448,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
         `;
             }
 
