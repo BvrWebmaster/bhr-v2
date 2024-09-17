@@ -2,8 +2,10 @@
 
 <x-ui.modal.image-panel-desktop :images="$images"/>
 
-<header class="w-full overflow-hidden bg-white h-[320px] laptop:h-[705px] laptop:pt-[128px]">
-   <div class="h-[250px] laptop:h-[576px] w-full laptop:grid laptop:grid-cols-2 laptop:gap-2 laptop-l:gap-x-4">
+<header class="w-full overflow-hidden h-[320px] laptop:h-[705px] ">
+    <x-layout.navigation-detailed />
+
+    <div class="h-[250px] laptop:h-[576px] w-full laptop:grid laptop:grid-cols-2 laptop:gap-2 laptop-l:gap-x-4 laptop:mt-[128px]">
        <img src="{{ $images[0]->featured_image }}" alt="{{ $images[0]->name }}" class="w-full h-full object-cover show-hotels-and-villa-desktop image-list  cursor-pointer" data-images-panel="{{ $images[0] }}"/>
        <div class="h-[70px] laptop:h-full w-full laptop:grid laptop:grid-cols-2 laptop:gap-2 laptop-l:gap-4 flex">
            @foreach($images->slice(1,4) as $key => $image)
@@ -19,9 +21,13 @@
        </div>
    </div>
 
+    <x-ui.modal.modal-login />
+
+    <x-ui.modal.get-started-modal />
 
     <script>
         $(document).ready(function () {
+            // logic show panel
            $('.show-hotels-and-villa-mobile').click(function () {
                $('#image-panel-mobile').addClass('translate-x-0').removeClass('translate-x-full');
            });

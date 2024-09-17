@@ -18,20 +18,20 @@
 
         <script>
             $(document).ready(function () {
-                $('#btn-login').click(function () {
-                    $('#modal-login').fadeIn('slow');
+                $('.btn-login').click(function () {
+                    $('.modal-login').fadeIn('slow');
                 });
 
-                $('#close-login').click(function () {
-                    $('#modal-login').fadeOut('fast');
+                $('.close-login').click(function () {
+                    $('.modal-login').fadeOut('fast');
                 })
 
-                $('#btn-register').click(function () {
-                   $('#modal-register').fadeIn('slow');
+                $('.btn-register').click(function () {
+                   $('.modal-register').fadeIn('slow');
                 });
 
-                $('#close-register').click(function () {
-                    $('#modal-register').fadeOut('fast');
+                $('.close-register').click(function () {
+                    $('.modal-register').fadeOut('fast');
                 });
             });
         </script>

@@ -3,9 +3,9 @@
 
 <x-app-layout>
 
-    <!-- body -->
     <x-layout.header-detail-layout :images="$accomodation->roomtypes" />
 
+    <!-- body -->
     <main>
 
     </main>
