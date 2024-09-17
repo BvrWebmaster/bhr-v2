@@ -2,7 +2,7 @@
 
 <x-ui.modal.image-panel-desktop :images="$images"/>
 
-<header class="w-full overflow-hidden h-[390px] laptop:h-[640px] laptop-l:h-[686px] pt-4 laptop:pt-8">
+<header class="w-full overflow-hidden h-[390px] laptop:h-[640px] laptop-l:h-[686px] pt-4 laptop:pt-8" id="nav-desktop-detail">
     <div class="pb-4 w-full">
         <x-layout.navigation-detailed />
     </div>
