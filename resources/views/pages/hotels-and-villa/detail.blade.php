@@ -1,4 +1,12 @@
 {!! seo($seoData) !!}
-<div>
-    <!-- Walk as if you are kissing the Earth with your feet. - Thich Nhat Hanh -->
-</div>
+
+
+<x-app-layout>
+
+    <!-- body -->
+    <x-layout.header-detail-layout :images="$accomodation->roomtypes" />
+
+    <main>
+
+    </main>
+</x-app-layout>

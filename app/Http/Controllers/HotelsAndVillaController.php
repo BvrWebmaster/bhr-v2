@@ -85,13 +85,13 @@ class HotelsAndVillaController extends Controller
 
     public function show(Accomodation $accomodation): View
     {
+        $accomodation = $accomodation->load(['category', 'location', 'facilities', 'roomtypes']);
+
         $seoData = new SEOData(
-
             title: $accomodation->name,
-
             description: $accomodation->meta_description
         );
 
-        return view('pages.hotels-and-villa.detail', compact('seoData'));
+        return view('pages.hotels-and-villa.detail', compact('seoData', 'accomodation'));
     }
 }
