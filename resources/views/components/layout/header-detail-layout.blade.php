@@ -2,10 +2,11 @@
 
 <x-ui.modal.image-panel-desktop :images="$images"/>
 
-<header class="w-full overflow-hidden h-[320px] laptop:h-[705px] ">
-    <x-layout.navigation-detailed />
-
-    <div class="h-[250px] laptop:h-[576px] w-full laptop:grid laptop:grid-cols-2 laptop:gap-2 laptop-l:gap-x-4 laptop:mt-[128px]">
+<header class="w-full overflow-hidden h-[320px] laptop:h-[705px] pt-8">
+    <div class="pb-4 w-full">
+        <x-layout.navigation-detailed />
+    </div>
+    <div class="h-[250px] laptop:h-[576px] w-full laptop:grid laptop:grid-cols-2 laptop:gap-2 laptop-l:gap-x-4">
        <img src="{{ $images[0]->featured_image }}" alt="{{ $images[0]->name }}" class="w-full h-full object-cover show-hotels-and-villa-desktop image-list  cursor-pointer" data-images-panel="{{ $images[0] }}"/>
        <div class="h-[70px] laptop:h-full w-full laptop:grid laptop:grid-cols-2 laptop:gap-2 laptop-l:gap-4 flex">
            @foreach($images->slice(1,4) as $key => $image)
