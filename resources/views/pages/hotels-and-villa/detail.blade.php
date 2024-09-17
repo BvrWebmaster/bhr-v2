@@ -58,7 +58,7 @@
             <div class="hidden space-y-4 laptop:flex flex-col justify-end laptop:pb-12">
                 <div class="w-full space-y-1 flex flex-col items-end  justify-end">
                     <p class="text-[#7C7C7C] text-base font-bold leading-[24px] tracking-[0.3px]">Start from</p>
-                    <h3 class="text-[#FF5700] font-semibold text-[32px] tracking-[0.5px]">IDR 2.345.678</h3>
+                    <h3 class="text-[#FF5700] font-semibold text-[32px] tracking-[0.5px]">IDR {{ $accomodation->price }}</h3>
                     <p class="text-[#7C7C7C] text-base leading-[24px] tracking-[0.5px]">/room/night</p>
                 </div>
                 <button class="bg-[#FF5700] py-[13px] px-6 rounded-xl text-[#FFF] text-xl font-semibold leading-[30px]">
@@ -268,7 +268,7 @@
             <div class="w-full flex justify-between px-4">
                 <div class="space-y-1 flex flex-col items-start">
                     <p class="text-[#7C7C7C] text-sm font-bold leading-[24px] tracking-[0.3px]">Start from</p>
-                    <h3 class="text-[#FF5700] font-semibold text-lg tracking-[0.5px]">IDR 2.345.678</h3>
+                    <h3 class="text-[#FF5700] font-semibold text-lg tracking-[0.5px]">IDR {{ $accomodation->price }}</h3>
                     <p class="text-[#7C7C7C] text-sm leading-[24px] tracking-[0.5px]">/room/night</p>
                 </div>
                 <div class="flex items-center">

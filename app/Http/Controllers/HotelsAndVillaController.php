@@ -85,12 +85,18 @@ class HotelsAndVillaController extends Controller
 
     public function show(Accomodation $accomodation): View
     {
-        $accomodation = $accomodation->load(['category', 'location', 'facilities', 'roomtypes']);
-
         $seoData = new SEOData(
             title: $accomodation->name,
             description: $accomodation->meta_description
         );
+
+        $accomodation = $accomodation->load(['category', 'location', 'facilities', 'roomtypes']);
+
+        $lowestPrice = $accomodation->roomtypes->min('price_per_night');
+        $discountPrice = $lowestPrice * 0.90;
+
+        $accomodation->price = number_format($lowestPrice, 0, ',', '.');
+        $accomodation->afterDiscount = $discountPrice;
 
         return view('pages.hotels-and-villa.detail', compact('seoData', 'accomodation'));
     }
