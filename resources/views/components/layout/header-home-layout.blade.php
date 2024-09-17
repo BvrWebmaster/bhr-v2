@@ -32,6 +32,8 @@
        <x-ui.header.header-activities />
    @elseif(request()->routeIs('special-offers.index'))
        <x-ui.header.header-special-offers />
+   @else
+        <x-ui.header.header-home-and-hotels-villa :showSearching="true"/>
    @endif
 
 

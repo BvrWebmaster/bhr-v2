@@ -239,7 +239,8 @@
 
                 $('#Accommodation').on('click', function () {
                     $('#btn-Accommodation').toggleClass('rotate-180');
-                })
+                    $('#container-filter-categories').toggleClass('h-0');
+                });
             });
 
             function accomodationCardHotelsAndVilla(accomodation) {
@@ -304,9 +305,9 @@
                         </div>
 
                         <!-- mobile card -->
-                        <div class="w-full flex overflow-x-scroll space-x-2 relative tablet:hidden">
-                            ${accomodation.facilities.slice(0,3).map(facility =>
-                                `<div class="rounded-full px-2 py-1 bg-[#FFEDD3] flex justify-center items-center">
+                        <div class="w-full flex overflow-x-auto space-x-2 relative tablet:hidden no-scrollbar">
+                            ${accomodation.facilities.slice(0,5).map(facility =>
+                                `<div class="flex-shrink-0 rounded-full px-2 py-1 bg-[#FFEDD3] flex justify-center items-center">
                                         <p class="font-sans text-[#FF5700] text-xs tablet:text-sm font-semibold leading-[18px]">${facility.name}</p>
                                     </div>`
                                 ).join('')
@@ -314,11 +315,11 @@
                         </div>
 
                         <!-- destop card -->
-                        <div class="flex justify-between">
-                            <div>
-                                <div class="hidden tablet:flex flex-wrap space-y-4 space-x-2">
+                        <div class="h-auto flex justify-between">
+                            <div class="h-full">
+                                <div class="w-[281px] hidden tablet:flex flex-wrap space-x-2 justify-start items-center space-y-4">
                                     ${accomodation.facilities.slice(0,4).map(facility =>`
-                                      <div class="rounded-full py-1 bg-[#FFEDD3] px-4 laptop:px-4 flex justify-center items-center">
+                                      <div class="h-full rounded-full py-1 bg-[#FFEDD3] px-4 laptop:px-4 flex justify-center items-center">
                                         <p class="text-[#FF5700] text-xs laptop:text-sm font-bold leading-[21px]">${facility.name}</p>
                                       </div>
                                     `).join('')}
