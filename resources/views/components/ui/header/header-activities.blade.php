@@ -62,8 +62,10 @@
                 });
             });
 
-            $('#btn-search-activities').on('click', function () {
+            $('.btn-search-activities').on('click', function () {
                 const search = $('#search-activities').val();
+
+
 
                 $.ajax({
                     url: "{{ route('activities.list') }}",
