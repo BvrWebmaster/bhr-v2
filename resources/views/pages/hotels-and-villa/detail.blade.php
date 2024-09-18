@@ -143,7 +143,7 @@
                         </p>
 
                     </div>
-                    <x-ui.button.button-see-more label="See More" />
+                    <x-ui.button.button-see-more id="btn-see-more-about" label="See More" />
                 </x-layout.layout-border-detail>
             </div>
         </x-layout.section-detail>
@@ -220,7 +220,7 @@
 
                         </div>
                     </div>
-                    <x-ui.button.button-see-more label="See Maps" />
+                    <x-ui.button.button-see-more id="open-map" label="See Maps" />
                 </x-layout.layout-border-detail>
             </div>
         </x-layout.section-detail>
@@ -367,6 +367,13 @@
                 maxZoom: 19,
                 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
             }).addTo(map);
+
+            $('#open-map').on('click', function (event) {
+                event.preventDefault();
+
+                const maps = `https://www.google.com/maps?q=${latitude},${longitude}`;
+                window.open(maps, '_blank');
+            });
         };
 
         $(document).ready(function () {
