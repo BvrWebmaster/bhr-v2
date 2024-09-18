@@ -8,10 +8,10 @@
        </div>
 
        <!-- container button filter and sort mobile -->
-       <div class="pt-7 px-4 w-full tablet:max-w-2xl laptop:max-w-4xl mx-auto flex justify-start space-x-4 laptop-l:hidden">
-           <x-ui.button.button-filter />
-           <x-ui.button.button-sort />
-       </div>
+{{--       <div class="pt-7 px-4 w-full tablet:max-w-2xl laptop:max-w-4xl mx-auto flex justify-start space-x-4 laptop-l:hidden">--}}
+{{--           <x-ui.button.button-filter />--}}
+{{--           <x-ui.button.button-sort />--}}
+{{--       </div>--}}
 
        <div class="py-4">
            <div class="w-full tablet:max-w-2xl laptop:max-w-4xl laptop-l:max-w-7xl desktop:max-w-[1440px] mx-auto px-4 tablet:px-0 space-y-6">

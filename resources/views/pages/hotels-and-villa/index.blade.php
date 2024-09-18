@@ -12,8 +12,8 @@
 
         <!-- container button filter and sort mobile -->
         <div class="pt-7 px-4 w-full tablet:max-w-2xl laptop:max-w-4xl mx-auto flex justify-start space-x-4 laptop-l:hidden">
-            <x-ui.button.button-filter />
-            <x-ui.button.button-sort />
+            <x-ui.button.button-filter id="btn-filter"/>
+            <x-ui.button.button-sort id="btn-sort"/>
         </div>
 
         <div class="py-4">
