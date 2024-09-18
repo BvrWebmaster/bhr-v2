@@ -1,5 +1,5 @@
 <div class="hidden h-[100vh] w-full bg-black/70 fixed z-40 items-center justify-center" id="image-panel-desktop">
-    <div class="w-[75%] bg-black/90 h-[65vh] bg-white grid grid-cols-3 gap-2 rounded-xl overflow-y-hidden">
+    <div class="w-[75%] bg-black/90 h-[65vh]  grid grid-cols-3 gap-2 rounded-xl overflow-y-hidden">
         <div class="bg-white w-full h-full col-span-1">
             <div class="border-b border-r py-4 px-3">
                 <p class="text-xl">Galery</p>
@@ -13,15 +13,13 @@
 
         <div class="w-full h-full py-4 col-span-2">
             <div class="w-full flex justify-end px-4 py-2">
-                <div id="close-image-panel">
+                <div id="close-image-panel" class="cursor-pointer">
                     <x-ui.icon.close-icon />
                 </div>
             </div>
 
             <!-- load images -->
-            <div id="list-images-container">
-{{--                <img src="{{ $images[0]->featured_image }}" alt="{{ $images[0]->name }}" class="w-full object-cover">--}}
-            </div>
+            <div id="list-images-container"></div>
         </div>
     </div>
 
