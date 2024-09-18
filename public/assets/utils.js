@@ -45,3 +45,8 @@ function spinnerLoading() {
         </div>
     `;
 }
+
+function priceBeforeDiscount(price) {
+    const discount = 10;
+    return price / (1 - (discount / 100)).toFixed(2);
+}
