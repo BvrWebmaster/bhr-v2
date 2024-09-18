@@ -72,7 +72,7 @@
         <x-layout.section-detail id="facilities">
             <div class="w-full grid laptop-l:grid-cols-3 gap-x-6 py-6 gap-y-3">
                 <div class="w-full laptop-l:col-span-2 px-4 py-2 laptop:py-8 laptop:px-10 space-y-4 border rounded-2xl border-[#BDBDBD]">
-                    <h2 class="text-[#292929] text-lg laptop:text-3xl font-semibold leading-[45px]">Popular Facilities</h2>
+                    <x-ui.label.text-detail-header-section label="Popular Facilities" />
                     <div class="grid tablet:grid-cols-2 desktop:grid-cols-3 gap-y-3">
                        @foreach($accomodation->facilities as $facility)
                             <div class="flex space-x-2 items-center">
@@ -183,7 +183,7 @@
         <x-layout.section-detail id="about">
             <div class="py-6">
                 <div class="w-full px-4 py-2 laptop:py-8 laptop:px-10 space-y-4 border rounded-2xl border-[#BDBDBD]">
-                    <h2 class="text-[#292929] text-lg laptop:text-3xl font-semibold leading-[45px]">About Accomodation</h2>
+                    <x-ui.label.text-detail-header-section label="About Accomodation" />
                     <div>
                         <p class="text-[#7C7C7C] text-sm laptop-l:text-xl font-medium leading-[40px] tracking-[0.7px]">
                             The Yubi Boutique Villas is one of the premium private villas. All villas are equipped with private swim
@@ -200,7 +200,7 @@
         <x-layout.section-detail id="location">
             <div class="w-full py-6">
                 <div class="w-full px-4 py-2 laptop:py-8 laptop:px-10 space-y-8 border rounded-2xl border-[#BDBDBD]">
-                    <h2 class="text-[#292929] text-lg laptop:text-3xl font-semibold leading-[45px]">Location</h2>
+                    <x-ui.label.text-detail-header-section label="Location" />
 
                 </div>
             </div>
@@ -210,14 +210,15 @@
         <x-layout.section-detail id="all-facilities">
             <div class="w-full py-6">
                 <div class="px-4 py-2 laptop:py-8 laptop:px-10 space-y-8 border rounded-2xl border-[#BDBDBD]">
-                    <h2 class="text-[#292929] text-lg laptop:text-3xl font-semibold leading-[45px]">All Facilities</h2>
-                    <div class="w-full flex space-x-[72px]">
+                    <x-ui.label.text-detail-header-section label="All Facilities" />
+                    <div class="w-full flex flex-col laptop:flex-row space-y-10 laptop:space-y-0 laptop:space-x-[72px] items-start">
+
                         <x-layout.layout-all-facilities>
                             <x-ui.label.text-header-all-facilities label="General">
                                 <x-ui.icon.general-icon />
                             </x-ui.label.text-header-all-facilities>
 
-                            <div class="flex flex-col space-y-4">
+                            <div class="flex flex-col space-y-4 items-start">
                                 <x-ui.label.text-all-facilities label="Restaurant" />
                                 <x-ui.label.text-all-facilities label="Smoking Area" />
                                 <x-ui.label.text-all-facilities label="Non-smoking Area" />
@@ -232,7 +233,7 @@
                                 <x-ui.icon.home-icon />
                             </x-ui.label.text-header-all-facilities>
 
-                            <div class="flex flex-col space-y-4">
+                            <div class="flex flex-col space-y-4 items-start">
                                 <x-ui.label.text-all-facilities label="Concierge" />
                                 <x-ui.label.text-all-facilities label="Laundry Service" />
                                 <x-ui.label.text-all-facilities label="Luggage Storage" />
@@ -246,7 +247,7 @@
                                 <x-ui.icon.transport-icon />
                             </x-ui.label.text-header-all-facilities>
 
-                            <div class="flex flex-col space-y-4">
+                            <div class="flex flex-col space-y-4 items-start">
                                 <x-ui.label.text-all-facilities label="Airport Shuttle" />
                                 <x-ui.label.text-all-facilities label="Car Rental" />
                                 <x-ui.label.text-all-facilities label="Free Parking" />
