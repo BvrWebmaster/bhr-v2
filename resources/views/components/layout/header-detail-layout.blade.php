@@ -11,9 +11,12 @@
        <div class="h-[70px] laptop:h-full w-full laptop:grid laptop:grid-cols-2 laptop:gap-2 laptop-l:gap-4 flex">
            @foreach($images->slice(1,4) as $key => $image)
                @if($key === 4)
-                   <div class="brightness-50 bg-black w-full h-full cursor-pointer show-hotels-and-villa-mobile show-hotels-and-villa-desktop image-list " data-images-panel="{{ $image }}">
-                       <img src="{{ $image->featured_image }}" alt="{{ $image->name }}" class="w-full h-full object-cover relative"/>
-                       <p class="text-white laptop:text-2xl top-1/2 absolute text-xs">Show All Images</p>
+                   <div class="brightness-50 relative bg-black w-full h-full cursor-pointer show-hotels-and-villa-mobile show-hotels-and-villa-desktop image-list " data-images-panel="{{ $image }}">
+                       <img src="{{ $image->featured_image }}" alt="{{ $image->name }}" class="w-full h-full object-cover"/>
+                       <p class="text-white text-xs laptop:text-2xl laptop:hidden left-5 top-1/2 absolute t">Show All</p>
+                       <div class="hidden absolute bottom-5 py-1 right-4 px-1 rounded bg-black/60 laptop:flex items-center justify-center">
+                           <p class="text-white text-base">Show All Images</p>
+                       </div>
                    </div>
                @else
                    <img src="{{ $image->featured_image }}" alt="{{ $image->name }}" class="w-full h-full object-cover cursor-pointer show-hotels-and-villa-desktop image-list" data-images-panel="{{ $image }}"/>

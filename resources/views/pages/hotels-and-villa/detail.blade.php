@@ -72,7 +72,7 @@
                 <div class="laptop:col-span-2">
                     <x-layout.layout-border-detail>
                         <x-ui.label.text-detail-header-section label="Popular Facilities" />
-                        <div class="w-full grid tablet:grid-cols-2 desktop::grid-cols-3 laptop-l:gap-x-16 gap-y-3">
+                        <div class="w-full grid tablet:grid-cols-2 desktop:grid-cols-3 laptop-l:gap-x-16 gap-y-3">
                             @foreach($accomodation->facilities as $facility)
                                 <div class="flex space-x-2 items-center">
                                     <x-ui.icon.swin-icon />
@@ -330,7 +330,7 @@
         <x-layout.section-cta />
 
         <!-- section price mobile -->
-        <div class="laptop:hidden fixed z-30 bottom-0 w-full py-4 bg-white rounded-t-2xl">
+        <div class="laptop:hidden fixed z-30 bottom-0 w-full py-4 bg-white rounded-t-2xl shadow">
             <div class="w-full flex justify-between px-4">
                 <div class="space-y-1 flex flex-col items-start">
                     <p class="text-[#7C7C7C] text-sm font-bold leading-[24px] tracking-[0.3px]">Start from</p>
