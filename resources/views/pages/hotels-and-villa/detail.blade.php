@@ -34,22 +34,20 @@
             <!-- description -->
             <div class="space-y-4 pt-6">
                 <div class="space-y-2">
-                    <h1 class="text-[#292929] text-lg laptop-l:text-5xl font-semibold leading-[72px]">{{ $accomodation->name }}</h1>
+                    <x-ui.label.text-header-detail :label="$accomodation->name" />
                     <div class="flex space-x-3 items-center">
                         <x-ui.icon.icon-location-detail />
-                        <h3 class="text-[#7C7C7C] text-sm laptop:text-xl font-medium leading-[30px] tracking-[0.3px]">
-                            {{ $accomodation->location->description }}
-                        </h3>
+                        <x-ui.label.text-detail-location :label="$accomodation->location->description" />
                     </div>
                 </div>
                 <div class="flex space-x-8">
                     <div class="flex space-x-3 items-center">
                         <x-ui.icon.room-icon />
-                        <p class="text-[#7C7C7C] text-sm laptop:text-xl font-medium leading-[30px]">4 Rooms</p>
+                        <x-ui.label.text-detail-header-facilities label="4 Rooms" />
                     </div>
                     <div class="flex space-x-3 items-center">
                         <x-ui.icon.guest-icon />
-                        <p class="text-[#7C7C7C] text-sm laptop:text-xl font-medium leading-[30px]">Max. 8 Guests</p>
+                        <x-ui.label.text-detail-header-facilities label="Max. 8 Guest" />
                     </div>
                 </div>
             </div>
@@ -70,25 +68,26 @@
 
         <!-- section popular facilities -->
         <x-layout.section-detail id="facilities">
-            <div class="w-full grid laptop-l:grid-cols-3 gap-x-6 py-6 gap-y-3">
-                <div class="w-full laptop-l:col-span-2 px-4 py-2 laptop:py-8 laptop:px-10 space-y-4 border rounded-2xl border-[#BDBDBD]">
+            <div class="w-full grid laptop-l:grid-cols-3 gap-x-6 py-2 tablet:py-4 laptop:py-6 gap-y-3">
+                <x-layout.layout-border-detail>
                     <x-ui.label.text-detail-header-section label="Popular Facilities" />
                     <div class="grid tablet:grid-cols-2 desktop:grid-cols-3 gap-y-3">
-                       @foreach($accomodation->facilities as $facility)
+                        @foreach($accomodation->facilities as $facility)
                             <div class="flex space-x-2 items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
                                     <path d="M12.8952 7.81719L18.6619 12.6857C18.5952 12.7227 18.5285 12.7678 18.4619 12.8088C17.7119 13.3174 16.791 13.6414 15.9952 13.6414C15.1785 13.6414 14.2952 13.3256 13.5285 12.8088C12.6077 12.173 11.3785 12.173 10.4577 12.8088C9.74521 13.2928 8.87438 13.6414 7.99105 13.6414C7.57021 13.6414 7.11188 13.5512 6.66188 13.3871C6.79521 8.42422 10.9244 4.4375 15.9994 4.4375H18.666C19.4035 4.4375 19.9994 5.02402 19.9994 5.75C19.9994 6.47598 19.4035 7.0625 18.666 7.0625H15.9994C14.8785 7.0625 13.8202 7.3332 12.8952 7.81719ZM6.66605 7.0625C6.66605 7.75869 6.3851 8.42637 5.885 8.91865C5.3849 9.41094 4.70662 9.6875 3.99938 9.6875C3.29214 9.6875 2.61386 9.41094 2.11376 8.91865C1.61367 8.42637 1.33271 7.75869 1.33271 7.0625C1.33271 6.36631 1.61367 5.69863 2.11376 5.20634C2.61386 4.71406 3.29214 4.4375 3.99938 4.4375C4.70662 4.4375 5.3849 4.71406 5.885 5.20634C6.3851 5.69863 6.66605 6.36631 6.66605 7.0625ZM12.7702 13.867C13.7077 14.5027 14.8535 14.9375 15.9994 14.9375C17.1202 14.9375 18.3077 14.4945 19.2244 13.867C19.7202 13.5184 20.3952 13.5471 20.8577 13.9367C21.4577 14.4248 22.2119 14.798 22.966 14.9703C23.6827 15.1344 24.1285 15.8398 23.9619 16.5453C23.7952 17.2508 23.0786 17.6896 22.3619 17.5256C21.341 17.2918 20.4911 16.8488 19.9369 16.5002C18.7285 17.14 17.3744 17.5625 15.9994 17.5625C14.6702 17.5625 13.4744 17.1564 12.6494 16.7873C12.4077 16.6766 12.1869 16.5699 11.9994 16.4715C11.8119 16.5699 11.5952 16.6807 11.3494 16.7873C10.5244 17.1564 9.32855 17.5625 7.99938 17.5625C6.62438 17.5625 5.27021 17.14 4.06188 16.5043C3.50355 16.8488 2.65771 17.2959 1.63688 17.5297C0.920214 17.6937 0.203547 17.2549 0.0368803 16.5494C-0.129786 15.8439 0.316047 15.1385 1.03271 14.9744C1.78688 14.8021 2.54105 14.4289 3.14105 13.9408C3.60355 13.5553 4.27855 13.5266 4.77438 13.8711C5.69521 14.4945 6.87855 14.9375 7.99938 14.9375C9.14521 14.9375 10.291 14.5027 11.2285 13.867C11.691 13.543 12.3077 13.543 12.7702 13.867Z" fill="#7C7C7C"/>
                                 </svg>
-                                <p class="text-[#7C7C7C] text-sm laptop:text-xl font-medium leading-[30px]">
+                                <p class="text-[#7C7C7C] text-sm tablet:text-base laptop:text-lg laptop-l:text-xl font-medium leading-[30px]">
                                     {{ $facility->name }}
                                 </p>
                             </div>
                         @endforeach
                     </div>
-                </div>
+                </x-layout.layout-border-detail>
 
-                <div class="w-full px-4 py-2 laptop:py-8 laptop:px-10 space-y-4 border rounded-2xl border-[#BDBDBD]">
-                    <h2 class="text-[#292929] text-lg laptop:text-3xl font-semibold leading-[45px]">Popular in the Area</h2>
+                <x-layout.layout-border-detail>
+                    <x-ui.label.text-detail-header-section label="Popular in the Area" />
+
                     <div class="flex flex-col space-y-4 laptop:space-y-6">
 
                         <!-- seminyak beach -->
@@ -107,10 +106,10 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <p class="text-[#7C7C7C] text-sm laptop:text-xl font-semibold leading-[30px]">Seminyak Beach</p>
+                                <p class="text-[#7C7C7C] text-sm tablet:text-base laptop:text-lg laptop-l:text-xl font-semibold leading-[30px]">Seminyak Beach</p>
                             </div>
                             <div>
-                                <p class="text-[#7C7C7C] text-sm laptop:text-xl font-medium leading-[30px]">1,72 km</p>
+                                <p class="text-[#7C7C7C] text-sm tablet:text-base laptop:text-lg laptop-l:text-xl font-medium leading-[30px]">1,72 km</p>
                             </div>
                         </div>
 
@@ -144,10 +143,10 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <p class="text-[#7C7C7C] text-sm laptop:text-xl font-semibold leading-[30px]">Mrs. Sippy Bali</p>
+                                <p class="text-[#7C7C7C] text-sm tablet:text-base laptop:text-lg laptop-l:text-xl font-semibold leading-[30px]">Mrs. Sippy Bali</p>
                             </div>
                             <div>
-                                <p class="text-[#7C7C7C] text-sm laptop:text-xl font-medium leading-[30px]">311 m</p>
+                                <p class="text-[#7C7C7C] text-sm tablet:text-base laptop:text-lg laptop-l:text-xl font-medium leading-[30px]">311 m</p>
                             </div>
                         </div>
 
@@ -167,52 +166,51 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <p class="text-[#7C7C7C] text-sm laptop:text-xl font-semibold leading-[30px]">Pura Petitenget</p>
+                                <p class="text-[#7C7C7C] text-sm tablet:text-base laptop:text-lg laptop-l:text-xl font-semibold leading-[30px]">Pura Petitenget</p>
                             </div>
                             <div>
-                                <p class="text-[#7C7C7C] text-sm laptop:text-xl font-medium leading-[30px]">474 m</p>
+                                <p class="text-[#7C7C7C] text-sm tablet:text-base laptop:text-lg laptop-l:text-xl font-medium leading-[30px]">474 m</p>
                             </div>
                         </div>
 
                     </div>
-                </div>
+                </x-layout.layout-border-detail>
             </div>
         </x-layout.section-detail>
 
         <!-- section about -->
         <x-layout.section-detail id="about">
-            <div class="py-6">
-                <div class="w-full px-4 py-2 laptop:py-8 laptop:px-10 space-y-4 border rounded-2xl border-[#BDBDBD]">
+            <div class="py-2 tablet:py-4 laptop:py-6">
+                <x-layout.layout-border-detail>
                     <x-ui.label.text-detail-header-section label="About Accomodation" />
                     <div>
-                        <p class="text-[#7C7C7C] text-sm laptop-l:text-xl font-medium leading-[40px] tracking-[0.7px]">
+                        <p class="text-[#7C7C7C] text-sm tablet:text-base laptop:text-lg laptop-l:text-xl font-medium leading-[40px] tracking-[0.7px]">
                             The Yubi Boutique Villas is one of the premium private villas. All villas are equipped with private swim
                             ming pools and are provided with an open floor with a fully equipped lounge, dining and kitchenette area. The design and layout of the villa has created a comfortable and perfect solution for romantic, recreation for couples and families. This villa is the perfect choice for couples who are looking for a
                             romantic vacation or honeymoon vacation. Enjoy the most memorable night with your loved ones by staying at The Yubi Boutique Villas. This villa is a suitable lodging for those who want privacy and tranquility while on vacation.
                         </p>
 
                     </div>
-                </div>
+                    <button class="text-[#FF5700] text-base tablet:text-lg laptop:text-xl font-semibold leading-[30px]">See More</button>
+                </x-layout.layout-border-detail>
             </div>
         </x-layout.section-detail>
 
         <!-- section location -->
         <x-layout.section-detail id="location">
-            <div class="w-full py-6">
-                <div class="w-full px-4 py-2 laptop:py-8 laptop:px-10 space-y-8 border rounded-2xl border-[#BDBDBD]">
+            <div class="w-full py-2 tablet:py-4 laptop:py-6">
+                <x-layout.layout-border-detail>
                     <x-ui.label.text-detail-header-section label="Location" />
-
-                </div>
+                </x-layout.layout-border-detail>
             </div>
         </x-layout.section-detail>
 
         <!-- section all facilities -->
         <x-layout.section-detail id="all-facilities">
-            <div class="w-full py-6">
-                <div class="px-4 py-2 laptop:py-8 laptop:px-10 space-y-8 border rounded-2xl border-[#BDBDBD]">
+            <div class="w-full py-2 tablet:py-4 laptop:py-6">
+                <x-layout.layout-border-detail>
                     <x-ui.label.text-detail-header-section label="All Facilities" />
                     <div class="w-full flex flex-col laptop:flex-row space-y-10 laptop:space-y-0 laptop:space-x-[72px] items-start">
-
                         <x-layout.layout-all-facilities>
                             <x-ui.label.text-header-all-facilities label="General">
                                 <x-ui.icon.general-icon />
@@ -255,7 +253,7 @@
                             </div>
                         </x-layout.layout-all-facilities>
                     </div>
-                </div>
+                </x-layout.layout-border-detail>
             </div>
         </x-layout.section-detail>
 
