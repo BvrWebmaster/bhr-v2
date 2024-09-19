@@ -1,1 +1,1 @@
-<button id="{{ $id }}" class="text-[#FF5700] text-base tablet:text-lg laptop:text-xl font-semibold leading-[30px]">{{ $label }}</button>
+<button id="{{ $id }}" class="text-[#FF5700] text-sm tablet:text-base laptop:text-lg laptop-l:text-xl font-semibold leading-[30px]">{{ $label }}</button>

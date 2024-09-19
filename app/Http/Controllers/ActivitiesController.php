@@ -65,4 +65,19 @@ class ActivitiesController extends Controller
 
         return response()->json($activities);
     }
+
+    public function show(Activity $activity): View
+    {
+        $seoData = new SEOData(
+
+            title: $activity->name,
+
+            description: $activity->meta_description
+
+        );
+
+        $activity = $activity->load(['location', 'category']);
+
+        return view('pages.activities.detail', compact('seoData' , 'activity'));
+    }
 }

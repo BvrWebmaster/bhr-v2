@@ -18,6 +18,7 @@ Route::get('load-accomodations', [HotelsAndVillaController::class, 'loadHotelsAn
 Route::get('activities', [ActivitiesController::class, 'index'])->name('activities.index');
 Route::get('activities-categories', [ActivitiesController::class, 'loadActivitiesCategories'])->name('activities-categories.index');
 Route::get('load-activities', [ActivitiesController::class, 'loadActivities'])->name('activities.list');
+Route::get('activities/{activity:slug}', [ActivitiesController::class, 'show'])->name('activities.detailed');
 Route::get('bali-stories', [BaliStoryController::class, 'index'])->name('bali-stories.index');
 Route::get('special-offers', [SpecialOfferController::class, 'index'])->name('special-offers.index');
 Route::get('contact', [ContactController::class, 'index'])->name('contact.index');

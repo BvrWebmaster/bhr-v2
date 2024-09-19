@@ -50,3 +50,22 @@ function priceBeforeDiscount(price) {
     const discount = 10;
     return price / (1 - (discount / 100)).toFixed(2);
 }
+
+function getNextDays(days) {
+    const result = [];
+    const today = new Date();
+
+    for (let i = 0; i < days; i++) {
+        const nextDay = new Date(today);
+        nextDay.setDate(today.getDate() + i);
+
+        const formattedDate = nextDay.toLocaleDateString('id-ID', {
+            month: 'short',
+            day: 'numeric'
+        });
+
+        result.push(formattedDate);
+    }
+
+    return result;
+}

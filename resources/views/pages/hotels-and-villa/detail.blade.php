@@ -32,7 +32,7 @@
         <!-- section title and price -->
         <x-layout.section-detail id="general-info">
             <!-- description -->
-            <div class="space-y-4 py-6">
+            <div class="space-y-4 pt-6 pb-6 tablet:pb-8 laptop:pb-10 laptop-l:pb-12">
                 <div class="space-y-2">
                     <x-ui.label.text-header-detail :label="$accomodation->name" />
                     <div class="flex space-x-3 items-center">

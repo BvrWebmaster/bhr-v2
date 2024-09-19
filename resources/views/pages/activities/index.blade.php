@@ -143,13 +143,15 @@
         });
 
         function cardActivitiesMain(activities) {
+            const activityUrl = "activities/";
+
             return `
                  <div  class="flex flex-col tablet:flex-row">
                            <div class="w-full tablet:w-[40%] laptop:w-[453px] relative h-[200px] tablet:h-[286px] laptop:h-[386px] overflow-hidden slide-container-hotels">
                                <img class="w-full h-full object-cover transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none rounded-t-2xl tablet:rounded-l-2xl laptop:rounded-l-[28px] tablet:rounded-t-none tablet:rounded-tl-2xl laptop:rounded-tl-[28px]" src="${activities.images}" alt="${activities.name}" />
                            </div>
 
-                           <a href="#" class="w-full tablet:w-[60%] laptop:w-[611px] tablet:h-[286px] laptop:h-[386px] border border-t-[#BDBDBD] border-b-[#BDBDBD] border-r-[#BDBDBD] rounded-b-2xl tablet:rounded-r-2xl laptop-l:rounded-r-[28px] tablet:rounded-bl-none no-scrollbar">
+                           <a href="${activityUrl}${activities.slug}" class="w-full tablet:w-[60%] laptop:w-[611px] tablet:h-[286px] laptop:h-[386px] border border-t-[#BDBDBD] border-b-[#BDBDBD] border-r-[#BDBDBD] rounded-b-2xl tablet:rounded-r-2xl laptop-l:rounded-r-[28px] tablet:rounded-bl-none no-scrollbar">
                                <div class="px-5 laptop:px-10 py-3 laptop:py-8 space-y-4 laptop:space-y-6">
 
                                    <!-- location and name-->
