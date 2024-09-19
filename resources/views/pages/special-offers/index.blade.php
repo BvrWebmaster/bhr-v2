@@ -69,8 +69,10 @@
 
 
         function cardSpecialOffers(specialOffers) {
+            const baseUrl = 'special-offers';
+
             return `
-                <a href="#" class="rounded-2xl overflow-hidden h-40 tablet:h-[240px] desktop::h-[280px] w-full md:h-52">
+                <a href="${baseUrl}/${specialOffers.slug}" class="rounded-2xl overflow-hidden h-40 tablet:h-[240px] desktop::h-[280px] w-full md:h-52">
                     <img src="${specialOffers.cover_image}" class="h-full w-full object-cover" alt="${specialOffers.title}" />
                 </a>
             `;

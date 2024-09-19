@@ -43,4 +43,18 @@ class SpecialOfferController extends Controller
 
         return response()->json($specialOffers);
     }
+
+    public function show(SpecialOffer $specialOffer): View
+    {
+        $seoData = new SEOData(
+
+            title: $specialOffer->title,
+
+            description: $specialOffer->meta_description
+        );
+
+        $specialOffer = $specialOffer->load(['category']);
+
+        return view('pages.special-offers.detail', compact('seoData', 'specialOffer'));
+    }
 }
