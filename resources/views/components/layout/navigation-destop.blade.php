@@ -34,6 +34,14 @@
 
         @elseif(request()->routeIs('bali-stories.index'))
         @elseif(request()->routeIs('special-offers.index'))
+            <div class="hidden tablet:flex justify-center items-center w-full ">
+                <div class="w-full h-16 laptop:h-20 py-2 px-4 laptop:py-3 laptop:px-6 bg-white tablet:flex justify-between rounded-xl">
+                    <input type="text" class="h-full w-[330px] focus:outline-none" placeholder="Search Special Offers" id="input-special-offers-nav">
+                    <button class="btn-search-special-offers rounded-xl py-3 px-6 bg-[#FF5700] text-white text-xl font-semibold leading-[20px] transform duration-150 active:scale-95">
+                        Search
+                    </button>
+                </div>
+            </div>
         @else
             <div class="flex justify-between pr-4">
                 <div class="flex">

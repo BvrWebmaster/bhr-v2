@@ -21,5 +21,6 @@ Route::get('load-activities', [ActivitiesController::class, 'loadActivities'])->
 Route::get('activities/{activity:slug}', [ActivitiesController::class, 'show'])->name('activities.detailed');
 Route::get('bali-stories', [BaliStoryController::class, 'index'])->name('bali-stories.index');
 Route::get('special-offers', [SpecialOfferController::class, 'index'])->name('special-offers.index');
+Route::get('load-special-offers', [SpecialOfferController::class, 'loadSpecialOffer'])->name('special-offers.load');
 Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
 Route::get('location', [LocationController::class, 'index'])->name('location');
