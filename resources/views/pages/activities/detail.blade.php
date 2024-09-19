@@ -66,6 +66,7 @@
             </div>
         </x-layout.section-detail>
 
+        <!-- section ticket booking -->
         <x-layout.section-detail id="ticket-booking">
           <div class="w-full py-2 tablet:py-4 laptop:py-6">
               <x-layout.layout-border-detail>
@@ -152,20 +153,51 @@
            </div>
         </x-layout.section-detail>
 
+        <!-- section tearms and conditions -->
         <x-layout.section-detail id="tearms-and-condition">
             <div class="w-full py-2 tablet:py-4 laptop:py-6">
                 <x-layout.layout-border-detail>
                     <x-ui.label.text-detail-header-section label="Terms and Conditions" />
 
+                    <div class="flex flex-col space-y-6">
+                       <div class="flex space-x-4 items-center">
+                           <x-ui.icon.general-icon />
+                           <x-ui.label.text-header-policy-detail label="Check-in Procedure" />
+                       </div>
+                        <x-ui.partials.text-tearms-and-condition-cheklist label="Prices include taxes." />
+                        <x-ui.partials.text-tearms-and-condition-cheklist label="Bali Zoo entrance ticket(s) that has been purchased is non-refundable." />
+                        <x-ui.partials.text-tearms-and-condition-cheklist label="Ticket(s) that have been purchased cannot be re-scheduled." />
+                        <x-ui.partials.text-tearms-and-condition-cheklist label="Customers are required to fill in personal data when ordering." />
+                    </div>
 
-
+                    <div class="flex flex-col space-y-6">
+                        <div class="flex space-x-4 items-center">
+                            <x-ui.icon.more-policy-icon />
+                            <x-ui.label.text-header-policy-detail label="Bali Zoo Terms and Conditions" />
+                        </div>
+                        <x-ui.partials.text-tearms-and-condition-cheklist label="Visitors under the age of 2 can enter for free." />
+                        <x-ui.partials.text-tearms-and-condition-cheklist label="Visitors in the category of children are those aged 2-12 years." />
+                        <x-ui.partials.text-tearms-and-condition-cheklist label="Shows and schedules are subject to change without prior notice due to weather conditions." />
+                    </div>
                 </x-layout.layout-border-detail>
             </div>
         </x-layout.section-detail>
 
-        <div class="w-full h-[100vh] bg-blue-500 section" id="location"></div>
-
-        <div class="w-full h-[100vh] bg-red-500 section" id="description"></div>
+        <!-- section location -->
+        <x-layout.section-detail id="location">
+            <div class="w-full py-2 tablet:py-4 laptop:py-6">
+                <x-layout.layout-border-detail>
+                    <x-ui.label.text-detail-header-section label="Location" />
+                    <div id="map-activities" class="h-[364px] w-full -z-30 rounded-xl"></div>
+                    <div class="w-full flex flex-col space-y-2 laptop:space-y-0 laptop:flex-row justify-between items-center">
+                        <p class="text-[#7C7C7C] text-sm tablet:text-base laptop:text-lg laptop-l:text-xl font-medium leading-[30px]">Jl. Raya Singapadu, Singapadu, Kec. Sukawati, Kabupaten Gianyar, Bali 80582</p>
+                        <div class="bg-[#FFF7EC] py-3 w-full laptop:w-[425px] flex items-center justify-center rounded-xl">
+                            <p class="text-[#FF5700] text-sm tablet:text-base laptop:text-lg laptop-l:text-xl font-semibold leading-[30px]">Directions on Maps</p>
+                        </div>
+                    </div>
+                </x-layout.layout-border-detail>
+            </div>
+        </x-layout.section-detail>
 
         <!-- section price mobile -->
         <div class="laptop:hidden fixed z-30 bottom-0 w-full py-4 bg-white rounded-t-2xl shadow">
@@ -190,6 +222,35 @@
     </main>
 
     <script>
+        window.onload = function () {
+            const latitude = -8.469656;
+            const longitude = 115.159928;
+
+            const map = L.map('map-activities', {
+                center: [latitude, longitude],
+                zoom: 13
+            });
+
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(map);
+
+            const circle = L.circle([latitude, longitude], {
+                color: 'red',
+                fillColor: '#f03',
+                fillOpacity: 0.2,
+                radius: 800
+            }).addTo(map);
+
+            $('#open-map').on('click', function (event) {
+                event.preventDefault();
+                const maps = `https://www.google.com/maps?q=${latitude},${longitude}`;
+                window.open(maps, '_blank');
+            });
+        };
+
+
         $(document).ready(function () {
 
            $('.section-link-activities').on('click', function () {
