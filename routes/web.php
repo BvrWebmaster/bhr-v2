@@ -20,6 +20,7 @@ Route::get('activities-categories', [ActivitiesController::class, 'loadActivitie
 Route::get('load-activities', [ActivitiesController::class, 'loadActivities'])->name('activities.list');
 Route::get('activities/{activity:slug}', [ActivitiesController::class, 'show'])->name('activities.detailed');
 Route::get('bali-stories', [BaliStoryController::class, 'index'])->name('bali-stories.index');
+Route::get('bali-stories/{slug}', [BaliStoryController::class,'show'])->name('bali-stories.detail');
 Route::get('special-offers', [SpecialOfferController::class, 'index'])->name('special-offers.index');
 Route::get('load-special-offers', [SpecialOfferController::class, 'loadSpecialOffer'])->name('special-offers.load');
 Route::get('special-offers/{specialOffer:slug}', [SpecialOfferController::class, 'show'])->name('special-offers.detail');
