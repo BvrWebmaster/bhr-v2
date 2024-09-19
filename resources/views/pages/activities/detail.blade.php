@@ -66,8 +66,9 @@
             </div>
         </x-layout.section-detail>
 
-        <!-- section ticket booking -->
-        <x-layout.section-detail id="ticket-booking">
+
+        <!-- section experience -->
+        <x-layout.section-detail id="experience">
           <div class="w-full py-2 tablet:py-4 laptop:py-6">
               <x-layout.layout-border-detail>
                   <x-ui.label.text-detail-header-section label="What You Will Experience" />
@@ -81,6 +82,7 @@
           </div>
         </x-layout.section-detail>
 
+        <!-- section ticket booking -->
         <x-layout.section-detail id="ticket-booking">
            <div class="w-full py-2 tablet:py-4 laptop:py-6">
                <x-layout.layout-border-detail>
@@ -219,6 +221,8 @@
         </div>
 
         <x-layout.section-cta />
+
+
     </main>
 
     <script>

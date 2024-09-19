@@ -78,6 +78,29 @@ class ActivitiesController extends Controller
 
         $activity = $activity->load(['location', 'category']);
 
+        $activity->imageListsL = [
+            [
+                'name' => 'image-test',
+                'images' => 'https://www.bvrbaliholidayrentals.com/storage/images//646ad2dff2cdf.jpg'
+            ],
+            [
+                'name' => 'image-test',
+                'images' => 'https://www.bvrbaliholidayrentals.com/storage/images//646ad2dff2cdf.jpg'
+            ],
+            [
+                'name' => 'image-test',
+                'images' => 'https://www.bvrbaliholidayrentals.com/storage/images//646ad2dff2cdf.jpg'
+            ],
+            [
+                'name' => 'image-test',
+                'images' => 'https://www.bvrbaliholidayrentals.com/storage/images//646ad2dff2cdf.jpg'
+            ],
+            [
+                'name' => 'image-test',
+                'images' => 'https://www.bvrbaliholidayrentals.com/storage/images//646ad2dff2cdf.jpg'
+            ],
+        ];
+
         return view('pages.activities.detail', compact('seoData' , 'activity'));
     }
 }
