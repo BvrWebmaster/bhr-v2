@@ -146,7 +146,7 @@
             const activityUrl = "activities/";
 
             return `
-                 <div  class="flex flex-col tablet:flex-row">
+                 <div  class="w-full flex flex-col tablet:flex-row">
                            <div class="w-full tablet:w-[40%] laptop:w-[453px] relative h-[200px] tablet:h-[286px] laptop:h-[386px] overflow-hidden slide-container-hotels">
                                <img class="w-full h-full object-cover transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none rounded-t-2xl tablet:rounded-l-2xl laptop:rounded-l-[28px] tablet:rounded-t-none tablet:rounded-tl-2xl laptop:rounded-tl-[28px]" src="${activities.images}" alt="${activities.name}" />
                            </div>
