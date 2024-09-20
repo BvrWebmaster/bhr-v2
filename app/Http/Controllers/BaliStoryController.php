@@ -43,6 +43,25 @@ class BaliStoryController extends Controller
 
     public function show(string $slug): View
     {
+        $baliStories = [
+            [
+                'images' => 'https://www.bvrbaliholidayrentals.com/storage/images//655d768ca86a1.png',
+                'title' => 'Sea Festival'
+            ],
+            [
+                'images' => 'https://www.bvrbaliholidayrentals.com/storage/images//65aa1a05c7558.JPG',
+                'title' => 'Ride The Adventure'
+            ],
+            [
+                'images' => 'https://www.bvrbaliholidayrentals.com/storage/images//655d768ca86a1.png',
+                'title' => 'Sea Festival'
+            ],
+            [
+                'images' => 'https://www.bvrbaliholidayrentals.com/storage/images//65aa1a05c7558.JPG',
+                'title' => 'Ride The Adventure'
+            ],
+        ];
+
         $seoData = new SEOData(
 
             title: 'detail bali',
@@ -50,6 +69,6 @@ class BaliStoryController extends Controller
             description: 'description detail bali stories'
         );
 
-        return view('pages.bali-stories.detail', compact('seoData'));
+        return view('pages.bali-stories.detail', compact('seoData', 'baliStories'));
     }
 }

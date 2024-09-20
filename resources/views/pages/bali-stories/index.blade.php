@@ -55,5 +55,7 @@
                @endforeach
             </div>
         </section>
+
+        <x-layout.section-cta />
     </main>
 </x-guest-layout>
