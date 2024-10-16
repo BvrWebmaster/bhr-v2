@@ -21,20 +21,20 @@
     <x-layout.navigation-mobile />
 
     <!-- navigation destop -->
-   <div class="w-full py-4 laptop:py-6 laptop:px-[64px] transform duration-200 ease-in-out px-4 flex justify-between items-start absolute z-40" id="nav-navigation-destop">
-       <x-layout.navigation-destop />
-   </div>
+    <div class="w-full py-4 laptop:py-6 laptop:px-[64px] transform duration-200 ease-in-out px-4 flex justify-between items-start absolute z-40" id="nav-navigation-destop">
+        <x-layout.navigation-destop />
+    </div>
 
     <!-- content header -->
-   @if(request()->routeIs('bali-stories.index'))
-       <x-ui.header.header-home-and-hotels-villa :showSearching="false"/>
-   @elseif(request()->routeIs('activities.index'))
-       <x-ui.header.header-activities />
-   @elseif(request()->routeIs('special-offers.index'))
-       <x-ui.header.header-special-offers />
-   @else
+    @if(request()->routeIs('bali-stories.index'))
+        <x-ui.header.header-home-and-hotels-villa :showSearching="false"/>
+    @elseif(request()->routeIs('activities.index'))
+        <x-ui.header.header-activities />
+    @elseif(request()->routeIs('special-offers.index'))
+        <x-ui.header.header-special-offers />
+    @else
         <x-ui.header.header-home-and-hotels-villa :showSearching="true"/>
-   @endif
+    @endif
 
 
 
@@ -75,6 +75,26 @@
                 navigation.classList.add('bg-transparent', 'shadow-none');
                 navigation.classList.remove('bg-white', 'shadow-lg');
             }
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const headerView = document.querySelector('header');
+
+            const scrollHandler = () => {
+                const rect = headerView.getBoundingClientRect();
+                const isOpen = rect.top >= 0 && rect.top <= window.innerHeight;
+
+                if (isOpen) {
+                    navigationLogo.src = '/images/bhr-logo-white.png';
+                    navigationSearch.classList.remove('laptop:block');
+                } else {
+                    navigationLogo.src = '/images/bhr-logo-black.png';
+                    listNavigation.classList.remove('laptop-l:flex');
+                }
+            };
+
+            window.addEventListener('scroll', scrollHandler);
+            scrollHandler();
         });
 
         $(document).ready(function () {
