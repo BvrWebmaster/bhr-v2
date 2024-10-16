@@ -18,6 +18,7 @@
             background-position: top;
             background-repeat: no-repeat;">
 
+
     <x-layout.navigation-mobile />
 
     <!-- navigation destop -->

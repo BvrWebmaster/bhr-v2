@@ -16,7 +16,7 @@
                 <div class="space-y-2">
                     <div class="flex items-center space-x-3">
                         <x-ui.icon.percent-icon />
-                        <x-ui.label.thrid-heading :label="'Don`t miss our special promo'"/>
+                        <x-ui.label.thrid-heading label="Don't miss our special promo"/>
                     </div>
                     <x-ui.label.sub-heading :label="'Here are some promo that we have made special for you. Pick before it expires!'" />
                 </div>
@@ -29,7 +29,7 @@
         </section>
 
         <!-- accomodations section -->
-        <section class="w-full py-7">
+        <section class="w-full py-6 lg:py-7">
             <div class="max-w-full tablet:max-w-2xl laptop:max-w-4xl laptop-l:max-w-7xl desktop:max-w-[1440px] mx-auto px-4 tablet:px-0 space-y-6 laptop-l:space-y-10">
                 <div class="space-y-4">
                     <div class="space-y-2">
@@ -69,7 +69,7 @@
         </section>
 
         <!-- activities section -->
-        <section class="py-7 w-full">
+        <section class="py-6 lg:py-7 w-full">
             <div class="max-w-full tablet:max-w-2xl laptop:max-w-4xl laptop-l:max-w-7xl desktop:max-w-[1440px] mx-auto px-4 tablet:px-0 space-y-6">
                 <div class="space-y-6">
                     <div class="space-y-2">

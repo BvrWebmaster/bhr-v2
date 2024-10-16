@@ -303,9 +303,7 @@
                             </div>
                         </div>
 
-                        <div>
-                            <p class="overflow-hidden text-[#7C7C7C] text-ellipsis font-montserrat text-base tablet:text-lg laptop:text-xl laptop-l:text-2xl font-medium leading-[44px] tracking-[0.7px]">You may be required to present valid government-issued identification at check-in, along with credit card or cash to cover deposits and incidentals. Special request may depend on hotel's availability at check-in and may cost extra fee. Special request availability is not guaranteed. Hotel may charge you additional fee for each extra person after reserved room's maximum capacity.</p>
-                        </div>
+                        <p class="text-[#7C7C7C] text-ellipsis font-montserrat text-base tablet:text-lg laptop:text-xl laptop-l:text-2xl font-medium leading-[44px] tracking-[0.7px]">You may be required to present valid government-issued identification at check-in, along with credit card or cash to cover deposits and incidentals. Special request may depend on hotel's availability at check-in and may cost extra fee. Special request availability is not guaranteed. Hotel may charge you additional fee for each extra person after reserved room's maximum capacity.</p>
 
                     </x-layout.layut-border-sub-detail>
 

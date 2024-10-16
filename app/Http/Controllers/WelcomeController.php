@@ -35,7 +35,7 @@ class WelcomeController extends Controller
 
             ->get();
 
-        $locations = Location::all();
+        $locations = Location::has('activities')->get();
 
         return view('pages.welcome', compact('promos',  'locations', 'activities', 'activeLocation', 'seoData'));
     }
