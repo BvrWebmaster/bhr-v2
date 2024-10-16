@@ -56,7 +56,7 @@
                     <div class="w-full relative">
                         <div class="overflow-hidden" id="slider-container-accomodations">
                             <!-- load accomodation -->
-                            <div class="flex items-stretch md:flex-row space-x-1 static transition duration-700" id="slider-accomodations"></div>
+                            <div class="flex items-stretch md:flex-row space-x-1 laptop-l:space-x-4 static transition duration-700" id="slider-accomodations"></div>
                         </div>
                         <x-ui.icon.icon-slider id="btn-next-accomodation" />
                         <x-ui.icon.icon-slider-prev id="btn-prev-accomodation" />
@@ -167,6 +167,13 @@
                     data: { location_id: locationId },
                     success: function(response) {
                         $('#slider-accomodations').empty();
+
+
+                        if (response.length <= 1) {
+                            $('#btn-next-accomodation').removeClass('tablet:block');
+                        } else {
+                            $('#btn-next-accomodation').addClass('tablet:block');
+                        }
 
                         $.each(response, function(index, accomodation) {
                             $('#slider-accomodations').append(cardAccomodationHome(accomodation));
