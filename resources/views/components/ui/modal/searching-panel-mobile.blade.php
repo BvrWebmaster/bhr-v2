@@ -7,24 +7,24 @@
         <div class="w-full space-y-4">
 
             <!-- container load location -->
-            <label for="container-locations-mobile" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select Location</label>
-            <select id="container-locations-mobile" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></select>
+            <label for="container-locations-mobile" class="block mb-2 text-sm font-medium text-gray-900">Select Location</label>
+            <select id="container-locations-mobile" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"></select>
 
             <!-- input datetime -->
             <div  class="w-full flex items-center justify-between tablet:justify-start space-x-2">
                 <div class="relative w-full">
-                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Start date</label>
-                    <input id="start-date-mobile" name="start" type="date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date start">
+                    <label class="block mb-2 text-sm font-medium text-gray-900">Start date</label>
+                    <input id="start-date-mobile" name="start" type="date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 " placeholder="Select date start">
                 </div>
                 <div class="relative w-full">
-                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">End date</label>
-                    <input id="end-date-mobile" name="start" type="date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date start">
+                    <label class="block mb-2 text-sm font-medium text-gray-900">End date</label>
+                    <input id="end-date-mobile" name="start" type="date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5" placeholder="Select date start">
                 </div>
             </div>
 
             <!-- guest options -->
             <div>
-                <label for="container-locations-mobile" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select Guest</label>
+                <label for="container-locations-mobile" class="block mb-2 text-sm font-medium text-gray-900">Select Guest</label>
                <x-ui.partials.guest-select
                    label="Adult"
                    subLabel="Ages 17 or above"
