@@ -7,7 +7,7 @@
         $background = 'images/bali-stories.jpg';
     } else {
         $background = 'images/header-home.png';
-        $header = 'tablet:h-[832px]';
+        $header = 'tablet:h-[432px] laptop:h-[532px] laptop-l:h-[682px]  desktop:h-[832px]';
     }
 
 @endphp
@@ -21,7 +21,7 @@
     <x-layout.navigation-mobile />
 
     <!-- navigation destop -->
-   <div class="w-full py-4 laptop:py-8 laptop:px-[64px] transform duration-200 ease-in-out px-4 flex justify-between items-start fixed z-40" id="nav-navigation-destop">
+   <div class="w-full py-4 laptop:py-6 laptop:px-[64px] transform duration-200 ease-in-out px-4 flex justify-between items-start absolute z-40" id="nav-navigation-destop">
        <x-layout.navigation-destop />
    </div>
 
@@ -55,43 +55,26 @@
             const headerPosition = header.getBoundingClientRect().bottom;
 
             if (headerPosition < 0) {
-                navigationLogo.src = '/images/bhr-logo-black.png';
                 listNavigation.classList.remove('laptop-l:flex');
                 containerAuth.classList.add('laptop:hidden');
                 containerAuth.classList.remove('laptop-l:flex');
                 navigationSearch.classList.add('laptop:block');
                 btnMenus.classList.add('laptop:hidden');
+                navigation.classList.remove('absolute');
+                navigation.classList.add('fixed');
+                navigation.classList.add('bg-white', 'shadow-lg');
+                navigation.classList.remove('bg-transparent', 'shadow-none');
             } else {
-                navigationLogo.src = '/images/bhr-logo-white.png';
                 listNavigation.classList.add('laptop-l:flex');
                 containerAuth.classList.add('tablet:flex');
                 containerAuth.classList.remove('laptop:hidden');
                 navigationSearch.classList.remove('laptop:block');
                 btnMenus.classList.remove('laptop:hidden');
+                navigation.classList.remove('fixed');
+                navigation.classList.add('absolute');
+                navigation.classList.add('bg-transparent', 'shadow-none');
+                navigation.classList.remove('bg-white', 'shadow-lg');
             }
-        });
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const headerView = document.querySelector('header');
-
-            const scrollHandler = () => {
-                const rect = headerView.getBoundingClientRect();
-                const isOpen = rect.top >= 0 && rect.top <= window.innerHeight;
-
-                if (isOpen) {
-                    navigationSearch.classList.remove('laptop:block');
-                    navigation.classList.add('bg-transparent', 'shadow-none');
-                    navigation.classList.remove('bg-white', 'shadow-lg');
-                } else {
-                    // remove flex when scroll
-                    listNavigation.classList.remove('laptop-l:flex');
-                    navigation.classList.add('bg-white', 'shadow-lg');
-                    navigation.classList.remove('bg-transparent', 'shadow-none');
-                }
-            };
-
-            window.addEventListener('scroll', scrollHandler);
-            scrollHandler();
         });
 
         $(document).ready(function () {

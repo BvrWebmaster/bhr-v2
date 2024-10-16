@@ -22,13 +22,15 @@ class AccomodationController extends Controller
 
             ->get();
 
-        $accomodations->transform(function ($accomodation) {
-            $lowestPrice = $accomodation->roomtypes->min('price_per_night') ?? 0;
-            $accomodation->discounted_price = $lowestPrice * 0.90;
-            $accomodation->price = $lowestPrice;
-            return $accomodation;
-        });
+       if (!$accomodations->isEmpty()) {
+           $accomodations->transform(function ($accomodation) {
+               $lowestPrice = $accomodation->roomtypes->min('price_per_night') ?? 0;
+               $accomodation->discounted_price = $lowestPrice * 0.90;
+               $accomodation->price = $lowestPrice;
+               return $accomodation;
+           });
 
+       }
         return response()->json($accomodations);
     }
 }

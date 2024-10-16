@@ -86,11 +86,11 @@
                     <div class="overflow-hidden" id="slider-container-activities">
                         <div class="flex items-stretch md:flex-row gap-x-2 static transition duration-700" id="slider-activities">
                             @foreach($activities as $activity)
-                              <div class="w-[37%] tablet:w-[30%] laptop:w-[34%] laptop-l:w-[24.4%] flex-shrink-0">
-                                  <x-ui.card.activities-card-slider
-                                      :images="'https://www.bvrbaliholidayrentals.com/storage/images//65b71a8b121a2.JPG'"
-                                      :title="'Bali Zoo'" />
-                              </div>
+                                <div class="w-[37%] tablet:w-[30%] laptop:w-[34%] laptop-l:w-[24.4%] flex-shrink-0">
+                                    <x-ui.card.activities-card-slider
+                                        :images="'https://www.bvrbaliholidayrentals.com/storage/images//65b71a8b121a2.JPG'"
+                                        :title="'Bali Zoo'" />
+                                </div>
                             @endforeach
                         </div>
 
@@ -332,8 +332,7 @@
             const hotelsAndVillaBaseURL = "hotels-and-villa/";
 
             return `
-                    <div class="w-[45%] tablet:w-1/3 laptop:w-[24.4%] flex-shrink-0">
-                        <a href="${hotelsAndVillaBaseURL}${accomodation.slug}" class="cursor-pointer bg-white w-[167px] tablet:w-[212px] laptop-l:w-[308px] desktop:w-[348px]">
+                     <a href="${hotelsAndVillaBaseURL}${accomodation.slug}" class="cursor-pointer bg-white w-[167px] tablet:w-[212px] laptop-l:w-[308px] desktop:w-[348px]">
                             <img src="${accomodation.featured_image}"
                                  alt="${accomodation.name}"
                                  class="w-full h-[104px] object-cover tablet:h-[152px] laptop:h-[152px] laptop-l:h-[225px] rounded-t-[6.58px] tablet:rounded-t-[11px] laptop-l:rounded-t-2xl">
@@ -379,7 +378,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+
                 `;
         }
     </script>

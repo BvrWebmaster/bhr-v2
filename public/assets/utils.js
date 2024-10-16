@@ -16,7 +16,13 @@ function getFirstThreeWords(text) {
     return text.split(' ').slice(0, 3).join(' ');
 }
 function convertToRupiah(price) {
-    return new Intl.NumberFormat('id-ID', {style: 'currency', currency: 'IDR'}).format(price);
+    return new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+        currencyDisplay: 'code',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    }).format(Math.round(price));
 }
 
 function formatDateLocal(dateString) {
