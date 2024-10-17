@@ -13,7 +13,7 @@
         <label for="datetime">
             <x-ui.icon.date-search-icon />
         </label>
-        <p class="w-full text-black text-base font-semibold leading-[24px]" id="input-date"></p>
+        <p class="w-full text-[#000] text-base font-semibold leading-[24px]" id="input-date"></p>
     </x-layout.input-search-mobile>
 
     <!-- user guest -->
@@ -21,7 +21,8 @@
         <label for="datetime">
             <x-ui.icon.user-icon />
         </label>
-        <p class="w-full text-black text-base font-semibold leading-[24px]" id="input-guest"></p>
+
+        <p class="w-full text-[#000] text-base font-semibold leading-[24px]" id="input-guest"></p>
     </x-layout.input-search-mobile>
 
     <x-ui.button.button-search-mobile label="Explore Now" />
