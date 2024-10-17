@@ -35,7 +35,13 @@ class WelcomeController extends Controller
 
             ->get();
 
-        $locations = Location::has('activities')->get();
+        $locations = Location::join('accomodations', 'locations.id', '=', 'accomodations.location_id')
+
+            ->distinct()
+
+            ->select('locations.*')
+
+            ->get();
 
         return view('pages.welcome', compact('promos',  'locations', 'activities', 'activeLocation', 'seoData'));
     }

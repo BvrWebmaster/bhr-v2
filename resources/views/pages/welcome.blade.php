@@ -166,10 +166,11 @@
                     method: 'GET',
                     data: { location_id: locationId },
                     success: function(response) {
+                        console.log(response);
                         $('#slider-accomodations').empty();
 
 
-                        if (response.length <= 1) {
+                        if (response.length <= 5) {
                             $('#btn-next-accomodation').removeClass('tablet:block');
                         } else {
                             $('#btn-next-accomodation').addClass('tablet:block');
@@ -178,6 +179,9 @@
                         $.each(response, function(index, accomodation) {
                             $('#slider-accomodations').append(cardAccomodationHome(accomodation));
                         });
+                    },
+                    error: function (xhr) {
+                        console.log(xhr);
                     }
                 });
             }
@@ -186,6 +190,8 @@
 
             $('.filter-btn').on('click', function() {
                 let locationId = $(this).data('location-id');
+
+                console.log(`locationid ${locationId}`);
 
                 loadAccomodations(locationId);
 
