@@ -1,4 +1,7 @@
 @php
+
+    $showSearchComponent = true;
+
     if (request()->routeIs('activities.index')) {
         $background = 'images/activities.jpeg';
         $header = 'tablet:h-[432px] laptop:h-[532px] laptop:h-[632px] laptop-l:h-[832px]';
@@ -10,6 +13,9 @@
         $header = 'tablet:h-[432px] laptop:h-[532px] laptop-l:h-[682px]  desktop:h-[832px]';
     }
 
+    if (request()->routeIs('bali-stories.index')) {
+        $showSearchComponent = false;
+    }
 @endphp
 
 <header class="h-[290px] {{ $header }} w-full overflow-hidden" id="header-desktop"
@@ -23,7 +29,7 @@
 
     <!-- navigation destop -->
     <div class="w-full py-4 laptop:py-6 laptop:px-[64px] transform duration-200 ease-in-out px-4 flex justify-between items-start absolute z-40" id="nav-navigation-destop">
-        <x-layout.navigation-destop />
+        <x-layout.navigation-destop :showSearchComponent="$showSearchComponent" />
     </div>
 
     <!-- content header -->
@@ -36,8 +42,6 @@
     @else
         <x-ui.header.header-home-and-hotels-villa :showSearching="true"/>
     @endif
-
-
 
     <x-ui.modal.modal-login />
 
@@ -55,7 +59,9 @@
             const header = document.getElementById('header-desktop');
             const headerPosition = header.getBoundingClientRect().bottom;
 
-            if (headerPosition < 0) {
+            console.log(`header posisition ${headerPosition}`);
+
+            if (headerPosition < 30) {
                 listNavigation.classList.remove('laptop-l:flex');
                 containerAuth.classList.add('laptop:hidden');
                 containerAuth.classList.remove('laptop-l:flex');
@@ -65,6 +71,7 @@
                 navigation.classList.add('fixed');
                 navigation.classList.add('bg-white', 'shadow-lg');
                 navigation.classList.remove('bg-transparent', 'shadow-none');
+                navigationLogo.src = '/images/bhr-logo-black.png';
             } else {
                 listNavigation.classList.add('laptop-l:flex');
                 containerAuth.classList.add('tablet:flex');
@@ -75,6 +82,7 @@
                 navigation.classList.add('absolute');
                 navigation.classList.add('bg-transparent', 'shadow-none');
                 navigation.classList.remove('bg-white', 'shadow-lg');
+                navigationLogo.src = '/images/bhr-logo-white.png';
             }
         });
 
@@ -86,11 +94,9 @@
                 const isOpen = rect.top >= 0 && rect.top <= window.innerHeight;
 
                 if (isOpen) {
-                    navigationLogo.src = '/images/bhr-logo-white.png';
                     navigationSearch.classList.remove('laptop:block');
                 } else {
-                    navigationLogo.src = '/images/bhr-logo-black.png';
-                    listNavigation.classList.remove('laptop-l:flex');
+                    // listNavigation.classList.remove('laptop-l:flex');
                 }
             };
 
