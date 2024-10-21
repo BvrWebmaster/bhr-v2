@@ -7,7 +7,6 @@ use App\Models\ActivityCategory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-use PhpParser\Builder;
 use RalphJSmit\Laravel\SEO\Support\SEOData;
 
 class ActivitiesController extends Controller
