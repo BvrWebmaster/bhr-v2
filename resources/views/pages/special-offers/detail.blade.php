@@ -2,6 +2,29 @@
 
 <x-app-layout>
 
+    <header class="w-full overflow-hidden h-[390px] laptop:h-[640px] laptop-l:h-[686px] pt-4 laptop:pt-8">
+        <div class="pb-4 w-full">
+            <x-layout.navigation-detailed />
+        </div>
+
+        <div class="h-[232px] laptop:h-[546px] laptop-l:h-[566px] w-full laptop:grid laptop:grid-cols-2 laptop:gap-2 laptop-l:gap-x-4">
+            <img src="https://www.bvrbaliholidayrentals.com/storage/offerImages/6544beb7dccf7.jpg" alt="Special offers" class="w-full h-full object-cover show-hotels-and-villa-desktop image-list  cursor-pointer"/>
+            <div class="h-[70px] laptop:h-full w-full laptop:grid laptop:grid-cols-2 laptop:gap-2 laptop-l:gap-4 flex">
+                <img src="https://www.bvrbaliholidayrentals.com/storage/offerImages/6544beb7dccf7.jpg" alt="special offers" class="w-full h-full object-cover cursor-pointer show-hotels-and-villa-desktop image-list"/>
+                <img src="https://www.bvrbaliholidayrentals.com/storage/offerImages/658a8b7bd7197.jpg" alt="special offers" class="w-full h-full object-cover cursor-pointer show-hotels-and-villa-desktop image-list"/>
+                <img src="https://www.bvrbaliholidayrentals.com/storage/offerImages/658a8b7bd7197.jpg" alt="special offers" class="w-full h-full object-cover cursor-pointer show-hotels-and-villa-desktop image-list"/>
+                <div class="brightness-50 laptop:brightness-100 relative w-full h-full cursor-pointer show-hotels-and-villa-mobile">
+                    <img src="https://www.bvrbaliholidayrentals.com/storage/offerImages/6544beb7dccf7.jpg" alt="special offers" class="w-full h-full object-cover cursor-pointer show-hotels-and-villa-desktop image-list"/>
+                    <p class="text-white text-xs laptop:text-2xl laptop:hidden left-5 top-1/2 absolute t">Show All</p>
+                    <div class="hidden absolute bottom-5 py-2 right-4 px-4 rounded bg-black/60 laptop:flex items-center justify-center">
+                        <p class="text-white text-base">Show All Images</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
     <main>
 
         <!-- section title and price -->
