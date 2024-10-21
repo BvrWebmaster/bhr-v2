@@ -63,8 +63,7 @@
 
                         <x-ui.partials.contact-label
                             label="Address"
-                            description="Gg. Meduri No.5, Seminyak, Kec. Kuta Utara,
-Kabupaten Badung, Bali 80236">
+                            description="Gg. Meduri No.5, Seminyak, Kec. Kuta Utara,Kabupaten Badung, Bali 80236">
                             <x-ui.icon.location-icon />
                         </x-ui.partials.contact-label>
 

@@ -16,8 +16,11 @@ class HotelsAndVillaController extends Controller
     public function index(): View
     {
         $seoData = new SEOData(
+
           title: 'Hotels And Villa',
+
           description: 'Description hotels and villa'
+
         );
 
         $facilities = AccomodationGeneralFacilities::all();
