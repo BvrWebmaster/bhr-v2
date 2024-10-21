@@ -59,8 +59,6 @@
             const header = document.getElementById('header-desktop');
             const headerPosition = header.getBoundingClientRect().bottom;
 
-            console.log(`header posisition ${headerPosition}`);
-
             if (headerPosition < 30) {
                 listNavigation.classList.remove('laptop-l:flex');
                 containerAuth.classList.add('laptop:hidden');

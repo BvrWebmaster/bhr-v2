@@ -166,7 +166,6 @@
                     method: 'GET',
                     data: { location_id: locationId },
                     success: function(response) {
-                        console.log(response);
                         $('#slider-accomodations').empty();
 
 
@@ -181,7 +180,7 @@
                         });
                     },
                     error: function (xhr) {
-                        console.log(xhr);
+                       alert(xhr);
                     }
                 });
             }
@@ -190,8 +189,6 @@
 
             $('.filter-btn').on('click', function() {
                 let locationId = $(this).data('location-id');
-
-                console.log(`locationid ${locationId}`);
 
                 loadAccomodations(locationId);
 
@@ -350,7 +347,7 @@
                                  alt="${accomodation.name}"
                                  class="w-full h-[104px] object-cover tablet:h-[152px] laptop:h-[152px] laptop-l:h-[225px] rounded-t-[6.58px] tablet:rounded-t-[11px] laptop-l:rounded-t-2xl">
 
-                            <div class="px-3 py-2 tablet:px-4 tablet:py-4 desktop:py-5 desktop:px-6 space-y-4 border border-b-[#BDBDBD] border-l-[#BDBDBD] border-r-[#BDBDBD] rounded-b-[6.58px] tablet:rounded-b-[11px] laptop-l:rounded-b-2xl">
+                            <div class="w-full px-3 py-2 tablet:px-4 tablet:py-4 desktop:py-5 desktop:px-6 space-y-4 border border-b-[#BDBDBD] border-l-[#BDBDBD] border-r-[#BDBDBD] rounded-b-[6.58px] tablet:rounded-b-[11px] laptop-l:rounded-b-2xl">
                                 <div class="space-y-3">
                                     <div class="space-y-3 tablet:space-y-4">
                                         <div class="space-y-2">
